@@ -120,6 +120,50 @@
 - [教学指南](./教学案例_SK-Hynix-Air-to-Air-Transfer_教学指南.md) — 1课时的国际货运时效教学设计
 - [正文](./教学案例_SK-Hynix-Air-to-Air-Transfer_正文.md) — 空空中转从4-5天到21小时的时效革命
 
+### 教学案例（国际物流项目运营教材专题）
+
+这批 25 个案例是《国际物流项目运营》教材配套案例，来源于三家企业/地区深度访谈，覆盖工程物流、综合货代、义乌外贸生态三个维度。每个案例聚焦一个具体的国际物流操作场景或管理问题，配有章节索引和讨论问题。
+
+**第一批：中外运（工程物流）** — 项目制、定制化、高复杂度，覆盖大件运输、EPC全流程、非洲内陆、报价风险、合同管理、职业路径。
+
+| # | 案例 | 核心内容 |
+|---|------|----------|
+| 01 | [赞比亚五环化肥项目全流程](./教学案例_Zambia-Fertilizer-Plant-Full-Chain-Logistics.md) | 内陆国家全链路物流——口岸选择、ABC三段报价、驻场管理 |
+| 02 | [文莱恒逸炼化项目超大型EPC](./教学案例_Brunei-Hengyi-Refinery-Mega-EPC-Logistics.md) | 填海荒岛建厂，4年跟踪才签约，220万计费吨，200人海外团队 |
+| 03 | [马来西亚漂浮光伏桥梁限重难题](./教学案例_Malaysia-Floating-Solar-Bridge-Weight-Limit.md) | 66.5吨变压器过70吨限重桥的三种方案比选 |
+| 04 | [刚果金洛阳钼业矿山循环型物流](./教学案例_DRC-TFM-KFM-Mining-Circular-Logistics.md) | 双向循环物流——运入耗材、运出产品，多期滚动项目管理 |
+| 05 | [阿曼储能项目战争背景下的交付](./教学案例_Oman-Energy-Storage-War-Delivery.md) | 美伊战争爆发下440个储能柜的准时交付，战争险应用 |
+| 06 | [轴线车压底仓监装失误](./教学案例_SPMT-Stowage-Failure-150k-Loss.md) | 15万美元的监装失误——轴线车被压入底仓，大件船等待5天 |
+| 07 | [C段报价三个典型陷阱](./教学案例_Segment-C-Quotation-Three-Traps.md) | 国外代理不含税、港口费错位、陆运换算差异 |
+| 08 | [闭口合同与情势变更](./教学案例_Fixed-Price-Contract-Hardship-Adaptation.md) | 疫情运价过山车下闭口合同的情势变更博弈 |
+| 09 | [陈总25年工程物流职业路径](./教学案例_25-Year-Project-Logistics-Career-Path.md) | 从蓝领到总监，驻外4年、出血热经历 |
+
+**第二批：华贸（综合货代）** — 多模式、标准化、平台化，覆盖全员营销、IT融合、整车空运、安检规则、特货合规、跨文化管理、留学生人才、合同策略、Global-to-Global。
+
+| # | 案例 | 核心内容 |
+|---|------|----------|
+| A | [全员营销制与内部协同](./教学案例_Huamao-All-Staff-Marketing-System.md) | 无个人提成的全员营销制，跨部门利润分成 |
+| B | [IT人员先下业务线](./教学案例_Huamao-IT-First-Go-Business-Line.md) | IT员工入职先到业务线轮岗一年的培养模式 |
+| C | [整车飞欧洲](./教学案例_Vehicle-Air-Freight-B747-Operation.md) | 一架747装8台汽车——ULD板型选择与新能源车空运 |
+| D | [安检24小时规则](./教学案例_Air-Security-24-Hour-Rule.md) | 货物须起飞前24小时完成安检入库的硬性时间约束 |
+| E | [特殊货物鉴定合规](./教学案例_Special-Cargo-Classification-Compliance.md) | 锂电池到化工品的货物分类鉴定与合规底线 |
+| F | [跨文化管理冲突](./教学案例_Cross-Cultural-Management-Conflict.md) | 海外派驻不是技术问题，是文化问题 |
+| G | [留学生回国就业路径](./教学案例_Overseas-Student-Return-Employment-Path.md) | 招留学生是因为他们能在地化，不是学历高 |
+| H | [合同周期从半年变一个月](./教学案例_Contract-Cycle-Monthly-Pricing-Evolution.md) | 运价剧烈波动下的合同周期演变与风险分担重构 |
+| I | [Global-to-Global业务崛起](./教学案例_Global-to-Global-Business-Rise.md) | 中国不再是唯一制造中心，G2G业务如何布局 |
+
+**第三批：义乌（跨境电商与外贸生态）** — 制度摩擦、商业逻辑、岗位变迁，来自三位义乌企业家/研究者的深度访谈。
+
+| # | 案例 | 核心内容 | 人物视角 |
+|---|------|----------|----------|
+| 甲 | [市场采购1039的诞生](./教学案例_Yiwu-Market-Purchase-1039-Birth.md) | 一张增值税发票引发的贸易制度革命 | 朱江忠（外贸老兵） |
+| 乙 | [税收悬挂困境](./教学案例_Yiwu-Tax-Suspension-Dilemma.md) | 增值税解决了，个人所得税征管悬而未决 | 朱江忠 |
+| 丙 | [苏溪枢纽港与海铁联运创新](./教学案例_Yiwu-Suxi-Rail-Port-Sea-Rail-Intermodal.md) | 上了火车就进了港——内陆港的制度创新 | 王建明（政府研究） |
+| 丁 | [先检验后装箱的流程再造](./教学案例_Yiwu-Inspect-Before-Stuffing-Process-Reengineering.md) | 从先装箱后验货到先验货后装箱的流程优化 | 王建明 |
+| 戊 | [从单证员到港前客服](./教学案例_Yiwu-Documentation-to-Pre-port-Career-Change.md) | 货代行业岗位代际更替——消失与新生 | 金旭峰（货代转型） |
+| 己 | [9.9元包邮的精算逻辑](./教学案例_Yiwu-9-9-Free-Shipping-Unit-Economics.md) | 义乌商人单位经济模型的底层思维 | 朱江忠 |
+| 庚 | [教材滞后的三个切片](./教学案例_Yiwu-Textbook-Lag-Three-Slices.md) | 1039、9610、税收悬挂——教材里没有的真实世界 | 朱江忠 |
+
 ## 参考文档
 
 - [商业案例开发SOP（方法论）](./商业案例开发SOP-方法论文档.md)
