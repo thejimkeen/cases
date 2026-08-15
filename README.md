@@ -97,6 +97,30 @@
 - [物流企业运营精细化管理全流程](./教学案例_物流企业运营精细化管理全流程.md) — 物流运营全流程风险管理框架
 - [物流企业运输合同纠纷与精细化管理](./教学案例_物流企业运输合同纠纷与精细化管理.md) — 运输合同纠纷的预防与应对
 
+### 系列教学案例（鄂州花湖机场枢纽专题）
+
+这组系列案例围绕鄂州花湖机场轴辐式枢纽的运营逻辑展开，每个系列包含教学指南、正文、附录三部分，适合组合使用或独立选用。
+
+**案例一：鄂州花湖机场轴辐式网络运营**
+- [教学指南](./教学案例_Ezhou-Huahu-Airport-Hub-and-Spoke_教学指南.md) — 2-3课时的完整教学设计
+- [正文](./教学案例_Ezhou-Huahu-Airport-Hub-and-Spoke_正文.md) — 轴辐式网络的概念、6小时奇迹、枢纽经济分析
+- [附录](./教学案例_Ezhou-Huahu-Airport-Hub-and-Spoke_附录.md) — 数据汇总、计算模型、延伸阅读
+
+**案例二：蔡司镜片供应链重构**
+- [教学指南](./教学案例_Zeiss-Lens-Supply-Chain-Restructuring_教学指南.md) — 1-2课时的决策型教学设计
+- [正文](./教学案例_Zeiss-Lens-Supply-Chain-Restructuring_正文.md) — 22个加工中心到3个的供应链革命
+- [附录](./教学案例_Zeiss-Lens-Supply-Chain-Restructuring_附录.md) — 成本对比、库存分析、风险矩阵
+
+**案例三：泰国榴莲跨境生鲜供应链**
+- [教学指南](./教学案例_Thai-Durian-Cross-border-Fresh-Supply-Chain_教学指南.md) — 1课时的生鲜供应链教学设计
+- [正文](./教学案例_Thai-Durian-Cross-border-Fresh-Supply-Chain_正文.md) — 空运直达 vs 陆运+直播两种模式
+- [附录](./教学案例_Thai-Durian-Cross-border-Fresh-Supply-Chain_附录.md) — 成本分析、客户调研、冷链技术
+
+**案例四：韩国海力士空空中转**
+- [教学指南](./教学案例_SK-Hynix-Air-to-Air-Transfer_教学指南.md) — 1课时的国际货运时效教学设计
+- [正文](./教学案例_SK-Hynix-Air-to-Air-Transfer_正文.md) — 空空中转从4-5天到21小时的时效革命
+
 ## 参考文档
 
 - [商业案例开发SOP（方法论）](./商业案例开发SOP-方法论文档.md)
+- [鄂州花湖机场——何飞演讲实录](./鄂州花湖机场-何飞演讲实录.md) — 鄂州机场空管团队负责人在物流论坛的演讲实录
