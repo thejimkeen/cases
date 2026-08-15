@@ -1,3 +1,41 @@
+---
+title: 润滑油企业营运资金需求（WCR）培训方案
+slug_en: lubricant-company-wcr-training-program
+date: 2026-03-23
+case_year: 2026
+status: draft
+company: 外资润滑油生产企业
+brand_en: Lubricant Manufacturing Company
+industry: 制造业/化工
+region: 中国
+case_type: 培训方案
+difficulty: 中级
+scenarios:
+  - 企业内训
+  - 培训教材
+courses:
+  - 财务管理
+  - 供应链管理
+  - 营运资金管理
+theories:
+  - WCR诊断
+  - 现金周转周期(CCC)
+  - DSO/DIO/DPO
+tags:
+  - WCR
+  - 营运资金
+  - 培训方案
+  - 润滑油
+  - 财务管理
+tags_en:
+  - WCR
+  - Working Capital
+  - Training Program
+  - Lubricant
+  - Financial Management
+description: 面向外资润滑油企业财务、供应链、销售团队的WCR培训方案，涵盖核心指标计算、行业基准对标与改善计划制定。
+---
+
 # 润滑油企业营运资金需求（WCR）培训方案
 
 ## 培训对象
@@ -562,4 +600,3 @@
 - 中期项目启动情况
 - WCR管理是否成为常态化机制
 - 是否需要进阶培训
-

@@ -1,3 +1,44 @@
+---
+title: 一只蓝色小鸟的反击：当棒球成为加拿大的精神盾牌
+slug_en: blue-jays-baseball-canada-national-spirit
+date: 2025-10-27
+case_year: 2025
+status: draft
+company: 多伦多蓝鸟队 (Toronto Blue Jays)
+brand_en: Toronto Blue Jays
+industry: 体育/娱乐
+region: 加拿大
+case_type: 体育营销
+difficulty: 初级
+scenarios:
+  - 教学案例
+  - 品牌复盘
+courses:
+  - 品牌营销
+  - 体育营销
+  - 消费者行为学
+theories:
+  - 情感营销
+  - 国民品牌
+  - 符号消费
+  - 地缘政治营销
+tags:
+  - 蓝鸟队
+  - Blue Jays
+  - 体育营销
+  - 加拿大
+  - 国民情绪
+  - 地缘政治
+tags_en:
+  - Blue Jays
+  - Sports Marketing
+  - Canada
+  - National Identity
+  - Geopolitics
+  - Emotional Branding
+description: 在多伦多蓝鸟队32年后重返冠军赛的背景下，棒球超越了体育本身，成为加拿大应对贸易战压力的精神盾牌和国民图腾。
+---
+
 一只蓝色小鸟的反击：当棒球成为加拿大的“精神盾牌”
 在那个深秋，比冬日寒意更早笼罩加拿大的，是一种无形的压力。南边的邻国，在美国总统特朗普的号令下，正挥舞着关税大棒，威胁要对所有加拿大出口商品筑起高墙。空气中弥漫着焦虑、不确定，以及一丝不屈的倔强。
 

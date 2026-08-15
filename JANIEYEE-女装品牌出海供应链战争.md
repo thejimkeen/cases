@@ -1,4 +1,42 @@
-
+---
+title: 超越SHEIN：一个网红博主的供应链战争，如何打响中国女装出海的下半场
+slug_en: janieyee-fashion-brand-global-supply-chain
+date: 2025-11-17
+case_year: 2015-2025
+status: draft
+company: JANIE YEE/景奕
+brand_en: JANIE YEE
+industry: 服装/时尚
+region: 中国/全球
+case_type: 品牌出海
+difficulty: 中级
+scenarios:
+  - 教学案例
+  - 品牌复盘
+courses:
+  - 品牌出海
+  - 供应链管理
+  - 跨境电商
+theories:
+  - 三级火箭模型
+  - 柔性供应链
+  - KOL到品牌
+  - 全球化方法论
+tags:
+  - JANIE YEE
+  - 女装出海
+  - 供应链
+  - 网红品牌
+  - 柔性工厂
+  - 跨境电商
+tags_en:
+  - JANIE YEE
+  - Fashion Export
+  - Supply Chain
+  - Influencer Brand
+  - Flexible Manufacturing
+  - Cross-border E-commerce
+description: 从微博穿搭博主到年GMV超5亿的品牌创始人，景奕用自建柔性工厂和全球面料采购，打响中国女装出海的品质之战。
 ---
 
 ### **超越SHEIN：一个“网红博主”的供应链战争，如何打响中国女装出海的下半场？**

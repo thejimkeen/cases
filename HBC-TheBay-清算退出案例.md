@@ -1,3 +1,45 @@
+---
+title: The Bay退出市场案例研究（HBC，2025）
+slug_en: hbc-hudson-bay-liquidation-case-study
+date: 2025-10-22
+case_year: 2025
+status: draft
+company: 哈德逊湾公司 (Hudson's Bay Company)
+brand_en: Hudson's Bay (The Bay)
+industry: 零售/百货
+region: 加拿大
+case_type: 行业研究
+difficulty: 中级
+scenarios:
+  - 教学案例
+  - 培训教材
+  - 战略复盘
+courses:
+  - 零售管理
+  - 企业破产法
+  - 战略管理
+theories:
+  - CCAA程序
+  - 清算退出
+  - 资产处置
+  - 全渠道转型滞后
+tags:
+  - HBC
+  - 哈德逊湾
+  - 百货倒闭
+  - CCAA
+  - 清算
+  - 零售业
+tags_en:
+  - HBC
+  - Hudson's Bay
+  - Retail Bankruptcy
+  - CCAA
+  - Liquidation
+  - Retail Apocalypse
+description: 2025年HBC进入CCAA债权人保护程序，重整融资未果后全面清算。本文记录关键时间线、教训要旨与行业影响。
+---
+
 The Bay 退出市场案例研究（HBC，2025）
 
 适用场景：教学案例 / 培训教材 / 战略复盘

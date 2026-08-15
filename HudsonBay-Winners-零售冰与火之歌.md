@@ -1,3 +1,44 @@
+---
+title: 零售业的冰与火之歌：350岁的哈德逊湾为何倒下，而折扣店Winners却在奢侈品街区称王
+slug_en: hudson-bay-winners-retail-ice-and-fire
+date: 2025-10-27
+case_year: 2010-2025
+status: draft
+company: 哈德逊湾公司 (HBC) / Winners
+brand_en: Hudson's Bay / Winners
+industry: 零售/百货
+region: 加拿大
+case_type: 战略管理
+difficulty: 中级
+scenarios:
+  - 教学案例
+  - 战略复盘
+courses:
+  - 零售管理
+  - 战略管理
+  - 品牌定位
+theories:
+  - 价值主张
+  - 寻宝式购物
+  - 中间地带诅咒
+  - 差异化竞争
+tags:
+  - 哈德逊湾
+  - Winners
+  - 零售
+  - 价值主张
+  - 百货
+  - 折扣零售
+tags_en:
+  - Hudson's Bay
+  - Winners
+  - Retail
+  - Value Proposition
+  - Department Store
+  - Off-price Retail
+description: 350岁的哈德逊湾百货走向清算，而折扣店Winners却在奢侈品街区人声鼎沸。这不是电商冲击的简单故事，而是价值主张的重新定义。
+---
+
 零售业的“冰与火之歌”：350岁的哈德逊湾为何倒下，而折扣店Winners却在奢侈品街区称王？
 在多伦多市中心的伊顿中心（Eaton Center），时间仿佛被劈成了两半。
 

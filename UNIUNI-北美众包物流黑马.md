@@ -1,3 +1,42 @@
+---
+title: 揭秘北美新晋快递黑马：UNIUNI如何靠众包+科技抢占美国市场
+slug_en: uniuni-crowdsourced-logistics-north-america
+date: 2025-11-04
+case_year: 2019-2025
+status: draft
+company: UNIUNI快递
+brand_en: UNIUNI
+industry: 物流/快递
+region: 加拿大/美国
+case_type: 商业模式
+difficulty: 初级
+scenarios:
+  - 教学案例
+  - 行业研究
+courses:
+  - 物流管理
+  - 商业模式设计
+  - 跨境电商
+theories:
+  - 众包模式
+  - 最后一公里
+  - 差异化竞争
+  - 轻资产运营
+tags:
+  - UNIUNI
+  - 众包物流
+  - 北美快递
+  - 最后一公里
+  - 跨境电商
+tags_en:
+  - UNIUNI
+  - Crowdsourced Logistics
+  - Last Mile Delivery
+  - Cross-border E-commerce
+  - North America
+description: 2019年成立于温哥华的UNIUNI，用众包模式切入北美最后一公里配送市场，覆盖55%美国人口，主打次日达服务。
+---
+
 - 揭秘北美新晋快递黑马：UNIUNI如何靠“众包+科技”抢占美国市场？
 - UNIUNI快递
 - 最近有朋友问到，美国市场上的小包快递UNIUNI是什么快递服务？他们的快递派送靠谱吗？跟那些老牌的UPS、FEDEX、USPS比起来，价格和时效有啥不同？
