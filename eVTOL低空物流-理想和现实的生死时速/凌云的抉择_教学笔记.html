@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MBE-2026-E01 教学笔记｜凌云的抉择：一家eVTOL公司的生死时速</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css"/>
+<style>
+:root{
+  --bg:#0f1419;--bg-paper:#1a1f2e;--ink:#e2e8f0;--ink-muted:#94a3b8;
+  --accent:#38bdf8;--accent-soft:#0c4a6e;--border:#334155;
+  --red:#f87171;--green:#4ade80;--orange:#fb923c;--sky:#7dd3fc;
+  --sidebar-w:16rem;
+  --font:"LXGW WenKai","PingFang SC",serif;
+  --font-sans:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:17px;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.88;}
+.layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;max-width:76rem;margin:0 auto;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}}
+aside{position:sticky;top:0;height:100vh;padding:1.5rem 1rem 1.5rem 1.25rem;border-right:1px solid var(--border);
+  background:rgba(26,31,46,.96);backdrop-filter:blur(10px);overflow-y:auto;}
+@media(max-width:900px){aside{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);}}
+.case-id{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;}
+aside h2{font-size:.9rem;font-weight:600;line-height:1.45;margin-bottom:1.4rem;}
+nav ul{list-style:none;}
+nav li{margin-bottom:.1rem;}
+nav a{display:block;padding:.32rem .55rem;font-size:.8rem;color:var(--ink-muted);text-decoration:none;border-radius:4px;border-left:2px solid transparent;transition:all .15s;}
+nav a:hover{color:var(--ink);background:var(--accent-soft);}
+nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft);font-weight:600;}
+.nav-group{font-family:var(--font-sans);font-size:.62rem;letter-spacing:.08em;color:var(--ink-muted);margin:1rem 0 .3rem .55rem;text-transform:uppercase;}
+.sidebar-badge{margin-top:1.5rem;padding:.8rem .9rem;background:#422006;border:1px solid #78350f;border-radius:6px;font-family:var(--font-sans);font-size:.72rem;color:#fbbf24;line-height:1.6;}
+main{padding:2rem 2.75rem 5rem;background:var(--bg-paper);box-shadow:-4px 0 28px rgba(0,0,0,.3);min-width:0;}
+@media(max-width:600px){main{padding:1.25rem 1rem 3rem;}}
+.tn-hero{background:linear-gradient(135deg,var(--accent-soft) 0%,#1e293b 100%);border:1px solid var(--border);border-radius:10px;padding:2rem 2.25rem;margin-bottom:2.5rem;}
+.tn-hero .case-tag{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:block;}
+.tn-hero h1{font-size:clamp(1.4rem,3vw,1.85rem);font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:.4rem;}
+.tn-hero .subtitle{font-size:.92rem;color:var(--ink-muted);margin-bottom:1.5rem;}
+.tn-meta{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:.5rem 1rem;font-family:var(--font-sans);font-size:.75rem;background:#0f172a;padding:.85rem 1rem;border-radius:6px;border:1px solid var(--border);}
+.tn-meta dt{color:var(--ink-muted);margin-bottom:.1rem;}
+.tn-meta dd{color:var(--ink);font-weight:600;}
+section{margin-bottom:3rem;scroll-margin-top:1.5rem;}
+section h2{font-size:1.2rem;font-weight:600;margin-bottom:1.1rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:.5rem;}
+section h3{font-size:.95rem;font-weight:600;margin:1.5rem 0 .6rem;color:var(--accent);font-family:var(--font-sans);letter-spacing:.02em;}
+.num{font-family:var(--font-sans);font-size:.7rem;color:var(--accent);font-weight:700;white-space:nowrap;}
+section p{margin-bottom:1rem;text-align:justify;}
+section ul,section ol{padding-left:1.5rem;margin-bottom:1rem;}
+section li{margin-bottom:.5rem;line-height:1.75;}
+.callout{margin:1.25rem 0;padding:1rem 1.25rem;border-radius:0 6px 6px 0;font-size:.9rem;}
+.callout.blue{background:#172554;border-left:3px solid #3b82f6;}
+.callout.green{background:#14532d;border-left:3px solid var(--green);}
+.callout.yellow{background:#422006;border-left:3px solid #fbbf24;}
+.callout.red{background:#450a0a;border-left:3px solid var(--red);}
+.callout-label{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;display:block;}
+.callout.blue .callout-label{color:#60a5fa;}
+.callout.green .callout-label{color:var(--green);}
+.callout.yellow .callout-label{color:#fbbf24;}
+.callout.red .callout-label{color:var(--red);}
+.strategy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1rem;margin:1.5rem 0;}
+.strat-card{background:#0f172a;border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.3rem;}
+.strat-title{font-family:var(--font-sans);font-size:.82rem;font-weight:700;color:var(--accent);margin-bottom:.5rem;}
+.strat-card p{font-size:.85rem;line-height:1.65;margin-bottom:.4rem;text-align:left;}
+.strat-card p:last-child{margin:0;}
+table{width:100%;border-collapse:collapse;font-size:.82rem;font-family:var(--font-sans);margin:1rem 0;}
+th{text-align:left;padding:.55rem .75rem;background:#0c4a6e;color:#e0f2fe;font-weight:600;}
+td{padding:.5rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:#0f172a;}
+tr:hover td{background:var(--accent-soft);}
+td.hi{color:var(--green);font-weight:600;}
+td.lo{color:var(--red);font-weight:600;}
+td.bold{font-weight:700;}
+footer{text-align:center;font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="case-id">MBE-2026-E01 · 教师版</div>
+  <h2>教学笔记：凌云的抉择</h2>
+  <nav>
+    <div class="nav-group">教学设计</div>
+    <ul>
+      <li><a href="#objectives">一、教学目标</a></li>
+      <li><a href="#structure">二、案例结构分析</a></li>
+      <li><a href="#timing">三、课堂时间安排</a></li>
+    </ul>
+    <div class="nav-group">讨论引导</div>
+    <ul>
+      <li><a href="#q1">问题一：战略诊断</a></li>
+      <li><a href="#q2">问题二：选项评估</a></li>
+      <li><a href="#q3">问题三：赵建明的技术</a></li>
+      <li><a href="#q4">问题四：郑浩博的协议</a></li>
+      <li><a href="#q5">问题五：先赚钱还是先等未来</a></li>
+      <li><a href="#q6">问题六：海外还是本土</a></li>
+    </ul>
+    <div class="nav-group">教学工具</div>
+    <ul>
+      <li><a href="#roleplay">角色扮演设计</a></li>
+      <li><a href="#homework">课后作业</a></li>
+      <li><a href="#extension">延伸资源</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-badge">
+    ⚠ 本文件为教师专用教学笔记，包含参考答案与引导思路，请勿向学员公开。
+  </div>
+</aside>
+<main>
+<div class="tn-hero" id="top">
+  <span class="case-tag">教学笔记 · 教师版</span>
+  <h1>凌云的抉择案例教学笔记</h1>
+  <p class="subtitle">战略选择、融资博弈与新兴技术产业商业化路径</p>
+  <dl class="tn-meta">
+    <div><dt>案例编号</dt><dd>MBE-2026-E01</dd></div>
+    <div><dt>课程定位</dt><dd>战略管理 / 创业管理 / 技术创新</dd></div>
+    <div><dt>难度</dt><dd>高级（★★★★★）</dd></div>
+    <div><dt>建议课时</dt><dd>120分钟（2课时）</dd></div>
+    <div><dt>适用对象</dt><dd>MBA / EMBA / 有产业背景研修学员</dd></div>
+    <div><dt>版本</dt><dd>v1.0 · 2026年8月</dd></div>
+  </dl>
+</div>
+<section id="objectives">
+  <h2><span class="num">一</span>教学目标</h2>
+  <h3>1.1 核心价值</h3>
+  <p>这个案例的独特性在于：它把一个高度真实的产业困境，压缩进了一个极短的时间窗口里。7个月的现金、92公里的航程极限、郑浩博的12个月里程碑——每一个数字都是真实的约束，不是教学假设。这逼着学员在"活下去"和"赢未来"之间做一个真实的选择，而不是一个抽象的讨论。</p>
+  <h3>1.2 知识目标</h3>
+  <ul>
+    <li>理解新兴技术产业商业化路径的结构性挑战（取证周期、先发优势、技术与资本的时序错配）</li>
+    <li>掌握资源极度受限下战略选项的评估框架（期望价值 vs. 生存概率）</li>
+    <li>理解可转换债务（Convertible Note）的结构逻辑及其对创始人的含义</li>
+    <li>认识中国"先载货后载人"政策的产业意义</li>
+  </ul>
+  <h3>1.3 能力目标</h3>
+  <ul>
+    <li>能够在信息不完整的条件下，识别决策的核心变量和核心不确定性</li>
+    <li>能够从不同角色视角（CEO、CFO、CTO、投资人）分析同一问题</li>
+    <li>能够设计并评估融资结构条款</li>
+    <li>能够区分"技术上可行"与"商业上可接受"的边界</li>
+  </ul>
+  <h3>1.4 素养目标</h3>
+  <ul>
+    <li>培养对"技术理想主义"与"商业现实主义"之间张力的感知力</li>
+    <li>理解创业中"时间"是最稀缺资源，每个决定都有机会成本</li>
+    <li>认识到好的战略不是选择"最好的选项"，而是在约束条件下选择"最不坏的选项"</li>
+  </ul>
+</section>
+
+<section id="structure">
+  <h2><span class="num">二</span>案例结构分析</h2>
+  <h3>2.1 叙事层次</h3>
+  <p>本案例设计了三个叙事层次，教师需要帮助学员在这三个层次之间切换：</p>
+  <div class="strategy-grid">
+    <div class="strat-card">
+      <div class="strat-title">表层：公司生存危机</div>
+      <p>7个月现金，投资人撤退，这是最直观的层面。学员第一遍读案例时感受到的是"救火"压力。</p>
+      <p>但这不是案例的核心，这只是让讨论有紧迫感的背景。</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-title">中层：战略定位困境</div>
+      <p>货运 vs. 载人，海外 vs. 国内，这是真正的战略选择。每个选项的逻辑都是成立的，没有明显的错误答案。</p>
+      <p>这才是课堂讨论应该聚焦的地方。</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-title">深层：产业结构逻辑</div>
+      <p>eVTOL行业的取证周期、无人机的竞争、政策的方向性，这是案例背后的结构性力量。</p>
+      <p>好的讨论会触及这一层，让学员理解凌云的困境不是个案，而是行业必经的阵痛。</p>
+    </div>
+  </div>
+  <h3>2.2 人物功能</h3>
+  <p>案例中每个主要人物，都不是简单的"支持者"或"反对者"，而是代表一种真实的逻辑：</p>
+  <table>
+    <thead><tr><th>人物</th><th>代表的逻辑</th><th>内在张力</th></tr></thead>
+    <tbody>
+      <tr><td class="bold">陈立远（CEO）</td><td>创业者的综合判断</td><td>在技术理想和生存现实之间撕裂</td></tr>
+      <tr><td class="bold">林思远（CFO）</td><td>财务现实主义</td><td>他的答案是"卖身"，但他自己知道这不是创业者的答案</td></tr>
+      <tr><td class="bold">赵建明（CTO）</td><td>技术理想主义</td><td>"如果我们为了活着变成第二梯队，活着的意义是什么？"</td></tr>
+      <tr><td class="bold">姜晓丹（市场VP）</td><td>市场信息与不确定性</td><td>带来了印尼机会，也带来了峰飞先发的坏消息</td></tr>
+      <tr><td class="bold">郑浩博（投资人）</td><td>资本的理性与自我保护</td><td>他的协议是"帮助"，但条款对凌云是不利的</td></tr>
+    </tbody>
+  </table>
+  <div class="callout yellow">
+    <span class="callout-label">教师提示</span>
+    <p>赵建明的那句"如果我们为了活着，变成第二梯队，那我们活着的意义是什么？"是全案情感张力最高的一句话。建议在讨论问题二时让学员直接回应这句话——这会迫使学员表态，而不是只做分析。</p>
+  </div>
+  <h3>2.3 92公里这个数字的设计意图</h3>
+  <p>赵建明花了六周，把航程从80公里推到了92公里，而目标是95公里，所需是91公里。这个设计是刻意的：</p>
+  <ul>
+    <li>92 &gt; 91，技术上可以飞</li>
+    <li>92 - 91 = 1，没有任何安全余量</li>
+    <li>目标是95，只达到了92，说明这是极限状态</li>
+  </ul>
+  <p>这个数字要求学员回答一个在现实工程和商业决策中极其常见的问题：<strong>技术上"够用"是否等于商业上"可以接受"？</strong>在航空领域，这个问题的代价是生命安全。这是让技术理想主义者和商业现实主义者最容易产生激烈碰撞的地方。</p>
+</section>
+
+<section id="timing">
+  <h2><span class="num">三</span>课堂时间安排</h2>
+  <p>本案例建议用两课时（120分钟）完成。如只有一课时（60分钟），请删除问题三和问题六，保留问题一、二、四、五。</p>
+  <table>
+    <thead><tr><th>阶段</th><th>时间</th><th>内容</th><th>教学方式</th></tr></thead>
+    <tbody>
+      <tr><td>开场导入</td><td>5分钟</td><td>读开头段落，提问：如果你是陈立远，你会怎么接郑浩博这通电话？</td><td>冷启动提问</td></tr>
+      <tr><td>问题一：诊断</td><td>15分钟</td><td>凌云的根本问题是什么？</td><td>小组讨论+汇报</td></tr>
+      <tr><td>问题二：选项</td><td>20分钟</td><td>四个选项的评估与辩论</td><td>全班辩论，教师引导</td></tr>
+      <tr><td>问题三：技术边界</td><td>10分钟</td><td>92公里够不够用？</td><td>直接提问，全班表态</td></tr>
+      <tr><td>问题四：融资结构</td><td>15分钟</td><td>郑浩博的协议是好协议吗？</td><td>角色扮演：投资人 vs 创始人</td></tr>
+      <tr><td>问题五：叙事</td><td>15分钟</td><td>先赚钱还是先等未来？</td><td>小组讨论</td></tr>
+      <tr><td>问题六：出海 vs 本土</td><td>10分钟</td><td>印尼 vs 顺丰示范线</td><td>快速表态+理由</td></tr>
+      <tr><td class="bold">教师总结</td><td>10分钟</td><td>提炼框架，回应核心问题</td><td>讲授</td></tr>
+    </tbody>
+  </table>
+  <div class="callout blue">
+    <span class="callout-label">节奏提示</span>
+    <p>问题二是本课的核心，不要让问题一占用超过20分钟。如果开场诊断讨论超时，直接宣布进入选项评估，把"诊断"作为前提假设带入讨论即可。问题三（92公里）是情绪爆发点，通常只需要5-10分钟就能激发强烈争论，不需要拉长。</p>
+  </div>
+</section>
+<section id="q1">
+  <h2><span class="num">讨论引导</span>问题一：战略诊断</h2>
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>凌云面临的根本困境是什么？是资金问题、技术问题，还是商业模式问题？如果你是陈立远，你如何定义这家公司的"核心问题"？</p>
+  </div>
+  <h3>常见误区</h3>
+  <p>学员通常会把答案停在表层：</p>
+  <ul>
+    <li>"根本问题是没钱"——这是症状，不是根因</li>
+    <li>"根本问题是没有产品证书"——这是约束，不是问题</li>
+    <li>"根本问题是竞争对手跑得快"——这是外部压力，不是内部问题</li>
+  </ul>
+  <h3>引导方向</h3>
+  <p>真正的根本问题是<strong>商业模式设计先天不匹配</strong>：凌云建立了一个以载人eVTOL为核心的企业，但载人eVTOL的商业化节奏（最快2027年底）远慢于企业的烧钱速度（7个月见底）。这不是个别决策的失误，而是时序错配的系统性问题。</p>
+  <p>追问学员：</p>
+  <ul>
+    <li>如果凌云2021年成立时就知道TC证要到2027年底，他们还会这样设计公司吗？</li>
+    <li>这个问题是陈立远的判断失误，还是整个行业的共同处境？</li>
+    <li>2021年的融资环境和2026年有什么不同，这个时序错配是如何被制造出来的？</li>
+  </ul>
+  <div class="callout green">
+    <span class="callout-label">核心洞察</span>
+    <p>凌云的问题不是"现在该怎么办"，而是"当初商业模式的时间假设就是错的"。这是一个结构性问题，不是一个执行问题。认清这一点，才能评估四个选项时不陷入"救火"逻辑。</p>
+  </div>
+</section>
+
+<section id="q2">
+  <h2><span class="num">讨论引导</span>问题二：选项评估</h2>
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>请对白板上的四个选项进行系统评估。哪个选项的"期望价值"最高？哪个选项的"生存概率"最高？两者不一致时，你如何权衡？</p>
+  </div>
+  <h3>四个选项的评估矩阵（教师参考，不直接发给学员）</h3>
+  <table>
+    <thead><tr><th>评估维度</th><th>选项一：押印尼</th><th>选项二：国内示范</th><th>选项三：两条腿</th><th>选项四：卖身</th></tr></thead>
+    <tbody>
+      <tr><td>12个月内产生收入</td><td class="hi">有可能</td><td class="hi">有可能</td><td class="hi">有可能</td><td class="hi">确定</td></tr>
+      <tr><td>V-300研发不中断</td><td class="lo">危险</td><td class="hi">可以</td><td class="lo">困难</td><td class="lo">不确定</td></tr>
+      <tr><td>需要追加融资</td><td class="lo">1.2亿</td><td>6000万</td><td class="lo">1.8亿</td><td class="hi">不需要</td></tr>
+      <tr><td>执行风险</td><td class="lo">高</td><td>中</td><td class="lo">极高</td><td>中</td></tr>
+      <tr><td>创始人控制权</td><td class="hi">保留</td><td class="hi">保留</td><td class="hi">保留</td><td class="lo">让渡</td></tr>
+      <tr><td>5年期望价值</td><td class="hi">最高</td><td>中</td><td class="hi">高</td><td>确定但有限</td></tr>
+      <tr><td>生存概率</td><td>中</td><td class="hi">较高</td><td class="lo">低</td><td class="hi">最高</td></tr>
+    </tbody>
+  </table>
+  <h3>核心辩论焦点</h3>
+  <p>这道题没有标准答案，但有几个高质量的辩论点值得教师主动推出：</p>
+  <div class="strategy-grid">
+    <div class="strat-card">
+      <div class="strat-title">关于选项一（押印尼）</div>
+      <p>"峰飞已经早了半圈"这个情报的可信度如何？是否有其他切入角度？</p>
+      <p>4个月的交货时差，在印尼客户眼里意味着什么？用"免费试运营三个月"能弥补这个差距吗？</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-title">关于选项四（卖身）</div>
+      <p>林思远说"这是财务的答案，不是创业者的答案"——这句话是什么意思？财务逻辑和创业者逻辑的分歧在哪里？</p>
+      <p>如果估值从12亿降到8亿，创始人实际损失是多少？陈立远能接受吗？</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-title">赵建明的问题</div>
+      <p>"如果我们为了活着变成第二梯队，活着的意义是什么？"</p>
+      <p>让学员直接回应这句话。这是一个价值观问题，没有客观答案，但每个选项背后都隐含了对这个问题的回答。</p>
+    </div>
+  </div>
+  <div class="callout yellow">
+    <span class="callout-label">教师的引导收尾</span>
+    <p>在辩论结束后，帮助学员提炼一个框架：<strong>在资源极度受限的情况下，"生存"和"战略定位"不是二选一，而是有时序的</strong>。先活下去，才有机会争优先级。但"活下去"的代价不能高到让未来失去意义。这个平衡点，就是凌云的决策核心。</p>
+  </div>
+</section>
+
+<section id="q3">
+  <h2><span class="num">讨论引导</span>问题三：赵建明的技术</h2>
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>V-1500能飞92公里这个数字，对印尼订单的意义是什么？技术上的边界参数（满载可以飞，但没有安全余量）在商业决策中应如何处理？</p>
+  </div>
+  <h3>数字背后的工程逻辑</h3>
+  <p>帮助学员理解这三个数字的关系：</p>
+  <ul>
+    <li><strong>91公里</strong>：巴厘岛到龙目岛的直线距离（印尼最重要的岛际航线之一）</li>
+    <li><strong>92公里</strong>：V-1500优化后的满载航程（赵建明六周测试的结果）</li>
+    <li><strong>1公里</strong>：理论上的余量——但在实际飞行中，逆风、温度、湿度、爬升损耗会吃掉这1公里</li>
+  </ul>
+  <h3>两种立场与引导</h3>
+  <table>
+    <thead><tr><th>立场</th><th>论点</th><th>反驳</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="bold">可以接受</td>
+        <td>数字上飞得到，先签合同，一边运营一边优化，这是创业公司的做法</td>
+        <td>航空领域没有"边运营边优化"的余地，一次失事就是整个公司的终点</td>
+      </tr>
+      <tr>
+        <td class="bold">不能接受</td>
+        <td>航空安全是红线，0安全余量不符合任何适航标准</td>
+        <td>那就等赵建明推到95公里——但那要多少时间？那段时间峰飞会发生什么？</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="callout red">
+    <span class="callout-label">关键引导问题</span>
+    <p>问学员：如果赵建明说"92公里在标准条件下安全，但在极端天气下可能不够"，你作为CEO，你怎么回答客户的问询？你会在合同里怎么写这条？</p>
+    <p>这个问题把技术讨论带入了法律责任和商业诚信的维度，通常能激发非常深入的讨论。</p>
+  </div>
+  <h3>教学收尾</h3>
+  <p>"够不够用"这个问题，在不同情境下有不同答案。引导学员理解：<strong>在技术产品的早期商业化阶段，定义"够用"的标准，本身就是一个战略决策</strong>，不只是技术决策。凌云的选择，会成为行业对这类问题的参照。</p>
+</section>
+<section id="q4">
+  <h2><span class="num">讨论引导</span>问题四：郑浩博的协议</h2>
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>郑浩博的"可转换债+里程碑"结构，对凌云意味着什么？这是一个好协议吗？从投资人角度和创始人角度分别分析。</p>
+  </div>
+  <h3>协议结构拆解</h3>
+  <table>
+    <thead><tr><th>条款</th><th>表面含义</th><th>深层含义</th></tr></thead>
+    <tbody>
+      <tr><td>3000万可转换债，12个月期限</td><td>给凌云约4个月运营资金</td><td>只够撑到赵建明的结果出来，倒逼陈立远快速决策</td></tr>
+      <tr><td>完成里程碑→转股权，估值8亿</td><td>对凌云是正向激励</td><td>A轮12亿，现在8亿，相当于承认了估值下滑</td></tr>
+      <tr><td>未完成→还3300万或清算优先权</td><td>投资人保护条款</td><td>一旦凌云失败，郑浩博比所有股东更早拿回钱</td></tr>
+      <tr><td>里程碑：4架交付 or 国内盈利 or 知名战略投资人</td><td>三个并行路径</td><td>任何一个都要在12个月内完成，且门槛都很高</td></tr>
+    </tbody>
+  </table>
+  <h3>从两个视角看这个协议</h3>
+  <div class="strategy-grid">
+    <div class="strat-card">
+      <div class="strat-title">投资人视角（郑浩博）</div>
+      <p>这是一个聪明的下行保护结构。无论凌云成功还是失败，翼程都有出路：成功则以较低估值转股参与上涨；失败则优先于其他股东收回资金。</p>
+      <p>里程碑设置得恰到好处——任何一个都证明了凌云的商业可行性，也都需要凌云付出极大努力。</p>
+    </div>
+    <div class="strat-card">
+      <div class="strat-title">创始人视角（陈立远）</div>
+      <p>3000万只够烧4个月，不足以完成任何一个里程碑（印尼4架交付至少需要1.2亿）。这意味着陈立远必须同时用这3000万撬动其他融资。</p>
+      <p>8亿估值意味着A轮投资人的持股在名义上缩水了——这个协议实际上是在用"我不清算你"换取陈立远接受低估值。</p>
+    </div>
+  </div>
+  <h3>追问方向</h3>
+  <ul>
+    <li>3000万对于完成任何一个里程碑都明显不够，郑浩博为什么这样设计？他真正想要的是什么？</li>
+    <li>陈立远应该接受这个协议吗？如果接受，他在接受时应该谈判哪些条款修改？</li>
+    <li>如果拒绝这个协议，陈立远的下一步是什么？</li>
+  </ul>
+  <div class="callout green">
+    <span class="callout-label">延伸讨论</span>
+    <p>可引入"可转换债"（Convertible Note）的标准结构作为对比：通常包含利率、折扣率（discount）、估值上限（cap）。郑浩博的结构有清算优先权但没有折扣，实际上是一个对投资人更有利的变体。让学员思考：什么条件下，创始人可以谈到更好的条款？</p>
+  </div>
+</section>
+
+<section id="q5">
+  <h2><span class="num">讨论引导</span>问题五：先赚钱还是先等未来</h2>
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>eVTOL行业存在一个结构性张力：货运能回血但会分散载人研发资源；载人是大市场但短期没有收入。这个两难，有没有不用取舍的解法？如果你是凌云的CEO，你怎么同时对投资人、客户、员工讲这个故事？</p>
+  </div>
+  <h3>结构性张力的本质</h3>
+  <p>帮助学员看清这个张力的来源：这不是凌云的个别问题，而是所有"平台技术"公司在商业化早期都会遇到的困境。</p>
+  <table>
+    <thead><tr><th>维度</th><th>全力做货运</th><th>坚守载人</th></tr></thead>
+    <tbody>
+      <tr><td>短期现金流</td><td class="hi">有可能正向</td><td class="lo">继续烧钱</td></tr>
+      <tr><td>V-300研发进度</td><td class="lo">被延误6-12个月</td><td class="hi">正常推进</td></tr>
+      <tr><td>行业定位</td><td>从"技术领先"变成"货运运营商"</td><td class="hi">保持技术第一梯队</td></tr>
+      <tr><td>团队士气</td><td class="lo">技术核心人员可能离职</td><td class="hi">保持愿景驱动</td></tr>
+      <tr><td>下一轮融资故事</td><td>更难讲（方向摇摆）</td><td class="hi">更清晰（专注载人）</td></tr>
+    </tbody>
+  </table>
+  <h3>有没有不用取舍的解法？</h3>
+  <p>这是本题最有价值的讨论点。参考答案方向：</p>
+  <ul>
+    <li><strong>时序策略</strong>：先用最小资源（不影响V-300的前提下）验证货运某一场景，用数据换下一轮融资，再回归载人主线。这需要极精确的资源切分。</li>
+    <li><strong>战略融资</strong>：找一个大物流公司做战略投资，让对方提供资源支持货运业务，凌云自己只提供技术和产品。这样货运成本不占用凌云内部资源。</li>
+    <li><strong>平台叙事</strong>：对外讲"凌云的核心是飞行平台，货运和载人是同一平台的两个应用"，让投资人理解货运是验证平台、不是战略转向。</li>
+  </ul>
+  <div class="callout yellow">
+    <span class="callout-label">向三个受众讲故事的参考框架</span>
+    <p><strong>对投资人：</strong>"货运是短期的验证工具和现金流，不是长期定位。我们在用真实运营数据，证明飞行平台的可靠性，这会加速载人取证的进程，也会让载人上市时的估值更有支撑。"</p>
+    <p><strong>对客户（货运）：</strong>"我们的飞行平台是为载人设计的，货运的安全标准更高。你买的不是一个低配产品，而是一个以载人标准设计、用于货运场景的飞行器。"</p>
+    <p><strong>对员工：</strong>"我们做货运是为了让V-300有机会最终上天。我们不是在转型，我们是在为梦想续命。"</p>
+  </div>
+</section>
+
+<section id="q6">
+  <h2><span class="num">讨论引导</span>问题六：海外还是本土</h2>
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>印尼订单和国内顺丰示范线，代表两种不同的起步路径：先在海外验证，还是先在本土深根。从供应链、监管、品牌、现金流等维度，各自的逻辑是什么？</p>
+  </div>
+  <h3>两条路径的比较框架</h3>
+  <table>
+    <thead><tr><th>维度</th><th>印尼（海外先行）</th><th>顺丰示范线（本土深根）</th></tr></thead>
+    <tbody>
+      <tr><td>监管门槛</td><td>印尼VTC认证（已有预评估，需完整），相对宽松</td><td>国内政策明确支持（山地/远郊），但航线审批繁琐</td></tr>
+      <tr><td>竞争压力</td><td class="lo">峰飞已先行6-8个月</td><td class="hi">无人机为主要竞争者，但eVTOL有规模优势</td></tr>
+      <tr><td>运营复杂度</td><td class="lo">极高（地勤从零建设、海外合规、汇率）</td><td>中（国内生态熟悉）</td></tr>
+      <tr><td>现金流回报</td><td class="hi">合同金额大（2.3亿），回血速度快</td><td>小而稳（政策补贴+运营收入）</td></tr>
+      <tr><td>品牌价值</td><td class="hi">国际化先行者，有故事可讲</td><td class="hi">政策背书，有利于下一轮融资</td></tr>
+      <tr><td>失败代价</td><td class="lo">高（海外资产损失+声誉打击）</td><td>中（国内项目失败影响相对可控）</td></tr>
+    </tbody>
+  </table>
+  <h3>核心引导问题</h3>
+  <ul>
+    <li>印尼的故事，技术上成立，运营上是未知数。姜晓丹说的"地勤问题"意味着什么？凌云是否有能力建设印尼的维保体系？</li>
+    <li>国内顺丰示范线，马天驰要求"证明某条线路能做到无人机的单位成本"——这个目标能达到吗？什么条件下可以？</li>
+    <li>如果两条路都走，优先级怎么设定？资源如何分配？</li>
+  </ul>
+  <div class="callout green">
+    <span class="callout-label">教师收尾</span>
+    <p>帮助学员看到一个更深的逻辑：选择印尼还是国内，本质上是选择"用什么来讲下一轮融资的故事"。印尼的故事是"国际化、刚需场景验证"；国内的故事是"政策红利、大客户背书"。在2026年的资本市场，哪个故事更好讲？这个问题没有固定答案，但值得学员结合当前宏观环境认真思考。</p>
+  </div>
+</section>
+
+<section id="roleplay">
+  <h2><span class="num">教学工具</span>角色扮演设计</h2>
+  <p>本案例特别适合角色扮演教学。建议分成5组，每组提前准备立场：</p>
+  <table>
+    <thead><tr><th>角色</th><th>分配组别</th><th>课堂任务</th></tr></thead>
+    <tbody>
+      <tr><td class="bold">陈立远（CEO）</td><td>A组</td><td>最终必须在五月战略会上宣布决定，并说服所有人</td></tr>
+      <tr><td class="bold">林思远（CFO）</td><td>B组</td><td>主张选项四（战略融资），用数字说服CEO</td></tr>
+      <tr><td class="bold">赵建明（CTO）</td><td>C组</td><td>坚守载人路线，反对任何会延误V-300的方案</td></tr>
+      <tr><td class="bold">郑浩博（投资人）</td><td>D组</td><td>替协议辩护，同时说明为什么不直接续投B轮</td></tr>
+      <tr><td class="bold">Budi Santoso（客户）</td><td>E组</td><td>代表印尼客户立场，说明为什么考虑给凌云机会，以及最关心什么</td></tr>
+    </tbody>
+  </table>
+  <div class="callout yellow">
+    <span class="callout-label">角色扮演的最佳时机</span>
+    <p>建议在问题二讨论结束后、问题四开始前进行角色扮演。先让B、C、D三组各陈述2分钟，再让A组（CEO）做出选择并说明理由。这个顺序能让"选项评估"的讨论落地成一个具体的决策场景，而不是停留在分析层面。</p>
+  </div>
+</section>
+
+<section id="homework">
+  <h2><span class="num">课后作业</span>作业设计</h2>
+  <h3>作业一：战略备忘录（必做）</h3>
+  <p>假设你是凌云的战略顾问，在2026年5月15日的战略会前，你需要提交一份500字以内的"决策备忘录"给陈立远，包含：</p>
+  <ol>
+    <li>你对凌云根本问题的诊断（一句话）</li>
+    <li>你推荐的选项及核心理由（三条）</li>
+    <li>你建议他如何回应郑浩博的协议（一条谈判策略）</li>
+  </ol>
+  <p><strong>格式要求</strong>：备忘录格式，500字以内，直接给建议，不需要背景介绍。</p>
+  <h3>作业二：融资条款设计（必做）</h3>
+  <p>郑浩博的协议条款如下：3000万可转换债、8亿转股估值、三个里程碑、未完成则优先清算权。</p>
+  <p>如果你是陈立远，你希望谈判修改哪三条条款？说明每条修改的理由和你认为可接受的替代条款。</p>
+  <h3>作业三：竞品分析（选做）</h3>
+  <p>选取峰飞航空的公开资料，分析：峰飞目前的商业化路径，与本案例中的"选项一（押印尼）"有何异同？峰飞的成功条件是否适用于凌云？</p>
+</section>
+
+<section id="extension">
+  <h2><span class="num">延伸</span>参考资源</h2>
+  <h3>产业背景资料</h3>
+  <ul>
+    <li>第二届国际低空经济博览会报道，界面新闻，2026年7月</li>
+    <li>国家发展改革委"十五五"低空经济专项规划</li>
+    <li>中国民航局适航司 eVTOL 型号合格审定专用条件（征求意见稿）</li>
+    <li>峰飞航空 V2000CG 公开资料及印尼 VTC 认证公告</li>
+  </ul>
+  <h3>理论框架参考</h3>
+  <ul>
+    <li>Christensen, C. (1997). <em>The Innovator's Dilemma</em>——理解新技术商业化路径选择</li>
+    <li>McGrath, R. (2013). <em>The End of Competitive Advantage</em>——新兴行业中"暂时优势"的逻辑</li>
+    <li>Blank, S. (2013). "Why the Lean Start-Up Changes Everything"——创业公司如何在不确定中寻找商业模式</li>
+    <li>可转换债务结构标准条款：Y Combinator SAFE Note 文档</li>
+  </ul>
+  <h3>相关案例对比</h3>
+  <ul>
+    <li><strong>特斯拉早期路径</strong>：先做高端跑车（Roadster）回血，再下沉到大众市场——与凌云"先货运后载人"的逻辑有相似之处</li>
+    <li><strong>Joby Aviation（美国）</strong>：全力押注载人 eVTOL，不做货运，结果是持续亏损但维持了战略清晰度</li>
+    <li><strong>Wisk Aero（波音系）</strong>：背靠大公司，完全不需要短期盈利，凌云面对的资本压力它没有——这种对比能让学员意识到凌云困境的独特性</li>
+  </ul>
+</section>
+
+<footer>
+  <p>本教学笔记与案例MBE-2026-E01配套使用，仅供授课教师参考。请勿在课前发放给学员。</p>
+  <p style="margin-top:.4rem;">MBE-2026-E01 Teaching Note &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; 2026年8月</p>
+</footer>
+</main>
+</div>
+<script>
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector('nav a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

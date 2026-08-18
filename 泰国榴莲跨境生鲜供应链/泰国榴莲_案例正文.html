@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>EZ-DURIAN-003 泰国榴莲跨境生鲜供应链案例</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css"/>
+<style>
+:root{
+  --bg:#f2f4f0;--bg-paper:#fafdf8;--ink:#1a1f1a;--ink-muted:#5c665c;
+  --accent:#16a34a;--accent-soft:#dcfce7;--border:#d8e0d5;
+  --red:#dc2626;--green:#059669;--orange:#c2410c;--yellow:#eab308;
+  --sidebar-w:16rem;
+  --font:"LXGW WenKai","PingFang SC",serif;
+  --font-sans:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:17px;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.88;}
+.layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;max-width:76rem;margin:0 auto;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}}
+aside{position:sticky;top:0;height:100vh;padding:1.5rem 1rem 1.5rem 1.25rem;border-right:1px solid var(--border);background:rgba(250,253,248,.95);backdrop-filter:blur(10px);overflow-y:auto;}
+@media(max-width:900px){aside{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);}}
+.case-id{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;}
+aside h2{font-size:.9rem;font-weight:600;line-height:1.45;margin-bottom:1.4rem;}
+nav ul{list-style:none;}
+nav li{margin-bottom:.1rem;}
+nav a{display:block;padding:.32rem .55rem;font-size:.8rem;color:var(--ink-muted);text-decoration:none;border-radius:4px;border-left:2px solid transparent;transition:all .15s;}
+nav a:hover{color:var(--ink);background:var(--accent-soft);}
+nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft);font-weight:600;}
+.nav-group{font-family:var(--font-sans);font-size:.62rem;letter-spacing:.08em;color:var(--ink-muted);margin:1rem 0 .3rem .55rem;text-transform:uppercase;}
+.sidebar-note{margin-top:1.5rem;padding:.8rem .9rem;background:#fff3cd;border:1px solid #fcd34d;border-radius:6px;font-family:var(--font-sans);font-size:.72rem;color:#92400e;line-height:1.6;}
+main{padding:2rem 2.75rem 5rem;background:var(--bg-paper);box-shadow:-4px 0 28px rgba(0,0,0,.04);min-width:0;}
+@media(max-width:600px){main{padding:1.25rem 1rem 3rem;}}
+.hero{border-bottom:3px double var(--border);padding-bottom:2rem;margin-bottom:2.25rem;}
+.tag{display:inline-block;font-family:var(--font-sans);font-size:.7rem;padding:.2rem .65rem;background:var(--ink);color:#fff;letter-spacing:.06em;border-radius:2px;margin-bottom:.85rem;}
+.hero h1{font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.35;font-weight:600;margin-bottom:.5rem;letter-spacing:-.02em;}
+.hero .subtitle{font-size:.98rem;color:var(--ink-muted);font-style:italic;margin-bottom:1.5rem;}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:.6rem 1.25rem;font-family:var(--font-sans);font-size:.76rem;background:#f4f7f2;padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.meta-grid dt{color:var(--ink-muted);margin-bottom:.1rem;}
+.meta-grid dd{color:var(--ink);font-weight:600;}
+.abstract{background:linear-gradient(135deg,var(--accent-soft) 0%,#fafdf8 100%);border-left:4px solid var(--accent);padding:1.3rem 1.6rem;margin-bottom:2.75rem;font-size:.95rem;border-radius:0 6px 6px 0;}
+.abstract .label{font-family:var(--font-sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:.55rem;}
+section{margin-bottom:3rem;scroll-margin-top:1.5rem;}
+section h2{font-size:1.3rem;font-weight:600;margin-bottom:1.1rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:.5rem;}
+section h3{font-size:1.02rem;font-weight:600;margin:1.6rem 0 .7rem;}
+.num{font-family:var(--font-sans);font-size:.72rem;color:var(--accent);font-weight:700;white-space:nowrap;}
+section p{margin-bottom:1rem;text-align:justify;}
+section ul,section ol{padding-left:1.5rem;margin-bottom:1rem;}
+section li{margin-bottom:.4rem;line-height:1.75;}
+.timeline{margin:1.5rem 0;padding:1.25rem 1.5rem;background:#f0fdf4;border-left:4px solid var(--accent);border-radius:0 6px 6px 0;}
+.timeline h4{font-family:var(--font-sans);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;}
+.timeline-item{display:flex;gap:.75rem;margin-bottom:.5rem;font-size:.88rem;}
+.timeline-item:last-child{margin-bottom:0;}
+.timeline-date{font-family:var(--font-sans);font-size:.75rem;font-weight:700;color:var(--accent);min-width:5.5rem;}
+.timeline-event{line-height:1.6;}
+.mode-compare{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0;}
+@media(max-width:700px){.mode-compare{grid-template-columns:1fr;}}
+.mode-card{background:#fff;border:2px solid var(--border);border-radius:8px;padding:1.5rem;transition:transform .2s,box-shadow .2s;}
+.mode-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.08);}
+.mode-card h4{font-size:1rem;font-weight:700;color:var(--accent);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;}
+.mode-badge{font-family:var(--font-sans);font-size:.65rem;padding:.2rem .5rem;background:var(--accent);color:#fff;border-radius:3px;letter-spacing:.05em;}
+.mode-card .flow{font-size:.84rem;line-height:1.7;margin-bottom:1rem;color:var(--ink-muted);}
+.mode-card .pros{margin-top:1rem;}
+.mode-card .pros h5,.mode-card .cons h5{font-family:var(--font-sans);font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
+.mode-card .pros h5{color:var(--green);}
+.mode-card .cons h5{color:var(--red);}
+.mode-card .pros ul,.mode-card .cons ul{font-size:.85rem;padding-left:1.2rem;margin:0;}
+.mode-card .pros li{color:var(--green);}
+.mode-card .cons li{color:var(--red);}
+.mode-card .metric{display:flex;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-family:var(--font-sans);font-size:.78rem;}
+.mode-card .metric dt{color:var(--ink-muted);}
+.mode-card .metric dd{font-weight:700;color:var(--accent);}
+table{width:100%;border-collapse:collapse;font-size:.83rem;font-family:var(--font-sans);margin:1.5rem 0;}
+th{text-align:left;padding:.55rem .75rem;background:var(--ink);color:#fff;font-weight:600;}
+td{padding:.5rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:#f6f9f5;}
+tr:hover td{background:var(--accent-soft);}
+td.hi{color:var(--accent);font-weight:600;}
+td.lo{color:var(--red);font-weight:600;}
+td.bold{font-weight:700;}
+.callout{margin:1.5rem 0;padding:1.25rem 1.5rem;border-radius:0 6px 6px 0;font-size:.9rem;}
+.callout.green{background:#f0fdf4;border-left:4px solid var(--accent);}
+.callout.yellow{background:#fefce8;border-left:4px solid var(--yellow);}
+.callout-label{font-family:var(--font-sans);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;display:block;}
+.callout.green .callout-label{color:var(--accent);}
+.callout.yellow .callout-label{color:#a16207;}
+.q-list{list-style:none;padding-left:0;}
+.q-item{margin-bottom:1.6rem;padding:1.1rem 1.25rem;background:var(--bg);border-radius:6px;border-left:3px solid var(--accent);font-size:.94rem;line-height:1.8;}
+.q-label{display:block;font-family:var(--font-sans);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem;}
+footer{text-align:center;font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside>
+  <div class="case-id">EZ-DURIAN-003</div>
+  <h2>泰国榴莲跨境生鲜供应链案例</h2>
+  <nav>
+    <div class="nav-group">案例正文</div>
+    <ul>
+      <li><a href="#abstract">案例摘要</a></li>
+      <li><a href="#s1">一、凌晨12点的订单</a></li>
+      <li><a href="#s2">二、生鲜电商的时效战争</a></li>
+      <li><a href="#s3">三、鄂州的两种模式</a></li>
+      <li><a href="#s4">四、商家的选择困境</a></li>
+      <li><a href="#s5">五、鄂州模式的核心价值</a></li>
+      <li><a href="#s6">六、挑战与风险</a></li>
+    </ul>
+    <div class="nav-group">讨论</div>
+    <ul>
+      <li><a href="#questions">五个思考题</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-note">
+    ⚠ 本文件为学员版案例正文，不含参考答案。<br>教学指南请见独立文件。
+  </div>
+</aside>
+
+<main>
+
+<div class="hero" id="top">
+  <span class="tag">教学案例 · 跨境生鲜供应链系列</span>
+  <h1>泰国榴莲跨境生鲜供应链案例</h1>
+  <p class="subtitle">空运直达 vs 陆运+直播：两种模式的时效与成本权衡</p>
+  <dl class="meta-grid">
+    <div><dt>案例编号</dt><dd>EZ-DURIAN-003</dd></div>
+    <div><dt>撰写日期</dt><dd>2026 年 6 月</dd></div>
+    <div><dt>企业</dt><dd>顺丰 / 生鲜电商</dd></div>
+    <div><dt>行业</dt><dd>跨境电商 / 冷链物流</dd></div>
+    <div><dt>核心议题</dt><dd>供应链模式选择 · 时效优化 · 成本控制</dd></div>
+    <div><dt>适用课程</dt><dd>国际物流 / 跨境电商 / 冷链物流</dd></div>
+    <div><dt>难度等级</dt><dd>初中级</dd></div>
+    <div><dt>建议课时</dt><dd>1 课时（45 分钟）</dd></div>
+  </dl>
+</div>
+
+<div class="abstract" id="abstract">
+  <span class="label">案例摘要</span>
+  <p>2025年11月15日凌晨，武汉的张女士在直播间下单购买了一颗泰国金枕榴莲，主播承诺"今晚下单，明天中午送达"。第二天中午11点30分，快递员真的敲响了她的门，从下单到送达仅用11小时25分钟。</p>
+  <p>这颗榴莲经历了一场精心设计的跨境供应链接力：从泰国采摘、陆运到中国凭祥口岸清关、陆运到鄂州花湖机场、直播间下单、凌晨航班起飞，最终次日送达。鄂州花湖机场的轴辐式网络为跨境生鲜电商提供了两种供应链模式：空运直达（产地真实性）和陆运+直播（极致时效）。商家该如何选择？</p>
+</div>
+
+<section id="s1">
+  <h2><span class="num">一</span>凌晨12点的订单</h2>
+  
+  <p>2025年11月15日，凌晨12点05分。</p>
+  <p>武汉的张女士刚刚结束一场直播，在手机上下单购买了一颗泰国金枕榴莲。直播间的主播承诺："今晚下单，明天中午送达，不新鲜包退。"</p>
+  <p>张女士有些怀疑：泰国到武汉，2000多公里，怎么可能24小时送达？</p>
+  <p>但第二天中午11点30分，快递员真的敲响了她的门。打开包裹，榴莲散发着浓郁的香气，果肉饱满，新鲜得像刚从树上摘下来。</p>
+  
+  <div class="timeline">
+    <h4>这颗榴莲的跨境之旅</h4>
+    <div class="timeline-item">
+      <div class="timeline-date">11月10日</div>
+      <div class="timeline-event">泰国果农采摘，运到曼谷工厂</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">11月11日</div>
+      <div class="timeline-event">曼谷工厂分拣、包装，陆运到中国凭祥口岸</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">11月13日</div>
+      <div class="timeline-event">凭祥口岸清关，陆运到鄂州花湖机场</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">11月14日</div>
+      <div class="timeline-event">鄂州机场跑道边仓库，主播开始直播</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">11月15日 00:05</div>
+      <div class="timeline-event">张女士下单</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">11月15日 03:30</div>
+      <div class="timeline-event">榴莲搭乘鄂州飞往武汉的航班起飞</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">11月15日 11:30</div>
+      <div class="timeline-event">快递员送达张女士家</div>
+    </div>
+  </div>
+  
+  <p>从下单到送达，仅用<strong>11小时25分钟</strong>。这就是鄂州花湖机场支撑的跨境生鲜供应链。</p>
+</section>
+
+<section id="s2">
+  <h2><span class="num">二</span>生鲜电商的时效战争</h2>
+  
+  <h3>2.1 生鲜电商的四大困境</h3>
+  <p>生鲜电商是电商行业最难做的品类之一：</p>
+  <ul>
+    <li><strong>保鲜期短</strong>：榴莲采摘后7-10天，车厘子15-20天，龙虾3-5天（活体）</li>
+    <li><strong>损耗率高</strong>：运输过程中的碰撞、挤压、温度波动都会导致损耗，行业平均损耗率15-20%</li>
+    <li><strong>客户期待高</strong>：客户要求新鲜、快速、价格合理，一旦不新鲜，退货率极高</li>
+    <li><strong>物流成本高</strong>：冷链运输成本是常温运输的2-3倍，最后1公里配送难度大</li>
+  </ul>
+  
+  <h3>2.2 传统跨境生鲜供应链</h3>
+  <p><strong>传统模式</strong>：产地 → 进口商 → 批发市场 → 零售商 → 消费者</p>
+  <p><strong>时效</strong>：7-15天</p>
+  <p><strong>痛点</strong>：环节多、时效慢、每个环节都有损耗、价格层层加价，消费者买到的价格是产地价格的3-5倍。</p>
+  
+  <h3>2.3 直播电商的崛起</h3>
+  <p>2020年后，直播电商快速崛起，改变了生鲜供应链：</p>
+  <p><strong>新模式</strong>：产地 → 直播间 → 消费者</p>
+  <p><strong>优势</strong>：减少中间环节降低价格、主播背书增强信任、直播互动提升体验。</p>
+  <p><strong>挑战</strong>：如何保证时效？直播结束后货物必须快速发出。如何保证新鲜？从产地到消费者，时间越短越好。</p>
+</section>
+
+<section id="s3">
+  <h2><span class="num">三</span>鄂州的两种模式</h2>
+  
+  <p>顺丰在鄂州花湖机场为泰国榴莲设计了两种供应链模式，满足不同客户的需求。</p>
+  
+  <div class="mode-compare">
+    <div class="mode-card">
+      <h4><span class="mode-badge">模式一</span> 空运直达 + 一单到底</h4>
+      <div class="flow">泰国曼谷工厂 → 装整板 → 飞机经停曼谷 → 鄂州分拣 → 全国派送</div>
+      
+      <div class="pros">
+        <h5>✓ 优势</h5>
+        <ul>
+          <li>产地真实性强：快递单显示"泰国曼谷"</li>
+          <li>一单到底：全程可追溯</li>
+          <li>库存风险低：按订单发货</li>
+        </ul>
+      </div>
+      
+      <div class="cons">
+        <h5>✗ 劣势</h5>
+        <ul>
+          <li>时效较慢：4-5天</li>
+          <li>成本较高：空运费用高</li>
+        </ul>
+      </div>
+      
+      <dl class="metric">
+        <dt>时效</dt><dd>4-5天</dd>
+        <dt>价格</dt><dd>80-100元/颗</dd>
+        <dt>损耗率</dt><dd>10%</dd>
+      </dl>
+    </div>
+    
+    <div class="mode-card">
+      <h4><span class="mode-badge">模式二</span> 陆运清关 + 机场直播</h4>
+      <div class="flow">泰国采摘 → 凭祥口岸清关 → 陆运到鄂州 → 场内直播 → 当晚分拣上机 → 次日送达</div>
+      
+      <div class="pros">
+        <h5>✓ 优势</h5>
+        <ul>
+          <li>极致时效：次日中午送达（约12小时）</li>
+          <li>延长销售窗口：可播到凌晨12点-1点</li>
+          <li>成本更低：陆运+航空组合</li>
+        </ul>
+      </div>
+      
+      <div class="cons">
+        <h5>✗ 劣势</h5>
+        <ul>
+          <li>产地不可见：快递单显示"鄂州"</li>
+          <li>需提前备货：库存风险高</li>
+          <li>损耗率较高：15%</li>
+        </ul>
+      </div>
+      
+      <dl class="metric">
+        <dt>时效</dt><dd>次日达</dd>
+        <dt>价格</dt><dd>60-80元/颗</dd>
+        <dt>损耗率</dt><dd>15%</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+  <h2><span class="num">四</span>商家的选择困境</h2>
+  
+  <h3>4.1 案例：某生鲜电商的决策</h3>
+  <p>某生鲜电商主营泰国榴莲，月销量10万颗。现在面临选择：</p>
+  
+  <p><strong>方案A（模式一：空运直达）</strong>：时效4-5天，价格80-100元/颗，产地真实性强但时效慢，库存风险低。</p>
+  <p><strong>方案B（模式二：陆运+直播）</strong>：时效次日达，价格60-80元/颗，时效快但产地不可见，库存风险高。</p>
+  <p><strong>方案C（两种模式并行）</strong>：高端客户选模式一，普通客户选模式二，但运营复杂度高。</p>
+  
+  <h3>4.2 数据分析</h3>
+  
+  <table>
+    <thead><tr><th>客户关注点</th><th>非常在意</th><th>比较在意</th><th>一般</th><th>不太在意</th></tr></thead>
+    <tbody>
+      <tr><td class="bold">新鲜度</td><td class="hi">85%</td><td>12%</td><td>2%</td><td>1%</td></tr>
+      <tr><td class="bold">价格</td><td class="hi">60%</td><td>30%</td><td>8%</td><td>2%</td></tr>
+      <tr><td class="bold">时效</td><td class="hi">55%</td><td>30%</td><td>12%</td><td>3%</td></tr>
+      <tr><td class="bold">产地真实性</td><td>40%</td><td>35%</td><td>20%</td><td>5%</td></tr>
+    </tbody>
+  </table>
+  
+  <p><strong>结论</strong>：85%的客户非常在意新鲜度（时效是新鲜度的保障），75%的客户在意产地真实性，两种模式都有市场需求。</p>
+  
+  <h3>4.3 成本对比</h3>
+  
+  <table>
+    <thead><tr><th>成本项</th><th>模式一（空运直达）</th><th>模式二（陆运+直播）</th></tr></thead>
+    <tbody>
+      <tr><td>采购成本</td><td>30元/颗</td><td>30元/颗</td></tr>
+      <tr><td>运输成本</td><td>25元/颗（空运）</td><td>15元/颗（陆运+航空）</td></tr>
+      <tr><td>损耗成本</td><td>5元/颗（10%损耗率）</td><td>8元/颗（15%损耗率）</td></tr>
+      <tr><td>其他成本</td><td>5元/颗</td><td>5元/颗</td></tr>
+      <tr><td class="bold">总成本</td><td class="bold">65元/颗</td><td class="bold">58元/颗</td></tr>
+      <tr><td class="bold">售价</td><td class="bold">90元/颗</td><td class="bold">75元/颗</td></tr>
+      <tr><td class="bold">毛利</td><td class="bold hi">25元/颗（38%）</td><td class="bold">17元/颗（29%）</td></tr>
+    </tbody>
+  </table>
+  
+  <p><strong>结论</strong>：模式一毛利更高（38% vs 29%），但模式二价格更低，销量可能更大。</p>
+</section>
+
+<section id="s5">
+  <h2><span class="num">五</span>鄂州模式的核心价值</h2>
+  
+  <h3>5.1 延长销售时间窗口</h3>
+  <p>传统模式下，直播电商最多只能播到晚上8-9点，因为快递公司晚上10点后不再揽收，第二天才能发货。</p>
+  <p>鄂州模式下，直播电商可以播到<strong>凌晨12点甚至1点</strong>，因为：</p>
+  <ul>
+    <li>鄂州飞机凌晨3:30才起飞</li>
+    <li>主播有足够的时间将订单送到鄂州机场</li>
+    <li>货物仍然可以搭上当晚的航班，实现次日达</li>
+  </ul>
+  
+  <div class="callout green">
+    <span class="callout-label">核心价值</span>
+    <p>主播多了4-5个小时的销售窗口。晚上10点-凌晨1点是直播电商的黄金时段（用户下班后、睡觉前），销售额可以提升30-50%。</p>
+  </div>
+  
+  <h3>5.2 降低库存风险</h3>
+  <p>传统模式下，生鲜电商需要提前备货：备货太多，卖不出去，损耗高；备货太少，断货，错失销售机会。</p>
+  <p>鄂州模式下，生鲜电商可以<strong>边播边发</strong>：</p>
+  <ul>
+    <li>主播播到凌晨12点，订单实时汇总</li>
+    <li>凌晨1点，根据订单数量从仓库取货</li>
+    <li>凌晨3:30，货物上机</li>
+  </ul>
+  <p><strong>价值</strong>：库存风险降低（按实际订单发货）、损耗率降低。</p>
+  
+  <h3>5.3 提升客户体验</h3>
+  <p>次日达的客户体验远优于4-5天：</p>
+  <ul>
+    <li>新鲜度更高</li>
+    <li>客户满意度更高</li>
+    <li>复购率更高</li>
+  </ul>
+</section>
+
+<section id="s6">
+  <h2><span class="num">六</span>挑战与风险</h2>
+  
+  <h3>6.1 挑战一：冷链管理</h3>
+  <p>榴莲对温度敏感：温度过高，加速成熟甚至腐烂；温度过低，冻伤影响口感。</p>
+  <p><strong>解决方案</strong>：全程冷链运输（15-20℃）、保温箱+冰袋、实时温度监控。</p>
+  
+  <h3>6.2 挑战二：海关清关</h3>
+  <p>跨境生鲜需要快速清关：传统清关1-2天，鄂州模式2-4小时（预清关+快速通道）。</p>
+  <p><strong>解决方案</strong>：提前申报（预清关）、与海关建立快速通道、专人对接。</p>
+  
+  <h3>6.3 挑战三：损耗控制</h3>
+  <p>生鲜损耗率高：运输过程中的碰撞、挤压、温度波动、过度成熟。</p>
+  <p><strong>解决方案</strong>：优化包装（防震、保温）、优化分拣流程（减少人工搬运）、实时监控（温度、湿度、位置）。</p>
+</section>
+
+<section id="questions">
+  <h2><span class="num">讨论</span>五个思考题</h2>
+  <p style="font-size:.88rem;color:var(--ink-muted);margin-bottom:1.5rem;">以下问题供课前阅读后思考，课堂讨论时使用。案例正文不含参考答案。</p>
+  <ol class="q-list">
+    <li class="q-item">
+      <span class="q-label">思考题一 · 模式选择</span>
+      如果你是生鲜电商，你会选择模式一（空运直达）、模式二（陆运+直播）还是两种模式并行？为什么？
+    </li>
+    <li class="q-item">
+      <span class="q-label">思考题二 · 成本优化</span>
+      模式二的损耗率（15%）高于模式一（10%），如何降低损耗率？从包装、温控、预测、直播等维度分析。
+    </li>
+    <li class="q-item">
+      <span class="q-label">思考题三 · 客户细分</span>
+      哪些客户更适合模式一？哪些客户更适合模式二？如何进行客户细分和精准营销？
+    </li>
+    <li class="q-item">
+      <span class="q-label">思考题四 · 可复制性</span>
+      鄂州模式能否复制到其他生鲜品类（如智利车厘子、挪威三文鱼、波士顿龙虾）？需要做哪些调整？
+    </li>
+    <li class="q-item">
+      <span class="q-label">思考题五 · 竞争分析</span>
+      如果竞争对手也采用鄂州模式，你如何保持竞争优势？从供应链、品牌、服务等维度分析。
+    </li>
+  </ol>
+</section>
+
+<footer>
+  <p>本案例基于2026年6月鄂州花湖机场访谈资料编写。部分数据（如成本、损耗率）为推算数据，仅供教学使用。案例中的商家为虚构，但供应链模式为真实模式。</p>
+  <p style="margin-top:.4rem;">EZ-DURIAN-003 &nbsp;·&nbsp; 案例版本 v1.0 &nbsp;·&nbsp; 2026年6月 &nbsp;·&nbsp; 仅供课堂讨论使用</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector('nav a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EL-2026-A03｜Teaching Note — 过桥：桥梁限重难题（教师版）</title>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css" />
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --bg-paper: #fefefe;
+      --ink: #111827;
+      --ink-muted: #6b7280;
+      --accent: #15803d;
+      --accent-soft: #dcfce7;
+      --accent-mid: #22c55e;
+      --border: #e5e7eb;
+      --red: #dc2626;
+      --amber: #d97706;
+      --amber-soft: #fef3c7;
+      --blue: #1d4ed8;
+      --sidebar-w: 16rem;
+      --font: "LXGW WenKai", "PingFang SC", "Hiragino Sans GB", serif;
+      --font-sans: "PingFang SC", "Microsoft YaHei", sans-serif;
+      --font-mono: "SF Mono", "Fira Code", "Consolas", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 17px; }
+    body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.85; }
+
+    .layout { display: grid; grid-template-columns: var(--sidebar-w) 1fr; min-height: 100vh; max-width: 76rem; margin: 0 auto; }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+    aside {
+      position: sticky; top: 0; height: 100vh;
+      padding: 1.5rem 1rem 1.5rem 1.25rem;
+      border-right: 1px solid var(--border);
+      background: rgba(254,254,254,0.95); backdrop-filter: blur(10px);
+      overflow-y: auto;
+    }
+    @media (max-width: 900px) { aside { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); } }
+    .case-id { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    aside h2 { font-size: 0.88rem; font-weight: 600; line-height: 1.45; margin-bottom: 1.4rem; color: var(--ink); }
+    nav ul { list-style: none; }
+    nav li { margin-bottom: 0.1rem; }
+    nav a {
+      display: block; padding: 0.32rem 0.55rem; font-size: 0.8rem; color: var(--ink-muted);
+      text-decoration: none; border-radius: 4px; border-left: 2px solid transparent; transition: all 0.15s;
+    }
+    nav a:hover { color: var(--ink); background: var(--accent-soft); }
+    nav a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+    .nav-group { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.08em; color: var(--ink-muted); margin: 1rem 0 0.3rem 0.55rem; text-transform: uppercase; }
+
+    main { padding: 2rem 2.75rem 5rem; background: var(--bg-paper); box-shadow: -4px 0 28px rgba(0,0,0,0.04); min-width: 0; }
+    @media (max-width: 600px) { main { padding: 1.25rem 1rem 3rem; } }
+
+    .conf-bar { background: linear-gradient(90deg, #15803d, #166534); color: #fff; font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; padding: 0.5rem; border-radius: 6px; margin-bottom: 1.5rem; }
+
+    .hero { border-bottom: 3px double var(--border); padding-bottom: 2rem; margin-bottom: 2.25rem; }
+    .tag { display: inline-block; font-family: var(--font-sans); font-size: 0.7rem; padding: 0.2rem 0.65rem; background: var(--accent); color: #fff; letter-spacing: 0.06em; border-radius: 2px; margin-bottom: 0.85rem; }
+    .hero h1 { font-size: clamp(1.5rem, 3.5vw, 2rem); line-height: 1.35; font-weight: 600; margin-bottom: 0.4rem; }
+    .hero .subtitle { font-size: 0.95rem; color: var(--ink-muted); font-style: italic; margin-bottom: 1.5rem; }
+    .meta-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); gap: 0.6rem 1.25rem;
+      font-family: var(--font-sans); font-size: 0.76rem; background: #f9fafb;
+      padding: 1rem 1.25rem; border-radius: 6px; border: 1px solid var(--border);
+    }
+    .meta-grid dt { color: var(--ink-muted); margin-bottom: 0.1rem; }
+    .meta-grid dd { color: var(--ink); font-weight: 600; }
+
+    section { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
+    section h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--accent); display: flex; align-items: baseline; gap: 0.5rem; color: var(--accent); }
+    section h3 { font-size: 1rem; font-weight: 600; margin: 1.5rem 0 0.6rem; }
+    section h4 { font-size: 0.9rem; font-weight: 600; margin: 1.2rem 0 0.4rem; color: var(--ink-muted); }
+    section p { margin-bottom: 0.9rem; text-align: justify; }
+    .num { font-family: var(--font-sans); font-size: 0.72rem; color: var(--accent); font-weight: 700; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; font-family: var(--font-sans); margin-bottom: 0.5rem; }
+    th { text-align: left; padding: 0.5rem 0.75rem; background: var(--accent); color: #fff; font-weight: 600; }
+    td { padding: 0.45rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; }
+    tr:nth-child(even) td { background: #f9fafb; }
+    tr:hover td { background: var(--accent-soft); }
+    td.ok { color: var(--accent); font-weight: 600; }
+    td.no { color: var(--red); }
+    td.warn { color: var(--amber); font-weight: 600; }
+
+    /* ── Framework steps ── */
+    .framework {
+      background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px;
+      padding: 1.25rem 1.5rem; margin: 1.25rem 0;
+    }
+    .framework .fw-title { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .fw-step { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.85rem; }
+    .fw-num {
+      flex-shrink: 0; width: 1.8rem; height: 1.8rem; border-radius: 50%;
+      background: var(--accent); color: #fff; font-family: var(--font-sans);
+      font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+    .fw-body { flex: 1; }
+    .fw-action { font-weight: 700; font-family: var(--font-sans); font-size: 0.88rem; color: var(--accent); }
+    .fw-desc { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.5; margin-top: 0.1rem; }
+    .fw-case { font-size: 0.78rem; color: var(--ink); background: rgba(255,255,255,0.7); border-radius: 4px; padding: 0.25rem 0.5rem; margin-top: 0.2rem; border-left: 2px solid var(--accent-mid); }
+
+    /* ── Insight cards ── */
+    .insight-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 0.85rem; margin: 1.25rem 0; }
+    .insight-card { border-radius: 8px; padding: 1rem 1.2rem; border-left: 4px solid; }
+    .insight-card.key { border-color: var(--accent); background: var(--accent-soft); }
+    .insight-card.warn { border-color: var(--amber); background: var(--amber-soft); }
+    .insight-card.alert { border-color: var(--red); background: #fee2e2; }
+    .insight-card .ic-label { font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .insight-card.key .ic-label { color: var(--accent); }
+    .insight-card.warn .ic-label { color: var(--amber); }
+    .insight-card.alert .ic-label { color: var(--red); }
+    .insight-card p { font-size: 0.83rem; line-height: 1.6; margin: 0; }
+
+    /* ── Teaching tip ── */
+    .tip { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 6px; padding: 0.85rem 1.1rem; font-family: var(--font-sans); font-size: 0.82rem; margin: 1rem 0; }
+    .tip .tp-head { font-weight: 700; color: var(--amber); margin-bottom: 0.3rem; }
+
+    /* ── Answer box ── */
+    .answer-block {
+      background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;
+      padding: 1.1rem 1.4rem; margin: 1rem 0;
+    }
+    .answer-block .ab-title { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+    .answer-block p { font-size: 0.88rem; margin-bottom: 0.6rem; }
+    .answer-block ul, .answer-block ol { padding-left: 1.3rem; font-size: 0.86rem; }
+    .answer-block li { margin-bottom: 0.35rem; line-height: 1.6; }
+
+    /* ── Checklist ── */
+    .checklist { list-style: none; margin: 0.75rem 0; }
+    .checklist li { display: flex; gap: 0.75rem; padding: 0.55rem 0.85rem; margin-bottom: 0.4rem; background: #fff; border: 1px solid var(--border); border-radius: 6px; font-size: 0.84rem; }
+    .checklist .cl-num { flex-shrink: 0; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--accent); color: #fff; font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .checklist .cl-item { font-weight: 600; color: var(--ink); min-width: 8rem; }
+    .checklist .cl-risk { color: var(--ink-muted); flex: 1; }
+
+    /* ── Cost table ── */
+    .cost-table td.cost { font-family: var(--font-mono); }
+    .cost-table tr.omit td { color: var(--red); }
+    .cost-table tr.include td { color: var(--accent); }
+
+    /* ── Scoring ── */
+    footer { text-align: center; font-family: var(--font-sans); font-size: 0.72rem; color: var(--ink-muted); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .highlight-target { animation: flash 1.2s ease-out; }
+    @keyframes flash { 0% { background: var(--accent-soft); } 100% { background: transparent; } }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <div class="case-id">EL-2026-A03 · Teaching Note</div>
+    <h2>过桥：桥梁限重难题（教师版）</h2>
+    <nav>
+      <div class="nav-group">教学设计</div>
+      <ul>
+        <li><a href="#overview">一、案例概述与定位</a></li>
+        <li><a href="#objectives">二、教学目标</a></li>
+        <li><a href="#framework">三、核心分析框架</a></li>
+      </ul>
+      <div class="nav-group">讨论题解析</div>
+      <ul>
+        <li><a href="#q1">讨论题 1：方案三的经济性</a></li>
+        <li><a href="#q2">讨论题 2：地点改变方案</a></li>
+        <li><a href="#q3">讨论题 3：路勘检查清单</a></li>
+      </ul>
+      <div class="nav-group">延伸</div>
+      <ul>
+        <li><a href="#cost">四、C段报价陷阱分析</a></li>
+        <li><a href="#context">五、行业背景延伸</a></li>
+        <li><a href="#scoring">六、评分与活动建议</a></li>
+      </ul>
+    </nav>
+    <div class="nav-group">配套</div>
+    <div style="padding:0.55rem 0.55rem 1rem;">
+      <a href="2026-08-17_马来西亚漂浮光伏桥梁限重-教学案例.html"
+         style="display:flex;align-items:center;gap:0.35rem;padding:0.42rem 0.65rem;background:#374151;color:#fff;text-decoration:none;border-radius:5px;font-size:0.72rem;font-family:var(--font-sans);font-weight:500;">
+        <span>📄</span><span>← 案例正文（学员版）</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+    <div class="conf-bar">⚠ 教师专用 · Instructor Only · 请勿课前发放给学员 ⚠</div>
+
+    <div class="hero">
+      <span class="tag">Teaching Note · 工程物流系列</span>
+      <h1>过桥：马来西亚漂浮光伏项目桥梁限重难题</h1>
+      <p class="subtitle">超限大件运输方案比选 — 教师参考指南与讨论题解析</p>
+      <dl class="meta-grid">
+        <div><dt>案例编号</dt><dd>EL-2026-A03</dd></div>
+        <div><dt>案例类型</dt><dd>决策型 · 方案比选</dd></div>
+        <div><dt>建议课时</dt><dd>0.5–1 学时</dd></div>
+        <div><dt>核心结论</dt><dd>液压推顶（方案三）：成本最低、当地可行</dd></div>
+        <div><dt>分析框架</dt><dd>四步障碍排除框架</dd></div>
+        <div><dt>延伸话题</dt><dd>C 段报价遗漏 · 东南亚工程物流</dd></div>
+      </dl>
+    </div>
+
+    <!-- Overview -->
+    <section id="overview">
+      <h2><span class="num">一</span>案例概述与定位</h2>
+      <p>本案例以中国外运为马来西亚漂浮光伏项目运输 66.5 吨变压器为背景，核心矛盾是：<strong>设备 + 运输车板总重 ≥ 96 吨，桥梁限重仅 70 吨，超限 37%，且当地资源极度匮乏</strong>。</p>
+      <p>案例短小精悍，适合在课堂上快速展开"方案比选"演练。学员需要在有限信息下，基于约束条件分析，完成从"发现问题 → 穷举方案 → 评估约束 → 选择最优"的完整决策链。</p>
+
+      <div class="insight-grid">
+        <div class="insight-card key">
+          <div class="ic-label">案例优势</div>
+          <p>场景真实、信息完整、结论清晰——适合 30–45 分钟的快节奏课堂讨论，学员可以在较短时间内走完完整的分析框架。</p>
+        </div>
+        <div class="insight-card warn">
+          <div class="ic-label">教学重点</div>
+          <p>不是让学员背诵"液压推顶"技术，而是训练<strong>在约束条件下系统比选方案</strong>的思维习惯，以及<strong>地点条件如何颠覆方案优先级</strong>的认知。</p>
+        </div>
+        <div class="insight-card alert">
+          <div class="ic-label">常见误区</div>
+          <p>学员往往先被"桥上桥"技术方案吸引（因为听起来专业），但忽视东马来西亚的资源约束。需引导他们先判断"可行性"，再评估"优劣性"。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objectives -->
+    <section id="objectives">
+      <h2><span class="num">二</span>教学目标</h2>
+      <table>
+        <thead><tr><th>目标层级</th><th>具体能力</th></tr></thead>
+        <tbody>
+          <tr><td><strong>知识</strong></td><td>了解超限大件运输的常见障碍类型（桥梁限重、道路承载、净空不足）及对应的处理技术</td></tr>
+          <tr><td><strong>知识</strong></td><td>了解液压推顶（液压千斤顶 + 钢滑轨）的基本作业原理</td></tr>
+          <tr><td><strong>技能</strong></td><td>运用"约束条件分析"框架，对同一工程场景下的多个方案进行系统比选</td></tr>
+          <tr><td><strong>分析</strong></td><td>识别目的地资源条件对方案选择的决定性影响，避免将"国内最优方案"直接套用海外项目</td></tr>
+          <tr><td><strong>综合</strong></td><td>设计工程物流路勘报告的核心检查清单，体现系统性风险识别能力</td></tr>
+          <tr><td><strong>认知</strong></td><td>理解 C 段（目的国）物流成本结构，识别超限运输报价中的常见遗漏项</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Framework -->
+    <section id="framework">
+      <h2><span class="num">三</span>核心分析框架：四步障碍排除法</h2>
+      <p>本案例完整展示了工程物流"障碍排除"的设计逻辑，可归纳为四步框架：</p>
+
+      <div class="framework">
+        <div class="fw-title">超限大件运输 · 障碍排除四步框架</div>
+        <div class="fw-step">
+          <div class="fw-num">1</div>
+          <div class="fw-body">
+            <div class="fw-action">识别障碍</div>
+            <div class="fw-desc">路勘发现所有限制节点，包括桥梁、隧道、净空、路面承载、转弯半径等</div>
+            <div class="fw-case">本案例：桥梁限重 70 吨，设备 + 车板 ≥ 96 吨，超限 37%</div>
+          </div>
+        </div>
+        <div class="fw-step">
+          <div class="fw-num">2</div>
+          <div class="fw-body">
+            <div class="fw-action">穷举方案</div>
+            <div class="fw-desc">不预设结论，列出所有理论上可行的绕障方式，包括非常规手段</div>
+            <div class="fw-case">本案例：修便道 / 桥上桥 / 液压推顶——三个方案均被系统考虑</div>
+          </div>
+        </div>
+        <div class="fw-step">
+          <div class="fw-num">3</div>
+          <div class="fw-body">
+            <div class="fw-action">评估约束</div>
+            <div class="fw-desc">对每个方案逐一评估当地条件可行性：资源、时间、成本、风险</div>
+            <div class="fw-case">本案例：东马资源匮乏 + 泄洪口限制 → 方案一、二均被否决</div>
+          </div>
+        </div>
+        <div class="fw-step">
+          <div class="fw-num">4</div>
+          <div class="fw-body">
+            <div class="fw-action">选择最优</div>
+            <div class="fw-desc">在可行方案中选择成本最低、风险最小、时间最短的方案执行</div>
+            <div class="fw-case">本案例：液压推顶 — 本地可执行、成本最低、技术成熟</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip">
+        <div class="tp-head">🎯 框架应用的核心提示</div>
+        步骤 3（评估约束）是最关键的环节，也是经验和专业判断最重要的体现。同样的方案，在中国国内可能是"最优"，在东马来西亚就是"不可行"。这个框架提醒我们：<strong>评估的标准永远是"在当地条件下"，而不是"在理想条件下"</strong>。
+      </div>
+    </section>
+
+    <!-- Q1 -->
+    <section id="q1">
+      <h2><span class="num">讨论题1</span>方案三的经济性分析</h2>
+      <p><em>原题：方案三被称为"最经济的方案"，它经济在哪里？请从成本、时间、资源三个维度与其他方案比较。</em></p>
+
+      <div class="answer-block">
+        <div class="ab-title">参考答案要点</div>
+        <p><strong>方案三之所以"最经济"，在于它充分利用了已有资源、最小化了外部依赖：</strong></p>
+      </div>
+
+      <table>
+        <thead><tr><th>维度</th><th>方案一：临时便道</th><th>方案二：桥上桥</th><th>方案三：液压推顶 ✅</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>直接成本</strong></td>
+            <td class="no">最高：土方填筑、碾压、路基材料、施工机械，费用难以预估</td>
+            <td class="warn">偏高：特种工装从西马/国内调运（运费+时间成本）；非标适配设计费</td>
+            <td class="ok">最低：液压千斤顶租用、钢滑轨材料、操作人工，无需外调特种工装</td>
+          </tr>
+          <tr>
+            <td><strong>时间成本</strong></td>
+            <td class="no">最长：泄洪口每周放水，施工窗口极短，工期无法预估</td>
+            <td class="warn">偏长：工装调运周期 + 非标设计周期</td>
+            <td class="ok">最短：设备就绪即可操作，无额外调运等待</td>
+          </tr>
+          <tr>
+            <td><strong>资源依赖</strong></td>
+            <td class="no">高度依赖当地施工机械（东马匮乏）</td>
+            <td class="warn">高度依赖西马/国内工装（调运成本高）</td>
+            <td class="ok">液压设备相对容易获得，本地或东马少量资源即可支撑</td>
+          </tr>
+          <tr>
+            <td><strong>技术风险</strong></td>
+            <td class="no">高：临时路基承载能力不确定</td>
+            <td class="warn">中：非标设计存在适配风险</td>
+            <td class="ok">低：液压推顶技术成熟，可控性强</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="tip">
+        <div class="tp-head">💡 讨论引导</div>
+        引导学员注意：方案三的"经济性"不只是直接费用低，还包括时间周期短（间接节省项目延误成本）和风险低（减少突发成本的可能性）。工程物流中，<strong>成本分析必须是全口径的</strong>，不能只看材料费。
+      </div>
+    </section>
+
+    <!-- Q2 -->
+    <section id="q2">
+      <h2><span class="num">讨论题2</span>如果是在中国国内，方案会如何改变？</h2>
+      <p><em>原题：如果这个项目在中国国内（而非东马来西亚），最优方案会是哪一个？目的地条件如何改变方案选择？</em></p>
+
+      <div class="answer-block">
+        <div class="ab-title">参考答案要点</div>
+        <p><strong>在中国国内，方案优先级很可能发生逆转：</strong></p>
+        <ul>
+          <li><strong>方案二（桥上桥）</strong>可能成为首选：国内工装资源丰富，标准型桥上桥工装可快速调用；大量工程物流公司有成熟经验；成本和周期可预测</li>
+          <li><strong>方案一（临时便道）</strong>可行性也更高：国内施工机械调配便利，工期相对可控，尤其当项目周期较长时，一次性修路具有后续使用价值</li>
+          <li><strong>方案三（液压推顶）</strong>在国内同样成立，但不一定是"最经济"的选项——因为其他方案的约束大幅降低</li>
+        </ul>
+      </div>
+
+      <h3>核心认知：约束条件决定方案优先级</h3>
+      <table>
+        <thead><tr><th>条件变量</th><th>中国国内</th><th>东马来西亚</th><th>影响</th></tr></thead>
+        <tbody>
+          <tr><td>特种工装获取</td><td class="ok">容易（大量供应商）</td><td class="no">极难（需长途调运）</td><td>直接决定方案二可行性</td></tr>
+          <tr><td>施工机械</td><td class="ok">丰富，就近调用</td><td class="no">匮乏，成本极高</td><td>直接决定方案一可行性</td></tr>
+          <tr><td>工程经验积累</td><td class="ok">成熟，标准化作业</td><td class="warn">有限，非标情况多</td><td>影响方案的风险评估</td></tr>
+          <tr><td>泄洪口放水</td><td colspan="2">均存在类似限制</td><td>影响所有便道方案</td></tr>
+        </tbody>
+      </table>
+
+      <div class="tip">
+        <div class="tp-head">🎯 课堂引导要点</div>
+        这道题的价值在于让学员理解：<strong>工程物流方案不能直接"移植"</strong>，同一个物理问题在不同地点有完全不同的解决方案。这是工程物流从业者的核心能力之一——对目的地资源条件的准确评估。建议引导学员思考：除了资源，还有哪些"地点因素"会影响工程物流方案的可行性？（如：法规、气候、语言障碍、当地合作伙伴等）
+      </div>
+    </section>
+
+    <!-- Q3 -->
+    <section id="q3">
+      <h2><span class="num">讨论题3</span>路勘报告核心检查清单</h2>
+      <p><em>原题：除了桥梁限重，路勘报告还应调查哪些信息？请列出核心检查项（不少于 8 项）并说明潜在风险。</em></p>
+
+      <div class="tip">
+        <div class="tp-head">📋 评分要点</div>
+        不要求学员答出所有项，但应能体现<strong>系统性思维</strong>：不只盯着"桥"，要考虑整条运输路线上所有可能的约束节点。能达到 8 项以上且风险描述清晰者，可得满分。
+      </div>
+
+      <h3>参考清单（15 项）</h3>
+      <ul class="checklist">
+        <li>
+          <div class="cl-num">1</div>
+          <div class="cl-item">桥梁限重</div>
+          <div class="cl-risk">本案例核心。需核实官方限重文件，并了解是否有历史超载记录、结构实际承载余量</div>
+        </li>
+        <li>
+          <div class="cl-num">2</div>
+          <div class="cl-item">桥梁跨度与结构</div>
+          <div class="cl-risk">跨度决定"桥上桥"工装是否适用；结构类型（梁桥/拱桥/索桥）影响过桥方案设计</div>
+        </li>
+        <li>
+          <div class="cl-num">3</div>
+          <div class="cl-item">道路宽度与坡度</div>
+          <div class="cl-risk">宽度不足无法通行宽体设备；坡度过大影响 SPMT 控制稳定性和制动安全</div>
+        </li>
+        <li>
+          <div class="cl-num">4</div>
+          <div class="cl-item">道路承载能力</div>
+          <div class="cl-risk">路面层（沥青/混凝土/土路）和路基的承载能力，决定是否需要铺设钢板或扩散承压</div>
+        </li>
+        <li>
+          <div class="cl-num">5</div>
+          <div class="cl-item">转弯半径与弯道</div>
+          <div class="cl-risk">超长运输组合车辆（如SPMT）在小半径弯道中可能无法通行或需要清场</div>
+        </li>
+        <li>
+          <div class="cl-num">6</div>
+          <div class="cl-item">净空高度</div>
+          <div class="cl-risk">架空线、桥洞、树枝、门洞等障碍，对高大设备构成净空限制</div>
+        </li>
+        <li>
+          <div class="cl-num">7</div>
+          <div class="cl-item">路侧地质与边坡</div>
+          <div class="cl-risk">路侧边坡稳定性影响超宽车辆通行时的安全距离；软土地基可能造成路面侧向沉降</div>
+        </li>
+        <li>
+          <div class="cl-num">8</div>
+          <div class="cl-item">水文与季节性约束</div>
+          <div class="cl-risk">本案例：泄洪口放水。此外还有雨季道路泥泞、河流水位变化影响便道等</div>
+        </li>
+        <li>
+          <div class="cl-num">9</div>
+          <div class="cl-item">临时作业区域</div>
+          <div class="cl-risk">过桥/过坡时，是否有足够空间停放备用设备、临时支撑；周边是否可设置临时指挥点</div>
+        </li>
+        <li>
+          <div class="cl-num">10</div>
+          <div class="cl-item">交通管制可行性</div>
+          <div class="cl-risk">超限运输通常需要交通管制配合；当地是否有协警资源、审批程序和时间要求</div>
+        </li>
+        <li>
+          <div class="cl-num">11</div>
+          <div class="cl-item">当地工程资源</div>
+          <div class="cl-risk">本案例核心约束：工装、吊机、液压设备的当地可获性，直接影响方案选择</div>
+        </li>
+        <li>
+          <div class="cl-num">12</div>
+          <div class="cl-item">终点卸车条件</div>
+          <div class="cl-risk">目的地是否有足够面积和承载力供SPMT运作；设备安装基础位置是否满足最后就位要求</div>
+        </li>
+        <li>
+          <div class="cl-num">13</div>
+          <div class="cl-item">法规与许可证</div>
+          <div class="cl-risk">当地超限运输是否需要特殊许可；申请周期是否影响项目节点</div>
+        </li>
+        <li>
+          <div class="cl-num">14</div>
+          <div class="cl-item">通讯与应急条件</div>
+          <div class="cl-risk">山区或偏远地区通讯可能受限；应急情况下（设备故障/人员伤亡）救援响应时间</div>
+        </li>
+        <li>
+          <div class="cl-num">15</div>
+          <div class="cl-item">附近居民与设施</div>
+          <div class="cl-risk">运输作业是否影响附近居民出行、学校/医院等重要设施，可能引发社区矛盾</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- C segment cost -->
+    <section id="cost">
+      <h2><span class="num">四</span>C 段报价陷阱：容易被遗漏的成本项</h2>
+      <p>本案例同时揭示了工程物流报价中一个重要认知：<strong>超限大件运输的 C 段（目的国段）成本，远不止"设备本身的重量 × 运输单价"</strong>。</p>
+
+      <table class="cost-table">
+        <thead><tr><th>成本类型</th><th>初学者的估算逻辑</th><th>本案例实际包含的成本</th></tr></thead>
+        <tbody>
+          <tr class="omit"><td>陆运基本费</td><td>66.5吨 × 运费单价</td><td>✓ 包含（基础运费）</td></tr>
+          <tr class="include"><td>SPMT 轴线车租用</td><td>❌ 常被忽略</td><td>✓ 必须包含（车板日租 + 配合司机）</td></tr>
+          <tr class="include"><td>液压千斤顶作业</td><td>❌ 常被忽略</td><td>✓ 顶升设备租用 + 工程师 + 操作人工</td></tr>
+          <tr class="include"><td>钢滑轨材料</td><td>❌ 常被忽略</td><td>✓ 滑轨购置/租用 + 铺设人工</td></tr>
+          <tr class="include"><td>液压推顶装置</td><td>❌ 常被忽略</td><td>✓ 推顶设备 + 操作人工</td></tr>
+          <tr class="include"><td>交通管制配合</td><td>❌ 常被忽略</td><td>✓ 警力协调费用或私人安保</td></tr>
+          <tr class="include"><td>当地向导/协调员</td><td>❌ 常被忽略</td><td>✓ 东马语言和文化差异需要当地协调</td></tr>
+          <tr class="include"><td>过桥方案工程师费</td><td>❌ 常被忽略</td><td>✓ 方案设计和现场指导专家费</td></tr>
+        </tbody>
+      </table>
+
+      <div class="tip">
+        <div class="tp-head">⚠️ 报价风险提示</div>
+        一个经验不足的报价员，很可能只用"变压器 66.5 吨 × 运费率"得出 C 段陆运成本，而将上表中所有"❌ 常被忽略"的成本项全部遗漏。这些遗漏项的总额，在类似场景中往往达到基础运费的 50%–150%。<strong>C 段报价是工程物流最容易发生重大亏损的环节。</strong>
+      </div>
+    </section>
+
+    <!-- Context -->
+    <section id="context">
+      <h2><span class="num">五</span>行业背景：漂浮光伏出海的新挑战</h2>
+      <p>本案例不是孤立事件，而是一类正在快速增长的运输场景。以下背景有助于将案例置于更大的行业趋势中理解：</p>
+
+      <div class="insight-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="insight-card key">
+          <div class="ic-label">漂浮光伏 vs 地面光伏</div>
+          <p>地面光伏建于平地/荒地边缘，道路条件相对完善。漂浮光伏建于内陆水库，道路天然薄弱，重型设备的"最后 10 公里"运输难度高出 1–2 个数量级。</p>
+        </div>
+        <div class="insight-card warn">
+          <div class="ic-label">东马来西亚特殊性</div>
+          <p>马来西亚分为西马（马来半岛）和东马（婆罗洲岛）。东马基础设施远落后于西马，工程资源匮乏，这是本案例所有约束的根本背景。</p>
+        </div>
+        <div class="insight-card key">
+          <div class="ic-label">新能源出海趋势</div>
+          <p>随着中国光伏企业大量承接东南亚 EPC 项目，类似的"最后 10 公里"超限运输挑战将越来越多。这是工程物流从业者的重要增量业务场景。</p>
+        </div>
+        <div class="insight-card warn">
+          <div class="ic-label">EPC 模式的运输责任</div>
+          <p>EPC 总承包模式下，设备能否准时到场直接影响整个工程节点。物流延误等于工程违约，因此工程物流的方案设计必须同时考虑时效和成本。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scoring -->
+    <section id="scoring">
+      <h2><span class="num">六</span>评分建议与课堂活动设计</h2>
+
+      <h3>课堂演练方式（推荐）</h3>
+      <p><strong>分组演练 + 揭晓对比</strong>：建议在阅读案例背景后，先隐藏"三个方案"部分，只呈现约束条件，让学员分组提出方案；各组汇报后，揭晓真实的三个方案和最终选择，引导讨论差异背后的原因。</p>
+
+      <table>
+        <thead><tr><th>评估维度</th><th>分值建议</th><th>评分要点</th></tr></thead>
+        <tbody>
+          <tr><td>讨论题 1：经济性分析</td><td>30 分</td><td>能从成本、时间、资源三维度展开对比，有具体说明，而非笼统描述</td></tr>
+          <tr><td>讨论题 2：地点条件影响</td><td>30 分</td><td>能明确指出"东马资源匮乏"是关键约束，并推导出国内情境下的方案变化</td></tr>
+          <tr><td>讨论题 3：路勘清单</td><td>40 分</td><td>达到 8 项以上（25分），每项有明确风险说明（15分）；系统性强者酌情加分</td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:1.5rem;">关联扩展（可选）</h3>
+      <table>
+        <thead><tr><th>关联方向</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>C 段报价陷阱</td><td>与"C段报价三个典型陷阱"案例联合，强化工程物流报价的全口径成本意识</td></tr>
+          <tr><td>项目全流程</td><td>与"赞比亚五环化肥项目"或"文莱恒逸炼化"案例对比，感受方案设计在完整项目周期中的位置</td></tr>
+          <tr><td>液压设备技术</td><td>可补充 SPMT（Self-Propelled Modular Transporter）的基本原理和常见配置，帮助学员建立设备认知</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>中物联教育培训 · EL-2026-A03 Teaching Note · 2026-08-17</p>
+      <p style="margin-top:0.35rem;">原始素材：中国外运工程物流事业部访谈（2026年5月）&nbsp;|&nbsp;
+        <a href="2026-08-17_马来西亚漂浮光伏桥梁限重-教学案例.html" style="color:var(--accent);">案例正文（学员版）</a>
+      </p>
+    </footer>
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('highlight-target');
+        setTimeout(() => target.classList.remove('highlight-target'), 1200);
+      }
+    });
+  });
+</script>
+</body>
+</html>

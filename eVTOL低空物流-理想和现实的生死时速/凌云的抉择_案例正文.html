@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MBE-2026-E01 凌云的抉择：一家eVTOL公司的生死时速</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css"/>
+<style>
+:root{
+  --bg:#f0f4f8;--bg-paper:#f8fafc;--ink:#0f172a;--ink-muted:#475569;
+  --accent:#0369a1;--accent-soft:#e0f2fe;--border:#cbd5e1;
+  --red:#dc2626;--green:#059669;--orange:#c2410c;--sky:#0ea5e9;
+  --sidebar-w:16rem;
+  --font:"LXGW WenKai","PingFang SC",serif;
+  --font-sans:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:17px;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.88;
+  background-image:radial-gradient(ellipse 80% 50% at 100% 0%,rgba(3,105,161,.06),transparent),
+  radial-gradient(ellipse 60% 40% at 0% 100%,rgba(14,165,233,.04),transparent);}
+.layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;max-width:76rem;margin:0 auto;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}}
+aside{position:sticky;top:0;height:100vh;padding:1.5rem 1rem 1.5rem 1.25rem;border-right:1px solid var(--border);
+  background:rgba(248,250,252,.96);backdrop-filter:blur(10px);overflow-y:auto;}
+@media(max-width:900px){aside{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);}}
+.case-id{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;}
+aside h2{font-size:.9rem;font-weight:600;line-height:1.45;margin-bottom:1.4rem;color:var(--ink);}
+nav ul{list-style:none;}
+nav li{margin-bottom:.1rem;}
+nav a{display:block;padding:.32rem .55rem;font-size:.8rem;color:var(--ink-muted);text-decoration:none;border-radius:4px;border-left:2px solid transparent;transition:all .15s;}
+nav a:hover{color:var(--ink);background:var(--accent-soft);}
+nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft);font-weight:600;}
+.nav-group{font-family:var(--font-sans);font-size:.62rem;letter-spacing:.08em;color:var(--ink-muted);margin:1rem 0 .3rem .55rem;text-transform:uppercase;}
+.sidebar-note{margin-top:1.5rem;padding:.8rem .9rem;background:#fff3cd;border:1px solid #fcd34d;border-radius:6px;font-family:var(--font-sans);font-size:.72rem;color:#92400e;line-height:1.6;}
+main{padding:2rem 2.75rem 5rem;background:var(--bg-paper);box-shadow:-4px 0 28px rgba(0,0,0,.04);min-width:0;}
+@media(max-width:600px){main{padding:1.25rem 1rem 3rem;}}
+.hero{border-bottom:3px double var(--border);padding-bottom:2rem;margin-bottom:2.25rem;}
+.tag{display:inline-block;font-family:var(--font-sans);font-size:.7rem;padding:.2rem .65rem;background:var(--ink);color:#fff;letter-spacing:.06em;border-radius:2px;margin-bottom:.85rem;}
+.hero h1{font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.35;font-weight:600;margin-bottom:.5rem;letter-spacing:-.02em;}
+.hero .subtitle{font-size:.98rem;color:var(--ink-muted);font-style:italic;margin-bottom:1.5rem;}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:.6rem 1.25rem;font-family:var(--font-sans);font-size:.76rem;background:#f1f5f9;padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.meta-grid dt{color:var(--ink-muted);margin-bottom:.1rem;}
+.meta-grid dd{color:var(--ink);font-weight:600;}
+.abstract{background:linear-gradient(135deg,var(--accent-soft) 0%,#f8fafc 100%);border-left:4px solid var(--accent);padding:1.3rem 1.6rem;margin-bottom:2.75rem;font-size:.95rem;border-radius:0 6px 6px 0;}
+.abstract .label{font-family:var(--font-sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:.55rem;}
+section{margin-bottom:3rem;scroll-margin-top:1.5rem;}
+section h2{font-size:1.3rem;font-weight:600;margin-bottom:1.1rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:.5rem;}
+section h3{font-size:1.02rem;font-weight:600;margin:1.6rem 0 .7rem;}
+.num{font-family:var(--font-sans);font-size:.72rem;color:var(--accent);font-weight:700;white-space:nowrap;}
+section p{margin-bottom:1rem;text-align:justify;}
+section ul,section ol{padding-left:1.5rem;margin-bottom:1rem;}
+section li{margin-bottom:.4rem;line-height:1.75;}
+blockquote{margin:1.25rem 0;padding:1rem 1.25rem;background:#f1f5f9;border-left:3px solid var(--accent);font-style:italic;color:#334155;font-size:.93rem;border-radius:0 4px 4px 0;}
+.dialogue{margin:1.5rem 0;padding:1.25rem 1.5rem;background:#fff;border:1px solid var(--border);border-radius:8px;font-size:.92rem;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+.d-line{margin-bottom:.65rem;line-height:1.75;}
+.d-line:last-child{margin-bottom:0;}
+.speaker{font-family:var(--font-sans);font-size:.75rem;font-weight:700;color:var(--accent);margin-right:.4rem;}
+.speaker.b{color:var(--orange);}
+.speaker.c{color:var(--green);}
+.speaker.d{color:#7c3aed;}
+.scene-note{font-family:var(--font-sans);font-size:.78rem;color:var(--ink-muted);font-style:italic;margin-bottom:.9rem;padding-bottom:.75rem;border-bottom:1px dashed var(--border);}
+.person-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:1rem;margin:1.5rem 0;}
+.person-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem 1.1rem;}
+.person-name{font-family:var(--font-sans);font-size:.85rem;font-weight:700;color:var(--accent);margin-bottom:.2rem;}
+.person-title{font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);margin-bottom:.5rem;}
+.person-card p{font-size:.82rem;line-height:1.65;margin:0;text-align:left;}
+.option-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+@media(max-width:700px){.option-grid{grid-template-columns:1fr;}}
+.opt-card{background:#fff;border:2px solid var(--border);border-radius:8px;padding:1.25rem;transition:transform .2s,box-shadow .2s;}
+.opt-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.07);}
+.opt-num{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.45rem;}
+.opt-title{font-size:.98rem;font-weight:700;margin-bottom:.6rem;color:var(--ink);}
+.opt-card p{font-size:.83rem;color:var(--ink-muted);text-align:left;margin-bottom:.5rem;}
+.opt-tag{display:inline-block;font-family:var(--font-sans);font-size:.7rem;padding:.2rem .5rem;border-radius:3px;font-weight:600;margin-top:.3rem;}
+.tag-risk-hi{background:#fee2e2;color:#dc2626;}
+.tag-risk-mid{background:#fef3c7;color:#b45309;}
+.tag-risk-lo{background:#dcfce7;color:#16a34a;}
+table{width:100%;border-collapse:collapse;font-size:.83rem;font-family:var(--font-sans);margin:1.5rem 0;}
+th{text-align:left;padding:.55rem .75rem;background:var(--ink);color:#fff;font-weight:600;}
+td{padding:.5rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:#f8fafc;}
+tr:hover td{background:var(--accent-soft);}
+td.neg{color:var(--red);font-weight:600;}
+td.pos{color:var(--green);font-weight:600;}
+td.warn{color:var(--orange);font-weight:600;}
+td.bold{font-weight:700;}
+td.sub{color:var(--ink-muted);font-size:.8rem;}
+.deadline-table tr:last-child td{font-weight:700;color:var(--red);}
+.q-list{list-style:none;padding-left:0;}
+.q-item{margin-bottom:1.6rem;padding:1.1rem 1.25rem;background:var(--bg);border-radius:6px;border-left:3px solid var(--accent);font-size:.94rem;line-height:1.8;}
+.q-label{display:block;font-family:var(--font-sans);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem;}
+footer{text-align:center;font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+@keyframes flash{0%{background:var(--accent-soft);}100%{background:transparent;}}
+.highlight-target{animation:flash 1.2s ease-out;}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="case-id">MBE-2026-E01</div>
+  <h2>凌云的抉择：一家eVTOL公司的生死时速</h2>
+  <nav>
+    <div class="nav-group">案例正文</div>
+    <ul>
+      <li><a href="#abstract">案例摘要</a></li>
+      <li><a href="#s1">一、那通电话</a></li>
+      <li><a href="#s2">二、凌云是谁</a></li>
+      <li><a href="#s3">三、两条路，四种声音</a></li>
+      <li><a href="#s4">四、印尼的那个下午</a></li>
+      <li><a href="#s5">五、国内的那条线</a></li>
+      <li><a href="#s6">六、财务的压力</a></li>
+      <li><a href="#s7">七、赵建明的晚上</a></li>
+      <li><a href="#s8">八、郑浩博的条件</a></li>
+      <li><a href="#s9">九、五月中旬的那次决定</a></li>
+    </ul>
+    <div class="nav-group">讨论</div>
+    <ul>
+      <li><a href="#questions">六个讨论问题</a></li>
+    </ul>
+    <div class="nav-group">数据附录</div>
+    <ul>
+      <li><a href="#ex1">附录一｜取证现状对比</a></li>
+      <li><a href="#ex2">附录二｜eVTOL vs 无人机成本</a></li>
+      <li><a href="#ex3">附录三｜印尼岛际物流市场</a></li>
+      <li><a href="#ex4">附录四｜人物简介</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-note">
+    ⚠ 本文件为学员版案例正文，不含参考答案。<br>教学笔记请见独立文件。
+  </div>
+</aside>
+<main>
+<div class="hero" id="top">
+  <span class="tag">教学案例 · eVTOL低空经济系列</span>
+  <h1>凌云的抉择：一家eVTOL公司的生死时速</h1>
+  <p class="subtitle">先赚钱，还是先等未来？资源耗尽前的最后一次押注</p>
+  <dl class="meta-grid">
+    <div><dt>案例编号</dt><dd>MBE-2026-E01</dd></div>
+    <div><dt>撰写日期</dt><dd>2026 年 8 月</dd></div>
+    <div><dt>主角企业</dt><dd>凌云航空（虚构）</dd></div>
+    <div><dt>行业</dt><dd>eVTOL / 低空经济 / 低空物流</dd></div>
+    <div><dt>决策者</dt><dd>陈立远，创始人兼 CEO</dd></div>
+    <div><dt>核心议题</dt><dd>战略选择 · 融资博弈 · 出海 vs 本土</dd></div>
+    <div><dt>适用课程</dt><dd>战略管理 / 创业管理 / 技术创新</dd></div>
+    <div><dt>难度等级</dt><dd>★★★★★ 高级</dd></div>
+  </dl>
+</div>
+<div class="abstract" id="abstract">
+  <span class="label">案例摘要 Abstract</span>
+  <p>2026年3月，深圳。凌云航空创始人陈立远同时面对两份文件：CFO的报告显示公司只剩7个月现金，而印尼一家物流公司递来12架eVTOL的合作意向书。就在这时，领投A轮的投资人打来电话宣布不续B轮。</p>
+  <p>凌云的核心产品V-300是国内技术最激进的载人eVTOL之一，但载人适航证最早2027年底才能拿到。唯一持证的货运产品V-1500，正面临无人机的成本竞争和海外巨头的先发优势。全力押印尼、聚焦国内示范线、两条腿走路、还是卖给大物流公司？每个选项背后，都是一道无法回避的取舍。</p>
+  <p style="margin-bottom:0">本案例主要人物与公司为虚构，但所有行业背景、政策环境、技术参数与市场数据均基于2025—2026年真实信息整理。</p>
+</div>
+<section id="s1">
+  <h2><span class="num">一</span>那通电话</h2>
+  <p>2026年3月的最后一个周五，下午5点47分。</p>
+  <p>陈立远坐在深圳南山区凌云航空的办公室里，窗外是正在施工的深中通道延伸带，橙色的塔吊把夕阳切成了几块。他盯着眼前的两份文件，已经盯了三个小时。</p>
+  <p>左边那份，是CFO林思远昨晚发来的：按照现在的烧钱速度，公司的A轮融资还剩下<strong>7个月的现金</strong>。</p>
+  <p>右边那份，是上个月一家印尼物流公司发来的合作意向书：对方愿意以租赁形式引入凌云的V-1500型货运eVTOL，首批<strong>12架</strong>，合同金额折合人民币约<strong>2.3亿元</strong>，但要求在2027年3月前完成首批交付，且须取得印尼民航局的运营许可。</p>
+  <p>电话在这时候响了。</p>
+  <p>是老股东、翼程资本的合伙人郑浩博。郑浩博在凌云A轮时领投了1.5亿，是凌云最大的外部股东。</p>
+  <div class="dialogue">
+    <div class="scene-note">深圳南山，凌云航空，2026年3月最后一个周五，傍晚</div>
+    <div class="d-line"><span class="speaker b">郑浩博：</span>"立远，我要跟你说一件事。B轮我们不续了。"</div>
+    <div class="d-line"><span class="speaker">陈立远：</span>（沉默）</div>
+    <div class="d-line"><span class="speaker b">郑浩博：</span>"不是不相信你。是整个LP层面的压力。载人eVTOL的故事，2026年已经很难再讲下去了。今年有三家竞争对手去做货运，股东们都在问我，凌云为什么不转？"</div>
+    <div class="d-line"><span class="speaker">陈立远：</span>"郑总，给我两周。"</div>
+  </div>
+</section>
+
+<section id="s2">
+  <h2><span class="num">二</span>凌云是谁</h2>
+  <p>凌云航空成立于2021年，总部在深圳，创始人陈立远是从波音西雅图研发中心回来的复合材料工程师，35岁，有两段创业经历——一段成功（卖给了字节），一段失败（无人配送，2023年关闭）。</p>
+  <p>凌云最初做的是<strong>载人eVTOL</strong>，定位城市短途出行，核心产品是V-300，一款4座级、航程120公里的电动垂直起降飞行器。V-300的技术路线是国内最激进的几家之一：分布式电推进、倾转旋翼，理论上安全冗余达到10⁻⁸量级，比同级产品高出一个数量级。</p>
+  <p>但V-300的商业化取决于一个前提：<strong>获得载人适航三证</strong>（型号合格证TC、生产许可证PC、适航证AC）。中国民航局（CAAC）目前还没有为任何一家载人eVTOL颁发完整的TC证，行业共识是最早也要<strong>2027年底</strong>。</p>
+  <p>在等待取证的这几年里，凌云靠什么活着？这是陈立远创业第五年面对的根本问题。</p>
+  <h3>2.1 凌云的现状</h3>
+  <p><strong>技术进展</strong>：</p>
+  <ul>
+    <li>V-300载人版：完成地面测试，进入试飞验证阶段，预计2027年申请CAAC型号审定</li>
+    <li>V-1500货运版：基于V-300平台改型，最大商业载重150公斤，航程80公里，2025年底已完成国内货运无人机适航认证，<strong>是目前凌云唯一持有合规证书的产品</strong></li>
+    <li>取得了印尼民航局VTC预评估资格（即进口国对中国已认证型号的互认资格）</li>
+  </ul>
+  <p><strong>商业现状</strong>（截至2026年3月）：</p>
+  <table>
+    <thead><tr><th>指标</th><th>数值</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>过去12个月营收</td><td class="warn">2,200万元</td><td>全部来自政府示范飞行项目补贴和试飞服务费</td></tr>
+      <tr><td>现金储备</td><td class="warn">5,300万元</td><td>A轮融资余额</td></tr>
+      <tr><td>月度净烧钱</td><td class="neg">约760万元</td><td>研发、人员、取证、设施</td></tr>
+      <tr><td>剩余可运营月数</td><td class="neg">约7个月</td><td>不含任何新收入</td></tr>
+      <tr><td>员工人数</td><td>187人</td><td>其中研发120人</td></tr>
+    </tbody>
+  </table>
+  <h3>2.2 核心问题的结构</h3>
+  <p>林思远在那份财务报告的最后一页写了一行字：</p>
+  <blockquote>"如果B轮不能在2026年9月前完成，公司将在2026年底面临强制裁员50%的选择。"</blockquote>
+  <p>陈立远知道这不是威胁，是现实。</p>
+</section>
+<section id="s3">
+  <h2><span class="num">三</span>两条路，四种声音</h2>
+  <p>郑浩博电话后的第二天早上，陈立远把核心团队召集到小会议室。桌上有四个人：他自己、CFO林思远、CTO赵建明，以及刚从新加坡飞回来、主管市场的VP姜晓丹。会议开了四个小时，陈立远没有说太多话，他让三个人说完。</p>
+  <h3>声音一：林思远的算盘</h3>
+  <p>林思远是财务出身，MBA毕业后在华为做过六年财务，是那种会把每一个决策都翻译成现金流的人。</p>
+  <div class="dialogue">
+    <div class="scene-note">凌云航空小会议室，次日上午</div>
+    <div class="d-line"><span class="speaker b">林思远：</span>"我只说数字。有三个场景：场景A，全力拿印尼订单，12架总毛利约7,200万，但前提是我们能在12个月内完成印尼VTC认证、完成12架交付、V-1500在印尼运营不出大问题。场景B，聚焦国内货运示范线，短期现金回报有限。场景C，继续死磕载人，7个月后现金到底。"</div>
+    <div class="d-line"><span class="speaker b">林思远：</span>"我的建议是A。但A里面有一个问题我算不出来——印尼那边的运营风险。"（停顿）"还有一个场景我们没谈：卖身。"</div>
+  </div>
+  <p>会议室里安静了三秒。</p>
+  <h3>声音二：赵建明的坚持</h3>
+  <p>赵建明是凌云的灵魂人物之一。前中国商飞的结构工程师，当初陈立远把他从上海挖来的时候，他拿了两倍薪资，但他跟陈立远说，薪资不是核心，他来是因为凌云的技术路线是他见过国内最认真的一家。</p>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker c">赵建明：</span>"我有一个问题。如果我们现在把资源转向货运，V-300的研发节奏就必须砍。砍30%的研发投入，V-300的TC申请要从2027年底推到2028年中。"</div>
+    <div class="d-line"><span class="speaker c">赵建明：</span>"2027年，行业里至少有三家会完成TC取证。我们如果晚了六个月，被抢先完成的竞争对手就会建立供应商关系、运营商生态。在航空行业里，这些先发优势不是六个月能追回来的。"</div>
+    <div class="d-line"><span class="speaker c">赵建明：</span>"我们现在的技术是第一梯队。如果我们为了活着，变成第二梯队，那我们活着的意义是什么？"</div>
+  </div>
+  <h3>声音三：姜晓丹的情报</h3>
+  <p>姜晓丹在新加坡待了一周，见了印尼WhiteSky的运营总监、一家马来西亚物流基金的合伙人，还有一个她不愿意在会议室透露姓名的"朋友"。她拿出一张手写的便条，放在桌上：</p>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker d">姜晓丹：</span>"峰飞在印尼已经比我们早了。"</div>
+    <div class="d-line"><span class="speaker d">姜晓丹：</span>"峰飞的V2000CG已经拿到印尼VTC认可，比凌云早了六到八个月。Nusantara给我们的意向书，我不确定同样的条款是不是同时给了峰飞。"</div>
+    <div class="d-line"><span class="speaker">陈立远：</span>"你问过了？"</div>
+    <div class="d-line"><span class="speaker d">姜晓丹：</span>"我旁敲侧击问过了。他们没有直接否认。"（停顿）"还有一件事。印尼岛际运营最大的问题不是飞机，是<strong>地勤</strong>。充电桩、维修、备件，如果你在雅加达一个岛出了故障，零件从中国运过来可能要等三周。印尼的故事，技术上成立，运营上是一个巨大的未知数。"</div>
+  </div>
+  <h3>声音四：陈立远想到的那个人</h3>
+  <p>四个小时后，会议结束，陈立远留在会议室里，叫住了要走出门的林思远。</p>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker">陈立远：</span>"老林，你刚才说的那个场景——卖身。如果顺丰来谈，我们值多少？"</div>
+    <div class="d-line"><span class="speaker b">林思远：</span>（想了大概十秒钟）"按现在的技术资产、取证进度和团队，战略投资估值大概在5到7亿。全资并购的话，可能8到10亿。"</div>
+    <div class="d-line"><span class="speaker">陈立远：</span>"那A轮我们是多少估值进去的？"</div>
+    <div class="d-line"><span class="speaker b">林思远：</span>"12亿。"</div>
+  </div>
+  <p>两个人都沉默了。</p>
+</section>
+
+<section id="s4">
+  <h2><span class="num">四</span>印尼的那个下午</h2>
+  <p>四月初，陈立远飞了一趟雅加达。没有随行团队，只有他和姜晓丹。他们约了Nusantara Air Cargo的运营总监Budi Santoso，在SCBD商务区的一家咖啡馆。</p>
+  <p>Budi是个五十出头的印尼人，在澳洲航空工作过八年，印尼语和英语都很流利，也会一点普通话。</p>
+  <div class="dialogue">
+    <div class="scene-note">雅加达，SCBD商务区，2026年4月初</div>
+    <div class="d-line"><span class="speaker b">Budi Santoso：</span>"我来问你们一个问题。峰飞给我们的报价，一架V2000的年度湿租费是350万人民币。你们的V-1500，你们能给多少？"</div>
+    <div class="d-line"><span class="speaker">陈立远：</span>"我先问你一个问题。你在意的是价格，还是运力？"</div>
+  </div>
+  <p>Budi有点意外，但他听下去了。陈立远把笔记本电脑推过去：</p>
+  <table>
+    <thead><tr><th>参数</th><th>凌云 V-1500</th><th>峰飞 V2000CG</th></tr></thead>
+    <tbody>
+      <tr><td>最大商业载重</td><td>150 kg</td><td>200 kg</td></tr>
+      <tr><td>满载航程</td><td class="pos">80 km</td><td class="warn">60 km</td></tr>
+      <tr><td>充电时间</td><td class="pos">45 分钟</td><td>55 分钟</td></tr>
+      <tr><td>噪音等级</td><td class="pos">72 dB</td><td>75 dB</td></tr>
+      <tr><td>适航证书</td><td class="warn">国内 + 印尼 VTC 预评估</td><td class="pos">国内 + 印尼 VTC 完整</td></tr>
+    </tbody>
+  </table>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker">陈立远：</span>"印尼的岛际平均距离是多少？"</div>
+    <div class="d-line"><span class="speaker b">Budi：</span>"大多数在60到90公里之间。"</div>
+    <div class="d-line"><span class="speaker">陈立远：</span>"所以V2000满载只能飞60公里，很多航线需要减载或中途补能。V-1500可以满载飞80公里，覆盖你70%以上的航线，不需要减载。我的报价是320万，比峰飞低30万。但我给你12架中的前4架<strong>免费运营三个月</strong>。三个月后，如果你觉得V-1500不如V2000，你换，不收违约金。"</div>
+    <div class="d-line"><span class="speaker b">Budi：</span>（沉默片刻）"你们什么时候能交货？"</div>
+    <div class="d-line"><span class="speaker">陈立远：</span>"第一批4架，2027年2月。"</div>
+    <div class="d-line"><span class="speaker b">Budi：</span>（皱眉）"峰飞说2026年10月。"</div>
+  </div>
+  <p>陈立远心里数了一下——4个月的差距。他没有说谎，凌云现在的产能，确实做不到2026年10月。</p>
+</section>
+
+<section id="s5">
+  <h2><span class="num">五</span>国内的那条线</h2>
+  <p>就在陈立远在雅加达的同一周，林思远在国内谈了另一条路线。顺丰的供应链创新部门，有一个叫"山地最后一公里"的内部项目，专门研究在云南、贵州、四川的山区能否用低空代替汽车运输。项目负责人是一个叫马天驰的年轻总监，30出头，背景是Uber的供应链部门。</p>
+  <div class="dialogue">
+    <div class="scene-note">顺丰深圳总部咖啡区，2026年4月</div>
+    <div class="d-line"><span class="speaker b">马天驰：</span>"同样是60公里的山地航线，无人机能用150元/单完成，你们能用多少？"</div>
+    <div class="d-line"><span class="speaker c">林思远：</span>（快速算了一下）"如果满载，我们是2.5到3元每公斤，比无人机便宜一个数量级。"</div>
+    <div class="d-line"><span class="speaker b">马天驰：</span>"问题是满载。我们山地这些线路，很多时候单次包裹量不超过30公斤。你150公斤的舱装30公斤，经济性直接崩了。"</div>
+  </div>
+  <p>这是一个真实的结构性问题。无人机的优势不在于规模，而在于<strong>轻量化部署</strong>——一条航线，一台无人机，按需起飞，不需要等到满载才合算。eVTOL的优势在于<strong>运力密度</strong>，但运力密度要有前提：货量足够大。</p>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker b">马天驰：</span>"凌云如果能证明，在某一条固定高频线路上，你们能做到无人机的单位成本，我明天就给你签协议。"</div>
+  </div>
+  <p>林思远在回公司的路上反复想了这句话好几遍。</p>
+</section>
+<section id="s6">
+  <h2><span class="num">六</span>财务的压力</h2>
+  <p>四月底，陈立远和林思远做了一次深度复盘，在白板上写下了所有的选项。</p>
+  <div class="option-grid">
+    <div class="opt-card">
+      <div class="opt-num">选项一</div>
+      <div class="opt-title">全力押印尼</div>
+      <p>拿下Nusantara合同12架，优先级：交付 &gt; 国内V-300研发。需追加融资1.2亿，需2026年8月前完成B轮。</p>
+      <p><strong>潜在收益：</strong>如12架交付成功，按五年湿租，总收入约1.9亿。</p>
+      <span class="opt-tag tag-risk-hi">风险：峰飞先发 / 印尼运营未知 / 海外合规</span>
+    </div>
+    <div class="opt-card">
+      <div class="opt-num">选项二</div>
+      <div class="opt-title">聚焦国内示范线</div>
+      <p>和顺丰、邮政谈山地固定线路，选2-3条高频航线做样板运营。融资需求约6000万，政策加持可期。</p>
+      <p><strong>潜在收益：</strong>短期有限，但有政策溢价和数据价值。</p>
+      <span class="opt-tag tag-risk-mid">风险：货量不足 / 无人机竞争</span>
+    </div>
+    <div class="opt-card">
+      <div class="opt-num">选项三</div>
+      <div class="opt-title">两条腿走路</div>
+      <p>印尼先谈4架小单，国内同步推一条样板线。融资需求最高约1.8亿，但风险也最分散。</p>
+      <p><strong>时间窗口：</strong>最难执行，对团队要求极高。</p>
+      <span class="opt-tag tag-risk-hi">风险：执行难度最大</span>
+    </div>
+    <div class="opt-card">
+      <div class="opt-num">选项四</div>
+      <div class="opt-title">战略融资 / 出售股权</div>
+      <p>找顺丰、中国邮政或菜鸟做战略投资，换资本换资源换渠道。需接受低于A轮的估值。</p>
+      <p><strong>代价：</strong>失去部分战略自主权。A轮估值12亿，现在最多8-10亿。</p>
+      <span class="opt-tag tag-risk-lo">风险：估值打折 / 控制权让渡</span>
+    </div>
+  </div>
+  <h3>数字的残酷</h3>
+  <p>林思远在白板旁边，又写了另一组数字——凌云的死亡线：</p>
+  <table class="deadline-table">
+    <thead><tr><th>时间节点</th><th>必须实现的事件</th><th>如果未实现</th></tr></thead>
+    <tbody>
+      <tr><td>2026年8月</td><td>B轮融资到账（至少5000万）</td><td class="neg">2026年12月开始强制裁员50%</td></tr>
+      <tr><td>2026年12月</td><td>至少一条业务线产生真实收入</td><td class="neg">估值大幅下滑，C轮无从谈起</td></tr>
+      <tr><td>2027年6月</td><td>V-300研发不得停滞</td><td class="neg">丢失载人赛道入场券</td></tr>
+    </tbody>
+  </table>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker b">林思远：</span>"我们只有一次押注的机会。押错了，就没有下一次了。"</div>
+    <div class="d-line"><span class="speaker">陈立远：</span>"如果是你，你选哪个？"</div>
+    <div class="d-line"><span class="speaker b">林思远：</span>（想了五秒钟）"我选四。但这是财务的答案，不是创业者的答案。你是创业者，你的答案我不知道。"</div>
+  </div>
+</section>
+
+<section id="s7">
+  <h2><span class="num">七</span>赵建明的晚上</h2>
+  <p>那周五晚上，赵建明在实验室工作到十一点。他在做一件所有人都不知道的事：他在测V-1500的核心参数能否在现有电池体系下，把满载航程从80公里推到95公里。</p>
+  <p>如果能推到95公里，印尼那条最难的岛际航线——从巴厘岛到龙目岛，直线距离91公里——就可以满载直飞，不需要中途补能。</p>
+  <p>这是一个技术上可行，但工程量很大的改造。他给陈立远发了一条微信，只有一行字：</p>
+  <blockquote>"给我六周，我有一个数字给你。"</blockquote>
+  <p>陈立远看到消息的时候，已经是夜里十二点。他没有立刻回复，他在想一件事：六周之后，是六月初。留给B轮的窗口，最多还有两到三个月。</p>
+</section>
+
+<section id="s8">
+  <h2><span class="num">八</span>郑浩博的条件</h2>
+  <p>一周后，郑浩博又主动联系了陈立远。</p>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker b">郑浩博：</span>"我想到了一个可能性。不是续投B轮，是一个选择权协议。"</div>
+  </div>
+  <p>郑浩博的方案是：翼程资本拿出<strong>3000万人民币</strong>，作为可转换债务，期限12个月。凌云在12个月内，如果完成了以下任何一个里程碑，债务自动转为股权，按<strong>8亿估值</strong>：</p>
+  <ol>
+    <li>完成印尼至少4架eVTOL的实际交付</li>
+    <li>在国内完成至少1条固定商业航线的持续盈利运营（连续3个月）</li>
+    <li>有知名战略投资人（非纯财务投资）跟进B轮</li>
+  </ol>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker b">郑浩博：</span>"如果12个月后都没完成，你还我3300万（加10%利息），或者我拿翼程的优先权，在清算中优先于所有人收回资金。"</div>
+  </div>
+  <p>陈立远听完，沉默了很长时间。3000万，在他们每月760万的烧钱速度下，只够烧4个月。但它有一个价值：<strong>它能让凌云撑到赵建明说的"六周之后"</strong>。</p>
+</section>
+
+<section id="s9">
+  <h2><span class="num">九</span>五月中旬的那次决定</h2>
+  <p>2026年5月15日，凌云内部战略会。</p>
+  <p>会议室里，所有主要决策者都在场。赵建明带来了他六周的测试结果：V-1500在不改变整机重量的前提下，通过优化热管理系统，可以将满载航程提升至<strong>92公里</strong>。不是95，但已经非常接近。</p>
+  <p>这意味着，巴厘岛到龙目岛的航线——91公里——可以满载直飞，但<strong>没有任何安全余量</strong>。</p>
+  <div class="dialogue">
+    <div class="d-line"><span class="speaker c">赵建明：</span>"这个数字够不够用，取决于你怎么定义'够'。"</div>
+  </div>
+  <p>会议室里，所有人都在等陈立远说话。陈立远喝了口水，开口：</p>
+  <p style="text-align:center;font-weight:600;font-size:1.08rem;margin:1.75rem 0 .5rem;">"我们来做一个决定。不是今天，是现在。"</p>
+</section>
+<section id="questions">
+  <h2><span class="num">讨论</span>六个讨论问题</h2>
+  <p style="font-size:.88rem;color:var(--ink-muted);margin-bottom:1.5rem;">以下问题供课前阅读后思考，课堂讨论时使用。案例正文不含参考答案。</p>
+  <ol class="q-list">
+    <li class="q-item">
+      <span class="q-label">问题一 · 战略诊断</span>
+      凌云面临的根本困境是什么？是资金问题、技术问题，还是商业模式问题？如果你是陈立远，你如何定义这家公司的"核心问题"？
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题二 · 选项评估</span>
+      请对白板上的四个选项进行系统评估。哪个选项的"期望价值"最高？哪个选项的"生存概率"最高？两者不一致时，你如何权衡？
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题三 · 赵建明的技术</span>
+      V-1500能飞92公里这个数字，对印尼订单的意义是什么？技术上的边界参数（满载可以飞，但没有安全余量）在商业决策中应如何处理？这是可以接受的条件，还是必须解决的问题？
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题四 · 郑浩博的协议</span>
+      郑浩博的"可转换债+里程碑"结构，对凌云意味着什么？这是一个好协议吗？从投资人角度和创业者角度分别分析。
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题五 · 先赚钱还是先等未来</span>
+      eVTOL行业存在一个结构性张力：货运能回血但会分散载人研发资源；载人是大市场但短期没有收入。这个两难，有没有不用取舍的解法？如果你是凌云的CEO，你怎么同时对投资人、客户、员工讲这个故事？
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题六 · 海外还是本土</span>
+      印尼订单和国内顺丰示范线，代表两种不同的起步路径：先在海外验证，还是先在本土深根。从供应链、监管、品牌、现金流等维度，各自的逻辑是什么？
+    </li>
+  </ol>
+</section>
+
+<section id="ex1">
+  <div style="margin:1.75rem 0;">
+    <div style="font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;">附录一 Exhibit 1</div>
+    <h3 style="font-size:.95rem;font-weight:600;margin-bottom:.75rem;">eVTOL取证现状对比（2026年3月）</h3>
+    <table>
+      <thead><tr><th>企业</th><th>产品</th><th>类型</th><th>取证进度</th></tr></thead>
+      <tbody>
+        <tr><td>峰飞航空</td><td>V2000CG</td><td>货运</td><td class="pos">国内三证完成；印尼VTC完整</td></tr>
+        <tr><td>御风未来</td><td>M1</td><td>货运/救援</td><td class="warn">国内无人机适航证</td></tr>
+        <tr><td class="bold">凌云航空（本案例）</td><td class="bold">V-1500</td><td>货运</td><td class="warn">国内货运适航证；印尼VTC预评估</td></tr>
+        <tr><td>亿航智能</td><td>EH216-S</td><td>载人</td><td class="pos">国内三证完成；部分海外市场</td></tr>
+        <tr><td>沃飞长空</td><td>AE200</td><td>载人</td><td>取证中</td></tr>
+        <tr><td>沃兰特</td><td>——</td><td>货运/载人</td><td>取证中</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="ex2">
+  <div style="margin:1.75rem 0;">
+    <div style="font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;">附录二 Exhibit 2</div>
+    <h3 style="font-size:.95rem;font-weight:600;margin-bottom:.75rem;">eVTOL vs 无人机成本结构对比（同等里程货运场景）</h3>
+    <table>
+      <thead><tr><th>指标</th><th>工业无人机（5kg载重）</th><th>eVTOL货运（150kg载重）</th></tr></thead>
+      <tbody>
+        <tr><td>设备成本</td><td>30—80万元/架</td><td class="warn">500—1,500万元/架</td></tr>
+        <tr><td>单次飞行成本</td><td class="pos">50—100元</td><td class="warn">800—1,200元</td></tr>
+        <tr><td>单公斤运输成本</td><td class="warn">10—20元（低载荷时）</td><td class="pos">5—8元（满载时）</td></tr>
+        <tr><td class="bold">盈利前提</td><td class="pos">任何时候</td><td class="neg">需要满载率 &gt;65%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="ex3">
+  <div style="margin:1.75rem 0;">
+    <div style="font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;">附录三 Exhibit 3</div>
+    <h3 style="font-size:.95rem;font-weight:600;margin-bottom:.75rem;">印尼岛际物流市场概况（2025年数据）</h3>
+    <table>
+      <thead><tr><th>指标</th><th>数据</th></tr></thead>
+      <tbody>
+        <tr><td>有人岛总数</td><td>约17,000个，其中约2,000个岛有定期物流需求</td></tr>
+        <tr><td>岛际主要运输方式</td><td>船运70% / 螺旋桨小飞机20% / 直升机8% / 其他2%</td></tr>
+        <tr><td>船运平均时效</td><td>8—36小时</td></tr>
+        <tr><td>螺旋桨飞机覆盖</td><td>仅约300个岛（需要简易跑道）</td></tr>
+        <tr><td>eVTOL潜在场景</td><td>岛际距离30—120km的次级岛屿，约800—1,200条潜在航线</td></tr>
+        <tr><td class="bold">市场规模估算</td><td class="pos">若替代10%船运场景，约90亿人民币/年</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.78rem;color:var(--ink-muted);margin-top:.6rem;">国家发改委"十五五"低空原则：先载货后载人 · 先隔离后融合 · 先远郊后城区</p>
+  </div>
+</section>
+
+<section id="ex4">
+  <h2><span class="num">附录四</span>人物简介</h2>
+  <div class="person-grid">
+    <div class="person-card">
+      <div class="person-name">陈立远</div>
+      <div class="person-title">创始人兼 CEO，35岁</div>
+      <p>复合材料工程学博士，前波音西雅图研发中心。两段创业经历：一段成功退出，一段失败（无人配送，2023年关闭）。被同行描述为"技术出身但不固执于技术的人"。</p>
+    </div>
+    <div class="person-card">
+      <div class="person-name">林思远</div>
+      <div class="person-title">CFO，42岁</div>
+      <p>华为财务体系出身，MBA。曾任两家上市公司财务总监。极度理性，喜欢用数字说话，内部绰号"算账机器"。</p>
+    </div>
+    <div class="person-card">
+      <div class="person-name">赵建明</div>
+      <div class="person-title">CTO，39岁</div>
+      <p>中国商飞前研究员，结构工程师出身，后自学电推进系统设计。认为凌云的V-300是他见过"技术上最认真"的国内eVTOL。不擅长表达，但在关键时刻会说出让所有人沉默的话。</p>
+    </div>
+    <div class="person-card">
+      <div class="person-name">姜晓丹</div>
+      <div class="person-title">市场VP，33岁</div>
+      <p>Uber亚太供应链背景，新加坡国立大学MBA。曾在东南亚运营过一家O2O物流创业公司。团队中对海外市场最了解的人，也是最早提出"印尼机会"的人。</p>
+    </div>
+    <div class="person-card">
+      <div class="person-name">郑浩博</div>
+      <div class="person-title">翼程资本合伙人，47岁</div>
+      <p>凌云A轮领投人。在新能源、航空、深科技领域有多个成功案例，但也有两个项目清零。被创始人们描述为"理解技术，但更理解钱"的投资人。</p>
+    </div>
+    <div class="person-card">
+      <div class="person-name">Budi Santoso</div>
+      <div class="person-title">Nusantara Air Cargo 运营总监，52岁</div>
+      <p>曾在澳洲航空工作八年，熟悉东南亚航空运营，是推动Nusantara进入eVTOL业务的核心人物。</p>
+    </div>
+    <div class="person-card">
+      <div class="person-name">马天驰</div>
+      <div class="person-title">顺丰供应链创新部总监，31岁</div>
+      <p>"山地最后一公里"项目负责人。Uber前供应链优化工程师，对运营单位经济学有深入理解，被同事称为"把每一分钱都要榨出价值的人"。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>本案例主要人物与公司均为虚构，行业背景、政策环境、技术参数与市场数据基于2025—2026年公开信息整理，仅供课堂讨论使用。</p>
+  <p style="margin-top:.4rem;">MBE-2026-E01 &nbsp;·&nbsp; 案例版本 v1.0 &nbsp;·&nbsp; 2026年8月 &nbsp;·&nbsp; 仅供课堂讨论使用</p>
+</footer>
+</main>
+</div>
+<script>
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector('nav a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

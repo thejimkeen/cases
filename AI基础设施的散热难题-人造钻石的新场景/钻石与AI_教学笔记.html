@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<parameter name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MBE-2026-T02 教学笔记｜当钻石遇上AI</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css"/>
+<style>
+:root{
+  --bg:#f2f4f0; --bg-paper:#fafdf8; --ink:#1a1f1a; --ink-muted:#5c665c;
+  --accent:#2563eb; --accent-soft:#dbeafe; --border:#d8e0d5;
+  --red:#dc2626; --green:#059669; --orange:#c2410c;
+  --sidebar-w:16rem;
+  --font:"LXGW WenKai","PingFang SC",serif;
+  --font-sans:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:17px;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.88;}
+.layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;max-width:76rem;margin:0 auto;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}}
+aside{position:sticky;top:0;height:100vh;padding:1.5rem 1rem 1.5rem 1.25rem;border-right:1px solid var(--border);background:rgba(250,253,248,.95);backdrop-filter:blur(10px);overflow-y:auto;}
+@media(max-width:900px){aside{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);}}
+.case-id{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;}
+aside h2{font-size:.9rem;font-weight:600;line-height:1.45;margin-bottom:1.4rem;color:var(--ink);}
+nav ul{list-style:none;}
+nav li{margin-bottom:.1rem;}
+nav a{display:block;padding:.32rem .55rem;font-size:.8rem;color:var(--ink-muted);text-decoration:none;border-radius:4px;border-left:2px solid transparent;transition:all .15s;}
+nav a:hover{color:var(--ink);background:var(--accent-soft);}
+nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft);font-weight:600;}
+.nav-group{font-family:var(--font-sans);font-size:.62rem;letter-spacing:.08em;color:var(--ink-muted);margin:1rem 0 .3rem .55rem;text-transform:uppercase;}
+.sidebar-badge{margin-top:1.5rem;padding:.8rem .9rem;background:#fff3cd;border:1px solid #fcd34d;border-radius:6px;font-family:var(--font-sans);font-size:.72rem;color:#92400e;line-height:1.6;}
+main{padding:2rem 2.75rem 5rem;background:var(--bg-paper);box-shadow:-4px 0 28px rgba(0,0,0,.04);min-width:0;}
+@media(max-width:600px){main{padding:1.25rem 1rem 3rem;}}
+.tn-hero{background:linear-gradient(135deg,var(--accent-soft) 0%,#fafdf8 100%);border:1px solid var(--border);border-radius:10px;padding:2rem 2.25rem;margin-bottom:2.5rem;}
+.tn-hero .case-tag{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:block;}
+.tn-hero h1{font-size:clamp(1.4rem,3vw,1.85rem);font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:.4rem;}
+.tn-hero .subtitle{font-size:.92rem;color:var(--ink-muted);margin-bottom:1.5rem;}
+.tn-meta{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:.5rem 1rem;font-family:var(--font-sans);font-size:.75rem;background:#f4f7f2;padding:.85rem 1rem;border-radius:6px;border:1px solid var(--border);}
+.tn-meta dt{color:var(--ink-muted);margin-bottom:.1rem;}
+.tn-meta dd{color:var(--ink);font-weight:600;}
+section{margin-bottom:3rem;scroll-margin-top:1.5rem;}
+section h2{font-size:1.2rem;font-weight:600;margin-bottom:1.1rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:.5rem;color:var(--ink);}
+section h3{font-size:.95rem;font-weight:600;margin:1.5rem 0 .6rem;color:var(--accent);font-family:var(--font-sans);letter-spacing:.02em;}
+.num{font-family:var(--font-sans);font-size:.7rem;color:var(--accent);font-weight:700;white-space:nowrap;}
+section p{margin-bottom:1rem;color:var(--ink);text-align:justify;}
+section ul,section ol{padding-left:1.5rem;margin-bottom:1rem;}
+section li{margin-bottom:.5rem;line-height:1.75;color:var(--ink);}
+strong{color:var(--ink);font-weight:700;}
+.callout{margin:1.25rem 0;padding:1rem 1.25rem;border-radius:0 6px 6px 0;font-size:.9rem;}
+.callout.blue{background:#eff6ff;border-left:3px solid var(--accent);color:var(--ink);}
+.callout.green{background:var(--accent-soft);border-left:3px solid var(--green);color:var(--ink);}
+.callout.yellow{background:#fffbeb;border-left:3px solid #f59e0b;color:var(--ink);}
+.callout.red{background:#fef2f2;border-left:3px solid var(--red);color:var(--ink);}
+.callout-label{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;display:block;}
+.callout.blue .callout-label{color:var(--accent);}
+.callout.green .callout-label{color:var(--green);}
+.callout.yellow .callout-label{color:#b45309;}
+.callout.red .callout-label{color:var(--red);}
+table{width:100%;border-collapse:collapse;font-size:.82rem;font-family:var(--font-sans);margin:1rem 0;}
+th{text-align:left;padding:.55rem .75rem;background:var(--ink);color:#fff;font-weight:600;letter-spacing:.02em;}
+td{padding:.5rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;color:var(--ink);}
+tr:nth-child(even) td{background:#f6f9f5;}
+tr:hover td{background:var(--accent-soft);}
+td.hi{color:var(--accent);font-weight:600;}
+td.lo{color:var(--red);font-weight:600;}
+td.ok{color:var(--green);font-weight:600;}
+.framework-box{margin:2rem 0;padding:1.5rem;background:#fff;border:2px solid var(--accent);border-radius:8px;}
+.framework-box h4{font-size:.88rem;font-weight:700;color:var(--accent);margin-bottom:1rem;font-family:var(--font-sans);text-align:center;}
+.framework-layers{display:flex;flex-direction:column;gap:.75rem;}
+.layer{padding:.85rem 1.1rem;background:var(--accent-soft);border-radius:6px;text-align:center;font-family:var(--font-sans);font-size:.82rem;font-weight:600;}
+.layer.top{background:var(--accent);color:#fff;}
+footer{text-align:center;font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside>
+  <div class="case-id">MBE-2026-T02 · 教师版</div>
+  <h2>教学笔记：当钻石遇上AI</h2>
+  <nav>
+    <div class="nav-group">教学设计</div>
+    <ul>
+      <li><a href="#positioning">一、案例定位</a></li>
+      <li><a href="#objectives">二、教学目标</a></li>
+      <li><a href="#timing">三、课堂时间安排</a></li>
+    </ul>
+    <div class="nav-group">讨论引导</div>
+    <ul>
+      <li><a href="#q1">问题一：价值重定位</a></li>
+      <li><a href="#q2">问题二：技术路径依赖</a></li>
+      <li><a href="#q3">问题三：供需错配</a></li>
+      <li><a href="#q4">问题四：追赶策略</a></li>
+      <li><a href="#q5">问题五：下一次转身</a></li>
+    </ul>
+    <div class="nav-group">扩展资源</div>
+    <ul>
+      <li><a href="#framework">分析框架</a></li>
+      <li><a href="#reading">延伸阅读</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-badge">
+    ⚠ 本文件为教师专用教学笔记，包含参考答案与引导思路，请勿向学员公开。
+  </div>
+</aside>
+
+<main>
+
+<div class="tn-hero" id="top">
+  <span class="case-tag">教学笔记 · 教师版</span>
+  <h1>当钻石遇上AI：一场意外的产业救赎</h1>
+  <p class="subtitle">产业转型、技术路径与价值重定位</p>
+  <dl class="tn-meta">
+    <div><dt>案例编号</dt><dd>MBE-2026-T02</dd></div>
+    <div><dt>课程定位</dt><dd>战略管理 / 产业经济 / 技术创新</dd></div>
+    <div><dt>难度</dt><dd>中等</dd></div>
+    <div><dt>建议课时</dt><dd>90分钟（单次课）</dd></div>
+    <div><dt>核心理论</dt><dd>价值链重构、路径依赖、技术S曲线</dd></div>
+    <div><dt>版本</dt><dd>v1.0 · 2026年8月</dd></div>
+  </dl>
+</div>
+
+<section id="positioning">
+  <h2><span class="num">一</span>案例定位</h2>
+  
+  <h3>1.1 为什么选这个案例</h3>
+  <p>这个案例有三个独特的价值：</p>
+  <ol>
+    <li><strong>极致的价值重定位</strong>：钻石从"永恒爱情"到"芯片散热器"，跨度之大罕见。学生能直观感受到：产品的价值不是固有的，而是由应用场景决定的。</li>
+    <li><strong>技术路径的悖论</strong>：中国企业在HPHT上全球领先，但这个优势在新场景下变成了"错误的领先"。这是讨论路径依赖最好的现实案例。</li>
+    <li><strong>市场失灵的教训</strong>：培育钻石珠宝市场从狂热到崩塌只用了五年，工业化产能与消费市场需求的错配，对很多快速扩张的行业都有警示意义。</li>
+  </ol>
+  
+  <h3>1.2 适用课程</h3>
+  <table>
+    <thead><tr><th>课程</th><th>章节</th><th>适配度</th></tr></thead>
+    <tbody>
+      <tr><td>战略管理</td><td>价值链分析、商业模式转型</td><td class="ok">⭐⭐⭐</td></tr>
+      <tr><td>产业经济</td><td>供需错配、市场失灵</td><td class="ok">⭐⭐⭐</td></tr>
+      <tr><td>技术创新管理</td><td>技术路径依赖、S曲线跃迁</td><td class="ok">⭐⭐⭐</td></tr>
+      <tr><td>国际商务</td><td>全球产业链、技术追赶</td><td class="hi">⭐⭐</td></tr>
+    </tbody>
+  </table>
+  
+  <h3>1.3 学生背景要求</h3>
+  <ul>
+    <li>MBA/EMBA学生，或有3年以上工作经验的本科高年级学生</li>
+    <li>了解基本的供需关系、价值链概念</li>
+    <li>对AI、半导体行业有基础认知（不需要技术细节）</li>
+  </ul>
+</section>
+
+<section id="objectives">
+  <h2><span class="num">二</span>教学目标</h2>
+  
+  <h3>2.1 知识目标</h3>
+  <ul>
+    <li>理解产品价值如何被应用场景重新定义</li>
+    <li>掌握技术路径依赖的形成机制与突破路径</li>
+    <li>认识工业化产能与消费市场需求错配的风险</li>
+  </ul>
+  
+  <h3>2.2 能力目标</h3>
+  <ul>
+    <li>能够识别企业技术积累中的"有效资产"与"路径锁定"</li>
+    <li>能够评估产业转型中的时机、风险与资源配置</li>
+    <li>能够从多个维度（技术、市场、产业链）分析企业战略选择</li>
+  </ul>
+  
+  <h3>2.3 态度目标</h3>
+  <ul>
+    <li>培养对产业变化的敏感度：看似"碰巧"的机会背后，往往有深层逻辑</li>
+    <li>避免线性外推思维：过去的成功路径，不一定适用于新场景</li>
+    <li>重视"真实需求"：营销可以创造溢价，但无法替代物理规律决定的价值</li>
+  </ul>
+</section>
+
+<section id="timing">
+  <h2><span class="num">三</span>课堂时间安排（90分钟）</h2>
+  
+  <table class="time-table">
+    <thead><tr><th>阶段</th><th>时间</th><th>内容</th></tr></thead>
+    <tbody>
+      <tr><td>开场</td><td>5分钟</td><td>简要回顾案例背景，确认学生已读完</td></tr>
+      <tr><td>问题一</td><td>15分钟</td><td>价值重定位：什么条件下产品价值可以被重新定义？</td></tr>
+      <tr><td>问题二</td><td>20分钟</td><td>技术路径依赖：HPHT的优势是红利还是陷阱？</td></tr>
+      <tr><td>问题三</td><td>15分钟</td><td>供需错配：为什么培育钻石珠宝市场崩塌得如此之快？</td></tr>
+      <tr><td>中场休息</td><td>5分钟</td><td>—</td></tr>
+      <tr><td>问题四</td><td>20分钟</td><td>追赶策略：自研、收购还是合作？</td></tr>
+      <tr><td>问题五</td><td>10分钟</td><td>下一次转身：如何避免被单一场景绑架？</td></tr>
+      <tr><td>总结</td><td>5分钟</td><td>框架回顾、要点提炼</td></tr>
+    </tbody>
+  </table>
+  
+  <div class="callout yellow">
+    <span class="callout-label">教学建议</span>
+    <p>这个案例的讨论很容易陷入技术细节（HPHT vs CVD）。提醒学生：我们关注的是<strong>战略选择</strong>，不是技术原理。技术只是工具，战略才是目的。</p>
+  </div>
+</section>
+
+<section id="q1">
+  <h2><span class="num">讨论引导</span>问题一：价值重定位</h2>
+  
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>钻石从"永恒爱情"到"芯片散热器"，这是产品定位的彻底改变。什么条件下，一个产品的价值可以被完全重新定义？这种重定位是企业主动选择，还是被市场倒逼？</p>
+  </div>
+  
+  <h3>引导思路</h3>
+  <p>先让学生自由讨论5分钟，然后引导他们区分两种不同的"价值"：</p>
+  <ol>
+    <li><strong>营销创造的价值</strong>：戴比尔斯把钻石和爱情绑定，创造了情感溢价。这种价值依赖持续的营销投入和稀缺性叙事。</li>
+    <li><strong>物理性质决定的价值</strong>：钻石的超高热导率（2600 W/(m·K)）是物理规律决定的，不需要营销，也不会因为供给增加而消失。</li>
+  </ol>
+  
+  <h3>核心观点</h3>
+  <p>产品的价值可以被重新定义，前提是：</p>
+  <ul>
+    <li><strong>原有价值体系崩塌</strong>：培育钻石的工业化生产，打破了"稀缺性"这个支撑珠宝价值的基础。</li>
+    <li><strong>新场景出现真实的、刚性的需求</strong>：AI芯片散热是物理约束，不是情感需求，无法用营销替代。</li>
+    <li><strong>产品的核心属性与新需求高度匹配</strong>：钻石的超高热导率，正好是散热场景最需要的。</li>
+  </ul>
+  
+  <h3>是主动还是被动？</h3>
+  <p>这个案例里，<strong>是被市场倒逼</strong>。河南企业最初押注珠宝市场，是因为那时候利润更高。但当珠宝价格崩塌，他们不得不寻找新出路。英伟达Vera Rubin的发布，是一个外部事件，不是企业规划的结果。</p>
+  <p>但这不意味着企业完全被动。那些在HPHT技术上积累了产能、设备、人才的企业，比其他人更快抓住了这个机会。<strong>被动的转型，也需要主动的准备</strong>。</p>
+  
+  <div class="callout green">
+    <span class="callout-label">延伸讨论</span>
+    <p>问学生：还有哪些产品经历过类似的价值重定位？（例如：硝酸甘油从炸药到心脏病药物、锂电池从消费电子到电动车）</p>
+  </div>
+</section>
+
+<section id="q2">
+  <h2><span class="num">讨论引导</span>问题二：技术路径依赖</h2>
+  
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>河南企业在HPHT上全球领先，但芯片散热需要CVD技术。这是"路径依赖的陷阱"还是"技术积累的红利"？企业应该继续深耕HPHT，还是all-in CVD？</p>
+  </div>
+  
+  <h3>引导思路</h3>
+  <p>这个问题的关键是：<strong>HPHT的积累，对CVD有多少迁移价值？</strong></p>
+  <p>让学生分组讨论，列出HPHT和CVD的差异，然后判断哪些能力可以复用，哪些需要从头开始。</p>
+  
+  <table>
+    <thead><tr><th>维度</th><th>HPHT的积累</th><th>对CVD的迁移价值</th></tr></thead>
+    <tbody>
+      <tr><td>设备</td><td>六面顶压机</td><td class="lo">低（CVD需要真空沉积设备）</td></tr>
+      <tr><td>工艺</td><td>高温高压控制</td><td class="lo">低（CVD是气相沉积，逻辑完全不同）</td></tr>
+      <tr><td>检测能力</td><td>晶体质量检测</td><td class="ok">高（热导率、杂质检测可复用）</td></tr>
+      <tr><td>供应链</td><td>原料采购、下游客户</td><td class="ok">高（碳源、检测设备可复用）</td></tr>
+      <tr><td>产业理解</td><td>金刚石市场、客户需求</td><td class="ok">高（理解下游应用场景）</td></tr>
+    </tbody>
+  </table>
+  
+  <h3>核心观点</h3>
+  <p><strong>这是"有限迁移"的路径依赖</strong>。</p>
+  <ul>
+    <li>HPHT的核心设备和工艺，对CVD几乎没有迁移价值。企业需要从头学习一套新的技术体系。</li>
+    <li>但HPHT积累的检测能力、供应链资源、对下游需求的理解，是有价值的。这些"软能力"降低了进入CVD的门槛。</li>
+  </ul>
+  
+  <h3>策略建议</h3>
+  <p>不应该"all-in CVD"，也不应该"只做HPHT"。合理的策略是：</p>
+  <ol>
+    <li><strong>HPHT继续维持</strong>：工业工具、光伏切割市场依然存在，这是现金流来源。</li>
+    <li><strong>CVD小规模试错</strong>：先用一部分资源（10%–20%）投入CVD研发，送测、小批量，看能否进入供应链。</li>
+    <li><strong>寻找外部合作</strong>：收购海外CVD技术团队，或与设备商合作，降低自研风险。</li>
+  </ol>
+  
+  <div class="callout yellow">
+    <span class="callout-label">教学提示</span>
+    <p>学生可能会说"应该all-in CVD，因为那是未来"。这时候要提醒他们：<strong>未来不一定属于你</strong>。CVD市场被海外巨头垄断20年，中国企业能否突破，还是未知数。在不确定性高的情况下，保留HPHT是理性的。</p>
+  </div>
+</section>
+
+<section id="q3">
+  <h2><span class="num">讨论引导</span>问题三：供需错配的教训</h2>
+  
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>培育钻石珠宝市场从狂热到崩塌，只用了不到五年。工业化生产能力和消费市场需求之间，为什么会产生如此严重的错配？这对其他快速扩张的行业有什么启示？</p>
+  </div>
+  
+  <h3>引导思路</h3>
+  <p>让学生先回顾案例里的时间线：</p>
+  <ul>
+    <li>2018—2020：培育钻石进入珠宝市场，消费者接受度快速提升；</li>
+    <li>2021—2023：产能疯狂扩张，产量从300万克拉飙升至2000万克拉；</li>
+    <li>2024—2026：价格崩塌，1克拉批发价从5000元跌到1300元。</li>
+  </ul>
+  <p>然后问：<strong>什么环节出了问题？</strong></p>
+  
+  <h3>核心观点</h3>
+  <p>供需错配的根本原因是：<strong>工业化产能的增长是指数级的，消费需求的增长是线性的</strong>。</p>
+  <ol>
+    <li><strong>供给侧</strong>：HPHT设备是按"吨"来计算产能的，一旦市场需求被验证，企业会疯狂扩产能。但消费市场的需求是有天花板的——中国一年有多少人结婚？每个人买几颗钻石？</li>
+    <li><strong>需求侧</strong>：培育钻石的价值支撑是"平替天然钻石"，但当价格跌到一定程度，消费者会觉得"这么便宜，还算奢侈品吗？"情感溢价消失，需求反而萎缩。</li>
+    <li><strong>企业决策</strong>：每个企业都看到了市场机会，每个企业都理性地扩产能，但所有企业加在一起，就是非理性的。这是典型的"囚徒困境"。</li>
+  </ol>
+  
+  <h3>对其他行业的启示</h3>
+  <p>问学生：还有哪些行业正在经历类似的过程？</p>
+  <p>参考答案：</p>
+  <ul>
+    <li><strong>新能源汽车</strong>：中国有超过100家新能源车企，产能远超市场需求，价格战已经开始。</li>
+    <li><strong>光伏</strong>：多晶硅、组件产能过剩，价格持续下跌，很多企业陷入亏损。</li>
+    <li><strong>共享单车</strong>：2017年高峰期，中国投放了2000万辆共享单车，但需求根本用不完，最后大量废弃。</li>
+  </ul>
+  
+  <div class="callout red">
+    <span class="callout-label">关键教训</span>
+    <p><strong>工业化生产能力，不能直接套用到消费市场</strong>。工业品的需求是刚性的（例如芯片散热），消费品的需求是弹性的（奢侈品的情感价值会随价格变化）。企业在扩产能时，必须区分这两种需求的性质。</p>
+  </div>
+</section>
+
+<section id="q4">
+  <h2><span class="num">讨论引导</span>问题四：从追赶到领先</h2>
+  
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>中国企业在CVD技术上落后海外20年。如果你是四方达或黄河旋风的CEO，你会选择自研、收购海外公司、还是与海外巨头合作？判断框架是什么？</p>
+  </div>
+  
+  <h3>引导思路</h3>
+  <p>让学生分组，每组选一个策略，列出优劣势，然后辩论。</p>
+  
+  <table>
+    <thead><tr><th>策略</th><th>优势</th><th>劣势</th><th>适用条件</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="bold">自研</td>
+        <td>技术完全自主、长期成本低</td>
+        <td>时间长（5-10年）、风险高、可能失败</td>
+        <td>有耐心、有资金、下游市场愿意等</td>
+      </tr>
+      <tr>
+        <td class="bold">收购海外公司</td>
+        <td>快速获得技术、团队、专利</td>
+        <td>价格高、可能被监管阻止、整合难</td>
+        <td>目标公司愿意卖、监管允许</td>
+      </tr>
+      <tr>
+        <td class="bold">与海外巨头合作</td>
+        <td>风险低、可以借力、快速进入市场</td>
+        <td>技术受制于人、利润被分走、难以独立</td>
+        <td>对方愿意合作、下游客户认可</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h3>判断框架</h3>
+  <p>选择策略时，需要考虑三个维度：</p>
+  <ol>
+    <li><strong>时间窗口</strong>：AI芯片散热需求在未来5年内会快速增长。如果自研需要10年，市场可能已经被海外巨头占领。</li>
+    <li><strong>技术壁垒</strong>：CVD技术的壁垒在哪里？是设备、工艺、还是专利？如果主要是工艺know-how，收购一个团队可能比买设备更有效。</li>
+    <li><strong>下游客户的态度</strong>：英伟达、AMD这些客户，愿意给中国企业机会吗？如果他们只认可元素六、Coherent，那么自研再成功也进不了供应链。</li>
+  </ol>
+  
+  <h3>核心观点</h3>
+  <p><strong>混合策略</strong>可能是最优解：</p>
+  <ul>
+    <li><strong>短期</strong>：与海外设备商合作，快速进入市场，先拿到小批量订单，积累经验。</li>
+    <li><strong>中期</strong>：尝试收购海外小型CVD企业（不是巨头，避免监管风险），获得核心技术。</li>
+    <li><strong>长期</strong>：自研下一代技术（例如更大尺寸、更高热导率），在5-10年后实现技术领先。</li>
+  </ul>
+  
+  <div class="callout green">
+    <span class="callout-label">延伸讨论</span>
+    <p>问学生：中国在其他领域（高铁、5G、电池）是怎么追赶的？有什么共同模式？（答案：引进-消化-吸收-再创新）</p>
+  </div>
+</section>
+
+<section id="q5">
+  <h2><span class="num">讨论引导</span>问题五：下一次转身</h2>
+  
+  <div class="callout blue">
+    <span class="callout-label">讨论问题</span>
+    <p>假设CVD散热市场在2030年被新材料（如石墨烯、氮化硼）替代，金刚石产业会面临第四次转身吗？企业如何避免被单一应用场景绑架？</p>
+  </div>
+  
+  <h3>引导思路</h3>
+  <p>这个问题是开放式的，目的是让学生<strong>跳出当下，思考更长期的战略</strong>。</p>
+  <p>先让学生讨论：石墨烯、氮化硼有可能替代金刚石吗？（答案：理论上可能，但目前成本、工艺都不成熟）</p>
+  <p>然后追问：<strong>如果真的被替代了，金刚石产业还有出路吗？</strong></p>
+  
+  <h3>核心观点</h3>
+  <p>金刚石的核心属性有三个：<strong>超高硬度、超高热导率、宽带隙半导体</strong>。前两个已经被应用（工具、散热），第三个还没有被充分开发。</p>
+  <p>如果散热市场被替代，金刚石可能会转向<strong>下一代半导体器件</strong>：</p>
+  <ul>
+    <li>金刚石功率器件：耐高压、耐高温，适合电动车、高铁等场景；</li>
+    <li>金刚石量子计算：氮空位中心（NV center）可以用于量子传感、量子计算。</li>
+  </ul>
+  
+  <h3>如何避免被单一场景绑架？</h3>
+  <p>三个建议：</p>
+  <ol>
+    <li><strong>技术多元化</strong>：不要只押注一个应用方向，同时布局散热、半导体、量子等多个领域。</li>
+    <li><strong>保持技术领先</strong>：如果在CVD上做到全球领先，即使散热市场萎缩，也可以快速转向其他应用。</li>
+    <li><strong>关注基础研究</strong>：金刚石的物理性质还有很多未被开发的可能性，企业可以与高校、研究所合作，提前布局下一代应用。</li>
+  </ol>
+  
+  <div class="callout yellow">
+    <span class="callout-label">教学提示</span>
+    <p>这个问题的目的不是要学生给出"正确答案"，而是培养<strong>长期思维</strong>：任何单一应用场景都可能被替代，企业必须持续寻找新的价值锚点。</p>
+  </div>
+</section>
+
+<section id="framework">
+  <h2><span class="num">分析框架</span>产业转型的三重逻辑</h2>
+  
+  <div class="framework-box">
+    <h4>从工具到奢侈品，再到基础设施</h4>
+    <div class="framework-layers">
+      <div class="layer top">价值锚点：物理性质（硬度、热导率）</div>
+      <div class="layer">第一次转身：工业工具 → 技术成熟 → HPHT产能建立</div>
+      <div class="layer">第二次转身：奢侈品 → 营销驱动 → 珠宝市场崩塌</div>
+      <div class="layer">第三次转身：AI基础设施 → 刚性需求 → CVD技术突破</div>
+    </div>
+  </div>
+  
+  <h3>框架要点</h3>
+  <ul>
+    <li><strong>价值锚点</strong>：金刚石的价值锚点始终是物理性质，营销只能创造溢价，无法替代真实的稀缺性。</li>
+    <li><strong>技术路径</strong>：每次转身都伴随技术升级（HPHT → 珠宝级HPHT → CVD），技术决定了能进入哪个市场。</li>
+    <li><strong>需求性质</strong>：工具和散热是刚性需求，珠宝是弹性需求。刚性需求更稳定，但门槛更高。</li>
+  </ul>
+</section>
+
+<section id="reading">
+  <h2><span class="num">延伸阅读</span>推荐资源</h2>
+  
+  <h3>学术文献</h3>
+  <ul>
+    <li>Clayton Christensen, <em>The Innovator's Dilemma</em>（《创新者的窘境》）——关于技术路径依赖与颠覆式创新</li>
+    <li>Michael Porter, "What is Strategy?"（《什么是战略》）——关于价值链重构与竞争优势</li>
+    <li>W. Brian Arthur, "Competing Technologies, Increasing Returns, and Lock-In by Historical Events"——关于路径依赖的经典论文</li>
+  </ul>
+  
+  <h3>行业报告</h3>
+  <ul>
+    <li>中国超硬材料协会《2026年上半年行业报告》</li>
+    <li>开源证券《芯片级金刚石散热市场前瞻》</li>
+    <li>McKinsey, "The future of diamond: From jewelry to semiconductors"</li>
+  </ul>
+  
+  <h3>相关案例</h3>
+  <ul>
+    <li>柯达的胶片到数码转型失败——路径依赖的经典案例</li>
+    <li>特斯拉的电池垂直整合——技术路径选择与供应链控制</li>
+    <li>中国光伏产业的崛起——从追赶到领先的完整路径</li>
+  </ul>
+</section>
+
+<footer>
+  <p>本教学笔记仅供授课教师使用，请勿向学员公开。如有疑问，请联系案例编写团队。</p>
+  <p style="margin-top:.4rem;">MBE-2026-T02 教学笔记 &nbsp;·&nbsp; v1.0 &nbsp;·&nbsp; 2026年8月</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector('nav a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

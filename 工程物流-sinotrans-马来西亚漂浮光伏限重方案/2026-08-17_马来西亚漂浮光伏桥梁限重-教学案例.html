@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EL-2026-A03｜过桥 — 马来西亚漂浮光伏桥梁限重难题</title>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css" />
+  <style>
+    :root {
+      --bg: #f5f0eb;
+      --bg-paper: #fffdf9;
+      --ink: #1c1917;
+      --ink-muted: #57534e;
+      --accent: #92400e;
+      --accent-soft: #fef3c7;
+      --accent-mid: #d97706;
+      --border: #e7e0d6;
+      --red: #dc2626;
+      --green: #15803d;
+      --green-soft: #dcfce7;
+      --blue: #1d4ed8;
+      --sidebar-w: 16rem;
+      --font: "LXGW WenKai", "PingFang SC", "Hiragino Sans GB", serif;
+      --font-sans: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 17px; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.85;
+      background-image:
+        radial-gradient(ellipse 70% 50% at 100% 0%, rgba(146,64,14,0.07), transparent),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(217,119,6,0.05), transparent);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      min-height: 100vh;
+      max-width: 76rem;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 1.5rem 1rem 1.5rem 1.25rem;
+      border-right: 1px solid var(--border);
+      background: rgba(255,253,249,0.94);
+      backdrop-filter: blur(10px);
+      overflow-y: auto;
+    }
+    @media (max-width: 900px) {
+      aside { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+    .case-id { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    aside h2 { font-size: 0.88rem; font-weight: 600; line-height: 1.45; margin-bottom: 1.4rem; color: var(--ink); }
+    nav ul { list-style: none; }
+    nav li { margin-bottom: 0.1rem; }
+    nav a {
+      display: block; padding: 0.32rem 0.55rem; font-size: 0.8rem; color: var(--ink-muted);
+      text-decoration: none; border-radius: 4px; border-left: 2px solid transparent; transition: all 0.15s;
+    }
+    nav a:hover { color: var(--ink); background: var(--accent-soft); }
+    nav a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+    .nav-group { font-family: var(--font-sans); font-size: 0.62rem; letter-spacing: 0.08em; color: var(--ink-muted); margin: 1rem 0 0.3rem 0.55rem; text-transform: uppercase; }
+
+    main { padding: 2rem 2.75rem 5rem; background: var(--bg-paper); box-shadow: -4px 0 28px rgba(0,0,0,0.04); min-width: 0; }
+    @media (max-width: 600px) { main { padding: 1.25rem 1rem 3rem; } }
+
+    /* ── Hero ── */
+    .hero { border-bottom: 3px double var(--border); padding-bottom: 2rem; margin-bottom: 2.25rem; }
+    .hero-banner {
+      width: 100%; height: 240px; border-radius: 8px; margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #1c0a00 0%, #451a03 45%, #78350f 80%, #3b1500 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.015) 20px, rgba(255,255,255,0.015) 21px);
+    }
+    .bridge-scene {
+      position: relative; z-index: 1; width: 100%; max-width: 540px; padding: 0 2rem;
+    }
+    .bridge-road {
+      height: 12px; background: rgba(255,255,255,0.18); border-radius: 2px;
+      display: flex; align-items: center; position: relative;
+    }
+    .bridge-road::before, .bridge-road::after {
+      content: ''; position: absolute; width: 8px; height: 40px;
+      background: rgba(255,255,255,0.3); border-radius: 3px;
+    }
+    .bridge-road::before { left: 15%; top: -14px; }
+    .bridge-road::after { right: 15%; top: -14px; }
+    .bridge-weight {
+      position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
+      background: rgba(220,38,38,0.9); color: #fff; padding: 0.3rem 0.75rem;
+      border-radius: 4px; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 700;
+      white-space: nowrap;
+    }
+    .bridge-weight::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: rgba(220,38,38,0.9); }
+    .truck-icon {
+      position: absolute; left: -10%; top: -22px;
+      font-size: 1.8rem; filter: brightness(0) invert(1);
+    }
+    .bridge-label {
+      position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-sans); font-size: 0.7rem; color: rgba(255,255,255,0.5); white-space: nowrap;
+    }
+    .hero-numbers {
+      display: flex; gap: 2rem; justify-content: center; margin-top: 3rem;
+    }
+    .hn-item { text-align: center; color: rgba(255,255,255,0.85); }
+    .hn-value { font-family: var(--font-sans); font-size: 1.8rem; font-weight: 800; line-height: 1; }
+    .hn-label { font-family: var(--font-sans); font-size: 0.65rem; opacity: 0.6; margin-top: 0.2rem; letter-spacing: 0.05em; }
+    .hn-item.red .hn-value { color: #f87171; }
+    .hn-item.green .hn-value { color: #4ade80; }
+
+    .tag { display: inline-block; font-family: var(--font-sans); font-size: 0.7rem; padding: 0.2rem 0.65rem; background: var(--ink); color: #fff; letter-spacing: 0.06em; border-radius: 2px; margin-bottom: 0.85rem; }
+    .hero h1 { font-size: clamp(1.65rem, 4vw, 2.15rem); line-height: 1.35; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    .hero .subtitle { font-size: 0.98rem; color: var(--ink-muted); font-style: italic; margin-bottom: 1.5rem; }
+    .meta-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: 0.6rem 1.25rem;
+      font-family: var(--font-sans); font-size: 0.76rem; background: #faf6f1; padding: 1rem 1.25rem;
+      border-radius: 6px; border: 1px solid var(--border);
+    }
+    .meta-grid dt { color: var(--ink-muted); margin-bottom: 0.1rem; }
+    .meta-grid dd { color: var(--ink); font-weight: 600; }
+
+    /* ── Abstract ── */
+    .abstract {
+      background: linear-gradient(135deg, var(--accent-soft) 0%, #fffdf9 100%);
+      border-left: 4px solid var(--accent); padding: 1.3rem 1.6rem; margin-bottom: 2.75rem;
+      font-size: 0.95rem; border-radius: 0 6px 6px 0;
+    }
+    .abstract .label { font-family: var(--font-sans); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 700; display: block; margin-bottom: 0.55rem; }
+
+    /* ── Sections ── */
+    section { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
+    section h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1.1rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 0.5rem; }
+    .num { font-family: var(--font-sans); font-size: 0.72rem; color: var(--accent); font-weight: 700; white-space: nowrap; }
+    section p { margin-bottom: 1rem; text-align: justify; }
+    section h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.6rem; }
+
+    blockquote {
+      margin: 1.25rem 0; padding: 1rem 1.25rem;
+      background: linear-gradient(135deg, #fef9c3, #fffbeb);
+      border-left: 3px solid var(--accent-mid);
+      font-style: italic; color: #44403c; font-size: 0.93rem; border-radius: 0 4px 4px 0;
+    }
+
+    /* ── Constraint box ── */
+    .constraint-list { list-style: none; margin: 1.25rem 0; }
+    .constraint-list li {
+      display: flex; gap: 0.85rem; align-items: flex-start;
+      padding: 0.7rem 1rem; margin-bottom: 0.5rem;
+      background: #fff; border: 1px solid var(--border); border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .constraint-list .ci-num {
+      flex-shrink: 0; width: 1.6rem; height: 1.6rem; border-radius: 50%;
+      background: var(--accent); color: #fff; font-family: var(--font-sans);
+      font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; justify-content: center;
+    }
+    .constraint-list .ci-text { flex: 1; color: var(--ink-muted); line-height: 1.55; }
+    .constraint-list .ci-text strong { color: var(--ink); }
+
+    /* ── Weight calc box ── */
+    .weight-calc {
+      background: #fff; border: 2px solid var(--accent-mid); border-radius: 8px;
+      padding: 1.2rem 1.5rem; margin: 1.25rem 0;
+    }
+    .weight-calc .wc-title { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 0.85rem; }
+    .wc-row { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.55rem; font-family: var(--font-sans); font-size: 0.9rem; }
+    .wc-item { background: #fef9c3; border: 1px solid #fde68a; border-radius: 5px; padding: 0.3rem 0.8rem; font-weight: 600; }
+    .wc-plus { color: var(--ink-muted); font-size: 1.2rem; }
+    .wc-eq { width: 100%; border-top: 2px dashed var(--accent-mid); margin: 0.5rem 0; }
+    .wc-total { font-size: 1.1rem; font-weight: 700; color: var(--red); }
+    .wc-limit { font-size: 0.85rem; color: var(--ink-muted); margin-top: 0.35rem; }
+    .wc-limit span { color: var(--green); font-weight: 700; }
+    .wc-over { color: var(--red); font-weight: 700; }
+
+    /* ── Three options ── */
+    .options-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    @media (max-width: 760px) { .options-grid { grid-template-columns: 1fr; } }
+
+    .option-card { border-radius: 10px; padding: 1.2rem; border: 2px solid; position: relative; }
+    .option-card.rejected { border-color: #e5e7eb; background: #f9fafb; opacity: 0.85; }
+    .option-card.chosen { border-color: var(--green); background: #f0fdf4; }
+
+    .option-card .oc-badge {
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.15rem 0.55rem; border-radius: 10px;
+      display: inline-block; margin-bottom: 0.5rem;
+    }
+    .option-card.rejected .oc-badge { background: #fee2e2; color: var(--red); }
+    .option-card.chosen .oc-badge { background: #dcfce7; color: var(--green); }
+
+    .option-card .oc-num { font-family: var(--font-sans); font-size: 0.68rem; color: var(--ink-muted); margin-bottom: 0.2rem; }
+    .option-card .oc-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.65rem; line-height: 1.3; }
+    .option-card.rejected .oc-title { color: #374151; }
+    .option-card.chosen .oc-title { color: var(--green); }
+
+    .option-card .oc-desc { font-size: 0.84rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 0.75rem; }
+
+    .oc-verdict {
+      font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600;
+      padding: 0.35rem 0.7rem; border-radius: 4px; text-align: center;
+    }
+    .option-card.rejected .oc-verdict { background: #fee2e2; color: var(--red); }
+    .option-card.chosen .oc-verdict { background: #dcfce7; color: var(--green); }
+
+    /* ── Steps / process ── */
+    .process-steps { margin: 1.5rem 0; }
+    .ps-item {
+      display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0;
+      position: relative;
+    }
+    .ps-item:not(:last-child)::before {
+      content: ''; position: absolute; left: 1rem; top: 2.1rem; width: 2px;
+      height: calc(100% - 0.5rem); background: var(--border);
+    }
+    .ps-dot {
+      flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%;
+      background: var(--accent-soft); border: 2px solid var(--accent-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700;
+      color: var(--accent); z-index: 1;
+    }
+    .ps-body { padding-bottom: 1.25rem; flex: 1; }
+    .ps-title { font-weight: 600; font-family: var(--font-sans); font-size: 0.88rem; margin-bottom: 0.2rem; }
+    .ps-text { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.6; }
+
+    /* ── Framework table ── */
+    table { width: 100%; border-collapse: collapse; font-size: 0.83rem; font-family: var(--font-sans); margin: 1.25rem 0; }
+    th { text-align: left; padding: 0.5rem 0.75rem; background: var(--accent); color: #fff; font-weight: 600; letter-spacing: 0.02em; }
+    td { padding: 0.48rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+    tr:nth-child(even) td { background: #faf8f5; }
+    tr:hover td { background: var(--accent-soft); }
+
+    /* ── Discussion questions ── */
+    .questions ol { padding-left: 1.5rem; }
+    .questions li { margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.8; }
+    .questions li strong { display: block; font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
+
+    /* ── Alert / callout ── */
+    .callout { background: #fef9c3; border: 1px solid #fde047; border-radius: 6px; padding: 0.9rem 1.2rem; font-family: var(--font-sans); font-size: 0.84rem; margin: 1.25rem 0; }
+
+    footer { text-align: center; font-family: var(--font-sans); font-size: 0.72rem; color: var(--ink-muted); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+
+    .highlight-target { animation: flash 1.2s ease-out; }
+    @keyframes flash { 0% { background: var(--accent-soft); } 100% { background: transparent; } }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ── Sidebar ── -->
+  <aside>
+    <div class="case-id">EL-2026-A03</div>
+    <h2>过桥：马来西亚漂浮光伏项目的桥梁限重难题</h2>
+    <nav>
+      <div class="nav-group">案例正文</div>
+      <ul>
+        <li><a href="#abstract">案例摘要</a></li>
+        <li><a href="#s1">一、案例背景</a></li>
+        <li><a href="#s2">二、一座21.2米的桥</a></li>
+        <li><a href="#s3">三、东马来西亚的额外约束</a></li>
+        <li><a href="#s4">四、三个方案的比选</a></li>
+        <li><a href="#s5">五、方案三的执行过程</a></li>
+      </ul>
+      <div class="nav-group">讨论</div>
+      <ul>
+        <li><a href="#questions">三道讨论题</a></li>
+      </ul>
+    </nav>
+    <div class="nav-group">配套资源</div>
+    <div style="padding:0.55rem 0.55rem 1rem;">
+      <a href="2026-08-17_马来西亚漂浮光伏桥梁限重-教学笔记.html"
+         style="display:flex;align-items:center;gap:0.35rem;padding:0.42rem 0.65rem;background:var(--accent);color:#fff;text-decoration:none;border-radius:5px;font-size:0.72rem;font-family:var(--font-sans);margin-bottom:0.45rem;font-weight:500;">
+        <span>📋</span><span>Teaching Note（教师版）→</span>
+      </a>
+      <div style="font-size:0.65rem;color:var(--ink-muted);padding:0.3rem 0.2rem;line-height:1.6;">
+        适用对象：中级，职业本科/企业内训<br/>
+        建议课时：0.5–1 学时<br/>
+        来源：中国外运访谈（2026.05）
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-banner">
+        <div style="position:relative;z-index:1;width:100%;padding:0 2.5rem;">
+          <div class="hero-numbers">
+            <div class="hn-item red">
+              <div class="hn-value">96吨</div>
+              <div class="hn-label">变压器 + 车板总重</div>
+            </div>
+            <div class="hn-item" style="display:flex;align-items:center;padding-top:0.5rem;">
+              <div style="color:rgba(255,255,255,0.35);font-size:2rem;font-weight:300;">÷</div>
+            </div>
+            <div class="hn-item green">
+              <div class="hn-value">70吨</div>
+              <div class="hn-label">桥梁限重上限</div>
+            </div>
+            <div class="hn-item" style="display:flex;align-items:center;padding-top:0.5rem;">
+              <div style="color:rgba(255,255,255,0.35);font-size:2rem;font-weight:300;">=</div>
+            </div>
+            <div class="hn-item red">
+              <div class="hn-value">+37%</div>
+              <div class="hn-label">超限幅度</div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:1.2rem;font-family:var(--font-sans);font-size:0.75rem;color:rgba(255,255,255,0.45);letter-spacing:0.06em;">21.2 米桥跨 · 东马来西亚内陆水库 · 唯一进山道路</div>
+        </div>
+      </div>
+
+      <span class="tag">教学案例 · 工程物流系列</span>
+      <h1>过桥</h1>
+      <p class="subtitle">马来西亚漂浮光伏项目，一台 66.5 吨变压器，一座限重 70 吨的桥</p>
+      <dl class="meta-grid">
+        <div><dt>案例编号</dt><dd>EL-2026-A03</dd></div>
+        <div><dt>项目时间</dt><dd>2024–2025 年</dd></div>
+        <div><dt>主体企业</dt><dd>中资企业</dd></div>
+        <div><dt>项目地点</dt><dd>东马来西亚 · 婆罗洲内陆</dd></div>
+        <div><dt>案例类型</dt><dd>超限大件运输 · 方案比选</dd></div>
+        <div><dt>核心知识点</dt><dd>约束分析 · 方案比选 · 液压推顶</dd></div>
+        <div><dt>来源</dt><dd>工作访谈与调研（2026.05）</dd></div>
+        <div><dt>建议课时</dt><dd>0.5–1 学时</dd></div>
+      </dl>
+    </div>
+
+    <!-- Abstract -->
+    <div class="abstract" id="abstract">
+      <span class="label">案例摘要 Abstract</span>
+      <p>2024 年，中国外运为马来西亚东部婆罗洲一个漂浮光伏电站项目承运关键设备——一台重达 66.5 吨的变压器。设备需经过一条蜿蜒山路运抵内陆水库。</p>
+      <p style="margin-bottom:0">路勘发现：进山唯一道路上有一座 21.2 米长的桥，官方限重 70 吨。而承载变压器的 SPMT 轴线车自重 30 吨以上，两者相加超过 96 吨，超限幅度达 37%。更困难的是：这里是东马来西亚，工程资源极度匮乏；桥侧泄洪口每周放水，几乎没有修建临时便道的施工窗口。<strong>物流团队面临三个选项——如何突破这道"卡口"？</strong></p>
+    </div>
+
+    <!-- S1 -->
+    <section id="s1">
+      <h2><span class="num">一</span>案例背景：当光伏遇上山路</h2>
+      <p>漂浮光伏，是将光伏组件安装在漂浮平台上、搭建于水库或湖泊水面的发电形式。与地面光伏相比，它节省土地、减少水体蒸发，近年来在东南亚地区快速扩张——而东南亚的水库，往往深藏于山区。</p>
+      <p>2024 年，一家中国 EPC 企业在马来西亚东部（东马来西亚，婆罗洲岛）承接了一个漂浮光伏电站项目。项目选址于内陆水库，周边山路蜿蜒，道路基础设施极度薄弱，是东南亚工程物流中难度最高的场景之一。</p>
+      <p>设备清单中有一台关键设备：<strong>变压器，重量 66.5 吨</strong>。</p>
+      <p>这台变压器，要运到水库边。路，只有一条。</p>
+      <blockquote>
+        漂浮光伏项目之所以在运输上比普通地面光伏更复杂，在于其选址通常是内陆水库，道路基础设施天然薄弱——需要在普通地面项目的运输难度上再加一个等级。
+      </blockquote>
+    </section>
+
+    <!-- S2 -->
+    <section id="s2">
+      <h2><span class="num">二</span>问题的起点：一座 21.2 米的桥</h2>
+      <p>物流团队接到任务后的第一步是<strong>路勘</strong>——对完整运输路线进行实地勘察，识别所有可能的限制节点。</p>
+      <p>路勘报告很快呈现了一个棘手问题：进山唯一道路上，有一座桥梁，长度 21.2 米，官方限重标注：<strong>70 吨</strong>。</p>
+      <p>70 吨，看起来比 66.5 吨的变压器多。问题在于：变压器不会自己走路，它需要装在运输车板上。</p>
+
+      <div class="weight-calc">
+        <div class="wc-title">重量叠加计算</div>
+        <div class="wc-row">
+          <div class="wc-item">变压器：66.5 吨</div>
+          <div class="wc-plus">＋</div>
+          <div class="wc-item">SPMT 轴线车：≥ 30 吨</div>
+        </div>
+        <div class="wc-eq"></div>
+        <div class="wc-total">合计：≥ 96 吨，超桥梁限重 37%</div>
+        <div class="wc-limit">桥梁限重：<span>70 吨</span> &nbsp;|&nbsp; 超限幅度：<span class="wc-over">+37%</span> &nbsp;|&nbsp; 桥长：21.2 米</div>
+      </div>
+
+      <p>桥，过不去。</p>
+    </section>
+
+    <!-- S3 -->
+    <section id="s3">
+      <h2><span class="num">三</span>东马来西亚的额外约束</h2>
+      <p>如果是在中国国内，工程物流团队有一套成熟的处理手段：就地调用资源，桥上桥工装、临时便道施工机械，都可以快速找到。但这个项目在东马来西亚——不是西马来西亚——当地的工程资源极其匮乏。</p>
+      <p>约束条件明确如下：</p>
+
+      <ul class="constraint-list">
+        <li>
+          <div class="ci-num">1</div>
+          <div class="ci-text"><strong>直接超限</strong>：变压器 66.5 吨 + 轴线车 ≥ 30 吨，合计超 96 吨，超桥梁限重 70 吨约 37%，不可直接通行</div>
+        </li>
+        <li>
+          <div class="ci-num">2</div>
+          <div class="ci-text"><strong>资源匮乏</strong>：东马来西亚工程资源极度稀缺，西马来西亚或国内调运特种工装，成本高、时间周期长</div>
+        </li>
+        <li>
+          <div class="ci-num">3</div>
+          <div class="ci-text"><strong>泄洪口限制</strong>：桥侧正好位于泄洪口上方，每周定期放水作业，修建临时便道的施工时间窗口极短，条件几乎不具备</div>
+        </li>
+        <li>
+          <div class="ci-num">4</div>
+          <div class="ci-text"><strong>桥跨距短</strong>：21.2 米的桥跨，使"桥上桥"类工装方案需要专门适配设计，不能直接套用国内标准方案</div>
+        </li>
+      </ul>
+
+      <div class="callout">
+        💡 <strong>关键认知</strong>：方案设计不是选"最先进的方案"，而是选"在当地约束条件下最可行的方案"。脱离了地点条件，任何方案都可能从"最优"变成"不可行"。
+      </div>
+    </section>
+
+    <!-- S4: Three options -->
+    <section id="s4">
+      <h2><span class="num">四</span>三个方案，一个选择</h2>
+      <p>物流团队与大件工程师研讨了三个可能的方案，逐一评估当地可行性：</p>
+
+      <div class="options-grid">
+        <!-- Option A -->
+        <div class="option-card rejected">
+          <div class="oc-badge">❌ 否决</div>
+          <div class="oc-num">方案一</div>
+          <div class="oc-title">修建临时便道绕行</div>
+          <div class="oc-desc">
+            在桥旁边修建一条临时路基，使设备和车辆绕开这座桥，从便道通过。国内常见的"修便道"方案。
+          </div>
+          <div style="font-size:0.8rem;color:#6b7280;margin-bottom:0.6rem;border-top:1px dashed #e5e7eb;padding-top:0.5rem;">
+            <div style="margin-bottom:0.2rem;">⛔ 桥侧为泄洪口，每周放水，施工窗口极短</div>
+            <div style="margin-bottom:0.2rem;">⛔ 填方碾压作业工期和成本无法预估</div>
+            <div>⛔ 东马资源匮乏，施工机械调配困难</div>
+          </div>
+          <div class="oc-verdict">施工窗口不具备 · 成本不可控</div>
+        </div>
+
+        <!-- Option B -->
+        <div class="option-card rejected">
+          <div class="oc-badge">❌ 否决</div>
+          <div class="oc-num">方案二</div>
+          <div class="oc-title">桥上桥工装（国内经典方案）</div>
+          <div class="oc-desc">
+            在被过桥梁上搭建工装结构，使着力点直接落在桥台（主结构）上，而非桥面板，绕过桥面承重限制。
+          </div>
+          <div style="font-size:0.8rem;color:#6b7280;margin-bottom:0.6rem;border-top:1px dashed #e5e7eb;padding-top:0.5rem;">
+            <div style="margin-bottom:0.2rem;">⛔ 特种工装当地没有，需从西马或国内调运</div>
+            <div style="margin-bottom:0.2rem;">⛔ 21.2 米跨距需专门设计，非标准方案</div>
+            <div>⛔ 调运成本和周期均偏高</div>
+          </div>
+          <div class="oc-verdict">工装不具备 · 成本过高</div>
+        </div>
+
+        <!-- Option C: CHOSEN -->
+        <div class="option-card chosen">
+          <div class="oc-badge">✅ 最终选择</div>
+          <div class="oc-num">方案三</div>
+          <div class="oc-title">液压顶升 + 钢轨滑推</div>
+          <div class="oc-desc">
+            将变压器从车板"解耦"，让它单独滑过桥面，过桥时桥梁只承受变压器本身的重量，不超限。
+          </div>
+          <div style="font-size:0.8rem;color:#166534;margin-bottom:0.6rem;border-top:1px dashed #bbf7d0;padding-top:0.5rem;">
+            <div style="margin-bottom:0.2rem;">✅ 过桥重量：66.5吨（变压器）+ 推顶装置少量 ≤ 70吨</div>
+            <div style="margin-bottom:0.2rem;">✅ 无需调运特种工装，本地可执行</div>
+            <div>✅ 技术成熟，成本可控</div>
+          </div>
+          <div class="oc-verdict">"最经济、最简单、最省事的方案"</div>
+        </div>
+      </div>
+
+      <h3>方案比选总表</h3>
+      <table>
+        <thead>
+          <tr><th>维度</th><th>方案一：临时便道</th><th>方案二：桥上桥</th><th>方案三：液压推顶 ✅</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>核心逻辑</td><td>绕开桥</td><td>强化桥</td><td>减轻过桥重量</td></tr>
+          <tr><td>当地可行性</td><td style="color:var(--red);">低（泄洪口限制）</td><td style="color:var(--red);">低（工装需外调）</td><td style="color:var(--green);">高（本地可执行）</td></tr>
+          <tr><td>成本</td><td style="color:var(--red);">不可预估</td><td style="color:var(--red);">偏高（运输+设计）</td><td style="color:var(--green);">最低</td></tr>
+          <tr><td>时间周期</td><td style="color:var(--red);">最长（施工窗口短）</td><td style="color:var(--red);">偏长（调运周期）</td><td style="color:var(--green);">最短</td></tr>
+          <tr><td>施工风险</td><td style="color:var(--red);">高（地基处理）</td><td>中</td><td style="color:var(--green);">低（技术成熟）</td></tr>
+          <tr><td>最终结论</td><td style="color:var(--red);">否决</td><td style="color:var(--red);">否决</td><td style="color:var(--green);">选择执行</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- S5: Execution -->
+    <section id="s5">
+      <h2><span class="num">五</span>方案三的执行：六个步骤过桥</h2>
+      <p>液压顶升 + 钢轨滑推的核心逻辑是<strong>将变压器与车板"解耦"</strong>，让变压器单独通过桥面。执行步骤如下：</p>
+
+      <div class="process-steps">
+        <div class="ps-item">
+          <div class="ps-dot">1</div>
+          <div class="ps-body">
+            <div class="ps-title">抵达桥头</div>
+            <div class="ps-text">SPMT 轴线车载着变压器（总重 ≥ 96 吨）驶至桥梁入口，停车待命。</div>
+          </div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-dot">2</div>
+          <div class="ps-body">
+            <div class="ps-title">液压顶升 · 变压器离开车板</div>
+            <div class="ps-text">使用液压千斤顶将变压器从车板上顶升，使其落在桥头地面上。轴线车空车先行开过桥，停在桥另一端等待。</div>
+          </div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-dot">3</div>
+          <div class="ps-body">
+            <div class="ps-title">铺设钢滑轨</div>
+            <div class="ps-text">在桥面铺设钢制滑轨，形成 21.2 米的推送通道，降低推动过程的摩擦阻力。</div>
+          </div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-dot">4</div>
+          <div class="ps-body">
+            <div class="ps-title">液压推顶 · 变压器过桥</div>
+            <div class="ps-text">用液压推顶装置，将变压器沿滑轨缓慢推过整座桥（21.2 米）。过桥时桥梁只承受变压器 66.5 吨 + 推顶装置少量重量，合计不超 70 吨限重。</div>
+          </div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-dot">5</div>
+          <div class="ps-body">
+            <div class="ps-title">变压器落回车板</div>
+            <div class="ps-text">变压器推至桥另一端，轴线车归位，再次用液压千斤顶将变压器顶升并落回车板上固定。</div>
+          </div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-dot">6</div>
+          <div class="ps-body">
+            <div class="ps-title">驶向项目现场</div>
+            <div class="ps-text">轴线车载着变压器继续行驶约 1 公里，抵达水库边的安装点，变压器安全就位。</div>
+          </div>
+        </div>
+      </div>
+
+      <blockquote>
+        "找到了最经济的方案，也是最简单、最省事的方案。"<br/>
+        <span style="font-size:0.85rem;opacity:0.75;margin-top:0.3rem;display:block;">— 陈总，中国外运工程物流事业部</span>
+      </blockquote>
+
+      <p>方案三最终落地执行，变压器安全过桥，准时抵达项目现场。</p>
+
+      <div class="callout">
+        💡 <strong>关于 C 段报价的提醒</strong>：这次过桥操作涉及的液压千斤顶租用、滑轨材料、操作人工，都属于目的国段（C 段）物流成本。一个经验不足的报价员，可能只根据"变压器 66.5 吨"估算陆运费，而忽略了 SPMT 自重、过桥工装、液压推顶设备等额外成本——这正是工程物流 C 段报价最常见的遗漏陷阱之一。
+      </div>
+    </section>
+
+    <!-- Discussion -->
+    <section id="questions">
+      <h2><span class="num">讨论</span>三道讨论题</h2>
+      <p style="color:var(--ink-muted);font-size:0.9rem;margin-bottom:1.5rem;">建议分组讨论（3–4 人/组），先由各组独立提出方案，再与真实案例对照。</p>
+      <div class="questions">
+        <ol>
+          <li>
+            <strong>讨论题 1｜方案三的经济性</strong>
+            方案三被陈总称为"最经济的方案"。请从<strong>成本、时间、资源三个维度</strong>，具体列出它与方案一、方案二的主要差异，解释为什么"最简单"也能是"最经济"。
+          </li>
+          <li>
+            <strong>讨论题 2｜地点改变方案选择</strong>
+            如果这个项目在中国国内（而非东马来西亚），你认为最优方案会是哪一个？请分析：<strong>目的地的资源条件</strong>如何影响方案评估的标准？这对我们在做工程物流方案设计时有什么启示？
+          </li>
+          <li>
+            <strong>讨论题 3｜路勘检查清单</strong>
+            路勘是工程物流方案设计的第一步。在本案例中，桥梁限重是关键发现。除此之外，请为类似的内陆重型设备运输项目，设计一份<strong>路勘报告核心检查清单</strong>（不少于 8 项），并说明每项检查项的潜在风险。
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <footer>
+      <p>中物联教育培训 · 工程物流教学案例系列 EL-2026-A03 · 2026-08-17</p>
+      <p style="margin-top:0.35rem;">原始素材：中国外运工程物流事业部访谈（2026年5月）&nbsp;|&nbsp; 整理：黄颖</p>
+      <p style="margin-top:0.35rem;"><a href="2026-08-17_马来西亚漂浮光伏桥梁限重-教学笔记.html" style="color:var(--accent);">Teaching Note（教师版）→</a></p>
+    </footer>
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('highlight-target');
+        setTimeout(() => target.classList.remove('highlight-target'), 1200);
+      }
+    });
+  });
+</script>
+</body>
+</html>

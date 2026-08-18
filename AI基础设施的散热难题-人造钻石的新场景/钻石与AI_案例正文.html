@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MBE-2026-T02 当钻石遇上AI：一场意外的产业救赎</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css"/>
+<style>
+:root{
+  --bg:#f2f4f0;--bg-paper:#fafdf8;--ink:#1a1f1a;--ink-muted:#5c665c;
+  --accent:#2563eb;--accent-soft:#dbeafe;--border:#d8e0d5;
+  --red:#dc2626;--green:#059669;--orange:#c2410c;
+  --sidebar-w:16rem;
+  --font:"LXGW WenKai","PingFang SC",serif;
+  --font-sans:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:17px;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.88;}
+.layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;max-width:76rem;margin:0 auto;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}}
+aside{position:sticky;top:0;height:100vh;padding:1.5rem 1rem 1.5rem 1.25rem;border-right:1px solid var(--border);background:rgba(250,253,248,.95);backdrop-filter:blur(10px);overflow-y:auto;}
+@media(max-width:900px){aside{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);}}
+.case-id{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;}
+aside h2{font-size:.9rem;font-weight:600;line-height:1.45;margin-bottom:1.4rem;}
+nav ul{list-style:none;}
+nav li{margin-bottom:.1rem;}
+nav a{display:block;padding:.32rem .55rem;font-size:.8rem;color:var(--ink-muted);text-decoration:none;border-radius:4px;border-left:2px solid transparent;transition:all .15s;}
+nav a:hover{color:var(--ink);background:var(--accent-soft);}
+nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft);font-weight:600;}
+.nav-group{font-family:var(--font-sans);font-size:.62rem;letter-spacing:.08em;color:var(--ink-muted);margin:1rem 0 .3rem .55rem;text-transform:uppercase;}
+.sidebar-note{margin-top:1.5rem;padding:.8rem .9rem;background:#fff3cd;border:1px solid #fcd34d;border-radius:6px;font-family:var(--font-sans);font-size:.72rem;color:#92400e;line-height:1.6;}
+main{padding:2rem 2.75rem 5rem;background:var(--bg-paper);box-shadow:-4px 0 28px rgba(0,0,0,.04);min-width:0;}
+@media(max-width:600px){main{padding:1.25rem 1rem 3rem;}}
+.hero{border-bottom:3px double var(--border);padding-bottom:2rem;margin-bottom:2.25rem;}
+.hero-photos{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.6rem;}
+@media(max-width:600px){.hero-photos{grid-template-columns:1fr;}}
+.hero-photos img{width:100%;height:200px;object-fit:cover;border-radius:6px;display:block;background:#dbeafe;}
+.img-caption{font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);margin-bottom:1.25rem;text-align:center;}
+.tag{display:inline-block;font-family:var(--font-sans);font-size:.7rem;padding:.2rem .65rem;background:var(--ink);color:#fff;letter-spacing:.06em;border-radius:2px;margin-bottom:.85rem;}
+.hero h1{font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.35;font-weight:600;margin-bottom:.5rem;letter-spacing:-.02em;}
+.hero .subtitle{font-size:.98rem;color:var(--ink-muted);font-style:italic;margin-bottom:1.5rem;}
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:.6rem 1.25rem;font-family:var(--font-sans);font-size:.76rem;background:#f4f7f2;padding:1rem 1.25rem;border-radius:6px;border:1px solid var(--border);}
+.meta-grid dt{color:var(--ink-muted);margin-bottom:.1rem;}
+.meta-grid dd{color:var(--ink);font-weight:600;}
+.abstract{background:linear-gradient(135deg,var(--accent-soft) 0%,#fafdf8 100%);border-left:4px solid var(--accent);padding:1.3rem 1.6rem;margin-bottom:2.75rem;font-size:.95rem;border-radius:0 6px 6px 0;}
+.abstract .label{font-family:var(--font-sans);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:.55rem;}
+section{margin-bottom:3rem;scroll-margin-top:1.5rem;}
+section h2{font-size:1.3rem;font-weight:600;margin-bottom:1.1rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:.5rem;}
+section h3{font-size:1.02rem;font-weight:600;margin:1.6rem 0 .7rem;}
+.num{font-family:var(--font-sans);font-size:.72rem;color:var(--accent);font-weight:700;white-space:nowrap;}
+section p{margin-bottom:1rem;text-align:justify;}
+section ul,section ol{padding-left:1.5rem;margin-bottom:1rem;}
+section li{margin-bottom:.4rem;line-height:1.75;}
+.highlight-box{margin:1.5rem 0;padding:1.25rem 1.5rem;background:#f0f9ff;border-left:4px solid var(--accent);border-radius:0 6px 6px 0;}
+.highlight-box .label{font-family:var(--font-sans);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
+.tech-compare{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0;}
+@media(max-width:650px){.tech-compare{grid-template-columns:1fr;}}
+.tech-card{background:#fff;border:2px solid var(--border);border-radius:8px;padding:1.25rem;}
+.tech-card h4{font-size:.88rem;font-weight:700;color:var(--accent);margin-bottom:.7rem;font-family:var(--font-sans);}
+.tech-card p{font-size:.84rem;line-height:1.7;margin-bottom:.6rem;text-align:left;}
+.tech-card ul{font-size:.82rem;padding-left:1.2rem;margin:0;}
+.tech-card li{margin-bottom:.3rem;}
+.tech-card .pros{color:var(--green);}
+.tech-card .cons{color:var(--red);}
+table{width:100%;border-collapse:collapse;font-size:.83rem;font-family:var(--font-sans);margin:1.5rem 0;}
+th{text-align:left;padding:.55rem .75rem;background:var(--ink);color:#fff;font-weight:600;}
+td{padding:.5rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+tr:nth-child(even) td{background:#f6f9f5;}
+tr:hover td{background:var(--accent-soft);}
+td.neg{color:var(--red);font-weight:600;}
+td.pos{color:var(--green);font-weight:600;}
+td.bold{font-weight:700;}
+.timeline{margin:2rem 0;padding-left:1.5rem;border-left:3px solid var(--accent-soft);}
+.timeline-item{margin-bottom:1.5rem;padding-left:1.5rem;position:relative;}
+.timeline-item::before{content:'';position:absolute;left:-1.65rem;top:.4rem;width:12px;height:12px;background:var(--accent);border-radius:50%;}
+.timeline-year{font-family:var(--font-sans);font-size:.75rem;font-weight:700;color:var(--accent);margin-bottom:.3rem;}
+.timeline-content{font-size:.88rem;line-height:1.7;}
+.q-list{list-style:none;padding-left:0;}
+.q-item{margin-bottom:1.6rem;padding:1.1rem 1.25rem;background:var(--bg);border-radius:6px;border-left:3px solid var(--accent);font-size:.94rem;line-height:1.8;}
+.q-label{display:block;font-family:var(--font-sans);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem;}
+footer{text-align:center;font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside>
+  <div class="case-id">MBE-2026-T02</div>
+  <h2>当钻石遇上AI：一场意外的产业救赎</h2>
+  <nav>
+    <div class="nav-group">案例正文</div>
+    <ul>
+      <li><a href="#abstract">案例摘要</a></li>
+      <li><a href="#s1">一、2026年春天，两个数字</a></li>
+      <li><a href="#s2">二、一块石头的三次转身</a></li>
+      <li><a href="#s3">三、AI的散热危机</a></li>
+      <li><a href="#s4">四、河南老乡的第三次机会</a></li>
+      <li><a href="#s5">五、一场意外的救赎</a></li>
+    </ul>
+    <div class="nav-group">讨论</div>
+    <ul>
+      <li><a href="#questions">五个讨论问题</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-note">
+    ⚠ 本文件为学员版案例正文，不含参考答案。<br>教学笔记请见独立文件。
+  </div>
+</aside>
+
+<main>
+
+<div class="hero" id="top">
+  <div class="hero-photos">
+    <img src="placeholder-河南老乡.jpg" alt="河南金刚石企业负责人" onerror="this.style.display='none'"/>
+    <img src="placeholder-CVD金刚石.jpg" alt="CVD金刚石样品" onerror="this.style.display='none'"/>
+  </div>
+  <p class="img-caption">河南金刚石产业集群与CVD金刚石样品（企业供图）</p>
+  <span class="tag">教学案例 · 科技产业系列</span>
+  <h1>当钻石遇上AI：一场意外的产业救赎</h1>
+  <p class="subtitle">从珠宝市场崩塌到芯片散热蓝海的产业转型</p>
+  <dl class="meta-grid">
+    <div><dt>案例编号</dt><dd>MBE-2026-T02</dd></div>
+    <div><dt>撰写日期</dt><dd>2026 年 8 月</dd></div>
+    <div><dt>产业</dt><dd>人造金刚石 / 半导体散热</dd></div>
+    <div><dt>涉及企业</dt><dd>四方达、黄河旋风、超赢钻石等</dd></div>
+    <div><dt>核心议题</dt><dd>产业转型 · 技术路径 · 市场重定位</dd></div>
+    <div><dt>适用课程</dt><dd>战略管理 / 产业经济 / 技术创新</dd></div>
+    <div><dt>版权声明</dt><dd>基于公开信息整理，仅供教学讨论</dd></div>
+  </dl>
+</div>
+
+<div class="abstract" id="abstract">
+  <span class="label">案例摘要</span>
+  <p>2026年，两条看似毫不相关的曲线交汇：英伟达新一代AI芯片功耗突破2300W，传统散热方案面临物理极限；同期，培育钻石珠宝批发价同比下跌13%，河南金刚石企业手握产能却找不到出路。当芯片需要超高导热材料，当钻石从"永恒爱情"的神话中跌落，一个意外的产业救赎开始了。</p>
+  <p>本案例追踪人造金刚石产业的三次转身：从工业工具到奢侈品，再到AI时代的基础设施。核心问题是：当一个行业的价值叙事彻底改变，企业如何在技术积累、产能布局与市场重定位之间找到新的生存逻辑？河南企业在HPHT技术上全球领先，但芯片散热需要的CVD技术却长期被海外垄断。这场转型，是机遇还是陷阱？</p>
+</div>
+
+<section id="s1">
+  <h2><span class="num">一</span>2026年春天，两个数字</h2>
+  
+  <h3>第一个数字：2300W</h3>
+  <p>这是英伟达新一代AI平台 Vera Rubin 芯片的热设计功耗。局部热流密度突破 1000W/cm²——相当于在一个指甲盖大小的面积上，持续释放一个电热水壶的热量。</p>
+  <p>传统的铜基散热方案已经到了物理极限。再往上堆散热片、加风扇,系统会先因为重量和体积崩溃,芯片还没凉下来。</p>
+  
+  <h3>第二个数字：-13%</h3>
+  <p>这是2026年二季度,培育钻石珠宝批发价的同比跌幅。</p>
+  <p>过去三年,这个数字每个季度都在刷新。曾经被渲染成"永恒爱情象征"的钻石,在人工培育技术成熟之后,价格像自由落体一样往下掉。消费者发现,花几千块就能买到一颗和天然钻石在物理性质上完全一样的石头,婚戒市场的神话开始瓦解。</p>
+  <p>河南的金刚石企业——四方达、黄河旋风、超赢钻石——过去十年靠HPHT(高温高压法)把这个行业做成了全球规模最大的产业集群。但现在,珠宝市场塌了,他们手里堆着的产能不知道该往哪里去。</p>
+  <p><strong>然后,这两个数字碰到了一起。</strong></p>
+</section>
+
+<section id="s2">
+  <h2><span class="num">二</span>一块石头的三次转身</h2>
+  
+  <h3>2.1 第一次转身:从宝石到工具</h3>
+  <p>钻石这个东西,最早不叫钻石,叫<strong>金刚石</strong>。</p>
+  <p>天然金刚石硬度极高,是已知最硬的材料。在工业革命之后,它最重要的用途不是装饰,而是切割——切玻璃、切金属、切陶瓷,什么都能切。但天然金刚石少、贵、开采难,工业界一直在等一个替代方案。</p>
+  <p>20世纪50年代,通用电气(GE)实验室用高温高压法(HPHT)第一次人工合成了金刚石。这个技术的核心逻辑很简单:模拟地球深处的环境——几千度的高温、几万个大气压,让碳原子重新排列成金刚石晶格。</p>
+  
+  <div class="highlight-box">
+    <div class="label">中国的HPHT之路</div>
+    <p>河南、山东的一批企业,从80年代开始摸索HPHT技术,到2010年代已经把成本压到了一个让全球同行绝望的水平。四方达的六面顶压机,一台设备可以同时培养几十颗金刚石晶体,24小时不停机。黄河旋风的产能更是做到了年产几十亿克拉——<strong>全球超过一半的工业级金刚石,都来自河南</strong>。</p>
+  </div>
+  
+  <p>这个时候,金刚石的主要用途是:**磨具、钻头、切割工具**。没有人觉得它应该是珠宝,它就是一个工业耗材。</p>
+  
+  <h3>2.2 第二次转身:工业品变成奢侈品</h3>
+  <p>2010年前后,一件事情改变了。</p>
+  <p>培育钻石的技术进步到了一个临界点:用HPHT法可以培养出大克拉、高净度的晶体,足以通过珠宝级的4C标准(克拉、颜色、净度、切工)。成本只有天然钻石的几分之一。</p>
+  <p>这时候有人发现:这玩意儿,物理性质和天然钻石一模一样。化学成分、晶体结构、光学特性,全都一样。如果不用专业仪器检测,珠宝商自己都分不出来。</p>
+  <p>于是一个新的生意出现了:**把工业品包装成奢侈品**。</p>
+  
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">2018—2020</div>
+      <div class="timeline-content">培育钻石珠宝市场起飞，河南企业发现副产品也能卖钱，产能开始向珠宝级转移。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2021—2023</div>
+      <div class="timeline-content">产能疯狂扩张，中国培育钻石产量从300万克拉飙升至2000万克拉。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2024—2026</div>
+      <div class="timeline-content">供给洪水淹没价格，1克拉批发价从5000元跌到1300元，珠宝市场见顶。</div>
+    </div>
+  </div>
+  
+  <h3>2.3 供给的洪水与价格的崩塌</h3>
+  <p>问题在于:**工业化生产一旦启动,产能是指数级增长的**。</p>
+  <p>河南的HPHT设备是按"吨"来计算产能的。当珠宝市场的需求被打开,企业发现这是一门比工具更赚钱的生意,于是产能疯狂扩张。供给的洪水,淹没了价格。</p>
+  <p>消费者的心理也在变化。当一颗钻石从"稀缺奢侈品"变成"工业化量产品",它在情感上的价值也在流失。年轻人开始觉得:既然这么便宜,那它到底还算不算"永恒"的象征？</p>
+  <p>珠宝市场见顶了。河南的企业手里堆着的产能,又一次面临出路问题。<strong>这一次,他们需要的不是新的消费者,而是新的应用场景。</strong></p>
+</section>
+
+<section id="s3">
+  <h2><span class="num">三</span>AI的散热危机</h2>
+  
+  <h3>3.1 摩尔定律的尽头</h3>
+  <p>2024年之后,AI芯片的功耗曲线开始变得陡峭。</p>
+  <p>英伟达的H100功耗700W,H200接近800W。到2026年的Vera Rubin,热设计功耗达到2300W。这不是线性增长,这是指数级跃迁。</p>
+  <p>背后的原因是:**算力需求和芯片工艺的矛盾正在激化**。大模型训练需要的算力每年翻几倍,但芯片制程的进步正在放缓。当晶体管密度无法再像过去那样快速翻倍,工程师只能通过提高频率、增加核心数量来榨取性能——代价是功耗暴涨。</p>
+  <p>功耗暴涨,意味着热量暴涨。一颗2300W的芯片,如果散热跟不上,核心温度会在几秒钟内冲到100℃以上,触发降频保护,性能直接腰斩。</p>
+  
+  <table>
+    <thead><tr><th>芯片型号</th><th>发布年份</th><th>TDP功耗</th><th>散热方案</th></tr></thead>
+    <tbody>
+      <tr><td>NVIDIA A100</td><td>2020</td><td>400W</td><td>风冷+水冷</td></tr>
+      <tr><td>NVIDIA H100</td><td>2022</td><td>700W</td><td>强化水冷</td></tr>
+      <tr><td>NVIDIA H200</td><td>2024</td><td>800W</td><td>液冷+铜基散热</td></tr>
+      <tr><td class="bold">NVIDIA Vera Rubin</td><td class="bold">2026</td><td class="bold pos">2300W</td><td class="bold">钻石铜复合散热</td></tr>
+    </tbody>
+  </table>
+  
+  <h3>3.2 钻石:大自然最好的散热器</h3>
+  <p>金刚石的室温热导率是 **2000–2600 W/(m·K)**,是铜的5倍以上,是已知固体材料中最高的。</p>
+  <p>更关键的是,它还具备几个其他材料很难同时满足的特性:</p>
+  <ul>
+    <li><strong>热膨胀系数极低</strong>:在温度变化时几乎不变形,可以和芯片紧密贴合;</li>
+    <li><strong>电绝缘性</strong>:不导电,不会对芯片电路产生干扰;</li>
+    <li><strong>化学稳定性</strong>:耐腐蚀,可以在高温、高湿环境下长期工作。</li>
+  </ul>
+  <p>理论上,金刚石是芯片散热的完美材料。但有一个问题:**天然金刚石太贵,而且尺寸不可控**。</p>
+  
+  <div class="highlight-box">
+    <div class="label">CVD：芯片散热的关键</div>
+    <p>通过<strong>化学气相沉积法(CVD)</strong>,可以在基底上"生长"出大面积的金刚石薄膜。这种薄膜的热导率和单晶金刚石几乎一样高,而且可以定制尺寸——8英寸、12英寸,覆盖整个芯片。</p>
+    <p>英伟达Vera Rubin采用的正是这个方案:**钻石铜复合散热**。在芯片核心和散热器之间,夹一层CVD金刚石薄膜,热量通过钻石快速传导到铜基散热器,再由风扇或水冷带走。</p>
+    <p>实测数据显示,加了金刚石散热层之后,GPU核心温度可以降低 **10–20℃**。</p>
+  </div>
+</section>
+
+<section id="s4">
+  <h2><span class="num">四</span>河南老乡的第三次机会</h2>
+  
+  <h3>4.1 从珠宝的废墟里爬出来</h3>
+  <p>2026年上半年,当培育钻石珠宝价格再跌13%,河南的金刚石企业几乎同时做出了一个决定:**全力转向工业级,押注芯片散热**。</p>
+  <p>四方达、黄河旋风、超赢钻石,这些在珠宝市场上被价格战拖得精疲力尽的企业,突然发现了一个新的蓝海。英伟达Vera Rubin的发布,像一针强心剂打进了行业。消息传出后,国内超过八成的金刚石企业宣布提价15%–30%,A股相关概念股大涨。</p>
+  <p>开源证券发布研报,预计芯片级金刚石散热市场规模将在5年内从0.5亿美元增长至 **152亿美元**。</p>
+  <p>这一次,钻石的价值回归了本质:**它不是爱情的象征,它是工业文明最需要的材料之一**。</p>
+  
+  <h3>4.2 CVD:一道必须跨过的门槛</h3>
+  <p>但这次转身,不像前两次那么顺利。中国在HPHT技术上是全球第一,但**芯片级散热需要的是CVD技术**——这条路上,中国落后了。</p>
+  
+  <div class="tech-compare">
+    <div class="tech-card">
+      <h4>HPHT 高温高压法</h4>
+      <p>模拟地球深处环境,让碳原子在高温高压下快速结晶。</p>
+      <ul class="pros">
+        <li><strong>优势</strong>：产量大、成本低，适合批量生产</li>
+        <li>中国企业全球领先</li>
+      </ul>
+      <ul class="cons">
+        <li><strong>劣势</strong>：晶体有杂质、形态不规则</li>
+        <li>热导率仅1000-1500 W/(m·K)</li>
+        <li>无法做大面积薄膜</li>
+      </ul>
+    </div>
+    <div class="tech-card">
+      <h4>CVD 化学气相沉积法</h4>
+      <p>在真空环境下,让含碳气体逐层沉积,生长出纯净单晶薄膜。</p>
+      <ul class="pros">
+        <li><strong>优势</strong>：杂质极少、晶格完整</li>
+        <li>可定制大尺寸（8-12英寸）</li>
+        <li>热导率稳定在2000+ W/(m·K)</li>
+      </ul>
+      <ul class="cons">
+        <li><strong>劣势</strong>：生长速度慢、设备昂贵</li>
+        <li>良率要求极高</li>
+        <li>长期被海外垄断</li>
+      </ul>
+    </div>
+  </div>
+  
+  <p>芯片散热用的金刚石,<strong>必须是CVD</strong>。而CVD技术,长期被<strong>戴比尔斯旗下的元素六(Element Six)</strong>、美国的<strong>Coherent</strong>等海外巨头垄断。</p>
+  <p>美国创业公司 **Akash Systems** 已经推出了商用金刚石散热服务器,并拿下3亿美元订单。中国企业要追上,必须在CVD上补课。</p>
+  
+  <h3>4.3 追赶:从送测到量产的长征</h3>
+  <p>2026年,国内几家头部企业开始密集发力CVD:</p>
+  <ul>
+    <li><strong>超赢钻石</strong>与英伟达开展合作交流,试图进入其供应链认证体系;</li>
+    <li><strong>四方达</strong>的CVD散热片已经进入小批量供货阶段;</li>
+    <li><strong>黄河旋风</strong>8英寸CVD热沉片生产线于2月投产,开始向下游送测样品。</li>
+  </ul>
+  <p>但从送测到量产,还有一段很长的路。芯片级应用对金刚石的要求极其苛刻:热导率偏差不能超过±5%,表面粗糙度必须在纳米级,杂质含量必须控制在ppm级别。这些指标,意味着企业不仅要有CVD设备,还要有精密的检测手段、稳定的工艺控制,以及足够的耐心。</p>
+  <p>海外巨头在这条路上已经走了二十年,中国企业现在才刚刚起步。</p>
+</section>
+
+<section id="s5">
+  <h2><span class="num">五</span>一场意外的救赎</h2>
+  
+  <h3>5.1 钻石不需要"永恒",只需要有用</h3>
+  <p>回到开头那两个数字。2300W的功耗,和-13%的价格跌幅,看起来是两件毫不相关的事。但它们碰到一起,产生了一个意外的结果:**钻石从"爱情的象征"变回了"工业的工具"**。</p>
+  <p>珠宝市场的神话破灭了,消费者不再相信"一颗永流传"的故事。但AI芯片的散热需求是真实的、刚性的、不可替代的。钻石在这里的价值,不依赖营销,不依赖情感,只依赖物理定律——热导率2600W/(m·K),这个数字不会因为市场情绪而改变。</p>
+  
+  <h3>5.2 从"机缘巧合"到"必然选择"</h3>
+  <p>有人说,很多事情都不是规划出来的,而是机缘巧合。</p>
+  <p>河南的企业最初做HPHT,是因为工业需要切割工具。后来发现副产品可以做珠宝。现在珠宝市场塌了,又发现AI需要散热。每一次转身,看起来都是"碰巧"。</p>
+  <p>但如果把时间线拉长,会发现这里面有一条更深的逻辑:**真正有价值的东西,最终会找到它应该在的位置**。钻石在珠宝市场上的价值是被人为抬高的,但钻石在工业上的价值——超高硬度、超高热导率——是物理性质决定的,是真实的稀缺性。</p>
+  <p>AI芯片的功耗曲线,最终把钻石推回了它应该在的位置:**不是柜台里的装饰品,而是数据中心机房里的散热器**。</p>
+  
+  <h3>5.3 下一个问题:中国能抓住这次机会吗？</h3>
+  <p>这个故事还没有结局。中国在HPHT上是全球第一,但CVD技术还在追赶。从送测到量产,从小批量到规模化,这中间还有无数个工艺细节需要打磨。</p>
+  <p>海外巨头不会坐视中国企业进入这个市场。但中国有两个优势:</p>
+  <ol>
+    <li><strong>完整的产业链</strong>:从HPHT设备、CVD设备,到原料供应、检测认证,全都在国内。迭代速度可以很快,成本控制也有优势。</li>
+    <li><strong>庞大的下游市场</strong>:中国是全球最大的AI算力需求方。数据中心、云计算、自动驾驶、大模型训练,都需要高性能芯片。这些场景的散热需求,就是CVD金刚石的天然市场。</li>
+  </ol>
+  <p>如果能在CVD技术上突破,中国的金刚石产业,可能会经历第三次真正的腾飞——不再依赖消费市场的情绪波动,而是成为AI时代基础设施的一部分。</p>
+</section>
+
+<section id="questions">
+  <h2><span class="num">讨论</span>五个讨论问题</h2>
+  <p style="font-size:.88rem;color:var(--ink-muted);margin-bottom:1.5rem;">以下问题供课前阅读后思考，课堂讨论时使用。案例正文不含参考答案。</p>
+  <ol class="q-list">
+    <li class="q-item">
+      <span class="q-label">问题一 · 价值重定位</span>
+      钻石从"永恒爱情"到"芯片散热器"，这是产品定位的彻底改变。什么条件下，一个产品的价值可以被完全重新定义？这种重定位是企业主动选择，还是被市场倒逼？
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题二 · 技术路径依赖</span>
+      河南企业在HPHT上全球领先，但芯片散热需要CVD技术。这是"路径依赖的陷阱"还是"技术积累的红利"？企业应该继续深耕HPHT，还是all-in CVD？
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题三 · 供需错配的教训</span>
+      培育钻石珠宝市场从狂热到崩塌，只用了不到五年。工业化生产能力和消费市场需求之间，为什么会产生如此严重的错配？这对其他快速扩张的行业有什么启示？
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题四 · 从追赶到领先</span>
+      中国企业在CVD技术上落后海外20年。如果你是四方达或黄河旋风的CEO，你会选择自研、收购海外公司、还是与海外巨头合作？判断框架是什么？
+    </li>
+    <li class="q-item">
+      <span class="q-label">问题五 · 下一次转身</span>
+      假设CVD散热市场在2030年被新材料（如石墨烯、氮化硼）替代，金刚石产业会面临第四次转身吗？企业如何避免被单一应用场景绑架？
+    </li>
+  </ol>
+</section>
+
+<footer>
+  <p>本案例基于2026年8月公开信息整理，主要数据来源：英伟达技术规格、中国超硬材料协会行业报告、开源证券研报、企业公告等。</p>
+  <p style="margin-top:.4rem;">MBE-2026-T02 &nbsp;·&nbsp; 案例版本 v1.0 &nbsp;·&nbsp; 2026年8月 &nbsp;·&nbsp; 仅供课堂讨论使用</p>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector('nav a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>MBE-2026-L01 教学笔记｜潜江荣盛冷链：标杆的重量</title>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css"/>
+<style>
+:root{
+  --bg:#f2f4f0; --bg-paper:#fafdf8; --ink:#1a1f1a; --ink-muted:#5c665c;
+  --accent:#2d7a4f; --accent-soft:#e8f5ee; --border:#d8e0d5;
+  --red:#dc2626; --green:#059669; --orange:#c2410c;
+  --blue:#0369a1; --yellow:#92400e;
+  --sidebar-w:16rem;
+  --font:"LXGW WenKai","PingFang SC",serif;
+  --font-sans:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:17px;}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.88;}
+
+.layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;max-width:76rem;margin:0 auto;}
+@media(max-width:900px){.layout{grid-template-columns:1fr;}}
+
+aside{position:sticky;top:0;height:100vh;padding:1.5rem 1rem 1.5rem 1.25rem;border-right:1px solid var(--border);background:rgba(250,253,248,.95);backdrop-filter:blur(10px);overflow-y:auto;}
+@media(max-width:900px){aside{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);}}
+.case-id{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;}
+aside h2{font-size:.9rem;font-weight:600;line-height:1.45;margin-bottom:1.4rem;color:var(--ink);}
+nav ul{list-style:none;}
+nav li{margin-bottom:.1rem;}
+nav a{display:block;padding:.32rem .55rem;font-size:.8rem;color:var(--ink-muted);text-decoration:none;border-radius:4px;border-left:2px solid transparent;transition:all .15s;}
+nav a:hover{color:var(--ink);background:var(--accent-soft);}
+nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft);font-weight:600;}
+.nav-group{font-family:var(--font-sans);font-size:.62rem;letter-spacing:.08em;color:var(--ink-muted);margin:1rem 0 .3rem .55rem;text-transform:uppercase;}
+.sidebar-badge{margin-top:1.5rem;padding:.8rem .9rem;background:#fff3cd;border:1px solid #fcd34d;border-radius:6px;font-family:var(--font-sans);font-size:.72rem;color:#92400e;line-height:1.6;}
+
+main{padding:2rem 2.75rem 5rem;background:var(--bg-paper);box-shadow:-4px 0 28px rgba(0,0,0,.04);min-width:0;}
+@media(max-width:600px){main{padding:1.25rem 1rem 3rem;}}
+
+/* Hero banner */
+.tn-hero{background:linear-gradient(135deg,var(--accent-soft) 0%,#fafdf8 100%);border:1px solid var(--border);border-radius:10px;padding:2rem 2.25rem;margin-bottom:2.5rem;}
+.tn-hero .case-tag{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:block;}
+.tn-hero h1{font-size:clamp(1.4rem,3vw,1.85rem);font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:.4rem;}
+.tn-hero .subtitle{font-size:.92rem;color:var(--ink-muted);margin-bottom:1.5rem;}
+.tn-meta{display:grid;grid-template-columns:repeat(auto-fill,minmax(11rem,1fr));gap:.5rem 1rem;font-family:var(--font-sans);font-size:.75rem;background:#f4f7f2;padding:.85rem 1rem;border-radius:6px;border:1px solid var(--border);}
+.tn-meta dt{color:var(--ink-muted);margin-bottom:.1rem;}
+.tn-meta dd{color:var(--ink);font-weight:600;}
+
+/* Sections */
+section{margin-bottom:3rem;scroll-margin-top:1.5rem;}
+section h2{font-size:1.2rem;font-weight:600;margin-bottom:1.1rem;padding-bottom:.4rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:.5rem;color:var(--ink);}
+section h3{font-size:.95rem;font-weight:600;margin:1.5rem 0 .6rem;color:var(--accent);font-family:var(--font-sans);letter-spacing:.02em;}
+.num{font-family:var(--font-sans);font-size:.7rem;color:var(--accent);font-weight:700;white-space:nowrap;}
+section p{margin-bottom:1rem;color:var(--ink);text-align:justify;}
+section ul,section ol{padding-left:1.5rem;margin-bottom:1rem;}
+section li{margin-bottom:.5rem;line-height:1.75;color:var(--ink);}
+strong{color:var(--ink);font-weight:700;}
+
+/* Callout boxes */
+.callout{margin:1.25rem 0;padding:1rem 1.25rem;border-radius:0 6px 6px 0;font-size:.9rem;}
+.callout.blue{background:#eff6ff;border-left:3px solid var(--blue);color:var(--ink);}
+.callout.green{background:var(--accent-soft);border-left:3px solid var(--accent);color:var(--ink);}
+.callout.yellow{background:#fffbeb;border-left:3px solid #f59e0b;color:var(--ink);}
+.callout.red{background:#fef2f2;border-left:3px solid var(--red);color:var(--ink);}
+.callout-label{font-family:var(--font-sans);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;display:block;}
+.callout.blue .callout-label{color:var(--blue);}
+.callout.green .callout-label{color:var(--accent);}
+.callout.yellow .callout-label{color:#b45309;}
+.callout.red .callout-label{color:var(--red);}
+
+/* Note cards grid */
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;}
+@media(max-width:600px){.note-grid{grid-template-columns:1fr;}}
+.note-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1rem 1.1rem;}
+.note-card h4{font-size:.75rem;font-weight:700;color:var(--accent);font-family:var(--font-sans);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
+.note-card p{font-size:.82rem;color:var(--ink-muted);margin:0;text-align:left;}
+
+/* Role cards */
+.role-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(10rem,1fr));gap:.75rem;margin:1rem 0;}
+.role-card{background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:.85rem 1rem;text-align:center;}
+.role-letter{font-family:var(--font-sans);font-size:1.3rem;font-weight:700;color:var(--accent);margin-bottom:.3rem;}
+.role-name{font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:.82rem;font-family:var(--font-sans);margin:1rem 0;}
+th{text-align:left;padding:.55rem .75rem;background:var(--ink);color:#fff;font-weight:600;letter-spacing:.02em;}
+td{padding:.5rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;color:var(--ink);}
+tr:nth-child(even) td{background:#f6f9f5;}
+tr:hover td{background:var(--accent-soft);}
+td.hi{color:var(--accent);font-weight:600;}
+td.lo{color:var(--red);font-weight:600;}
+td.ok{color:var(--green);font-weight:600;}
+
+/* Framework triangle */
+.triangle-wrap{display:flex;flex-direction:column;align-items:center;margin:2rem 0;gap:.5rem;}
+.tri-top,.tri-mid,.tri-bot{font-family:var(--font-sans);font-size:.85rem;font-weight:700;text-align:center;padding:.6rem 1.4rem;border-radius:6px;}
+.tri-top{background:var(--accent-soft);border:1.5px solid var(--accent);color:var(--accent);width:14rem;}
+.tri-mid{display:flex;gap:2rem;align-items:center;font-size:.78rem;}
+.tri-mid .tri-node{background:#fff;border:1.5px solid var(--border);color:var(--ink);padding:.5rem 1.1rem;border-radius:6px;width:10rem;text-align:center;}
+.tri-mid .tri-node strong{color:var(--accent);}
+.tri-arrow{font-size:1.2rem;color:var(--ink-muted);}
+
+/* Time table */
+.time-table{width:100%;border-collapse:collapse;font-size:.83rem;font-family:var(--font-sans);margin:1rem 0;}
+.time-table th{background:var(--accent-soft);color:var(--accent);padding:.5rem .75rem;text-align:left;border-bottom:1px solid var(--border);font-weight:700;}
+.time-table td{padding:.45rem .75rem;border-bottom:1px solid var(--border);color:var(--ink);}
+.time-table tr:nth-child(even) td{background:#f6f9f5;}
+.time-table tr:last-child td{font-weight:700;color:var(--accent);}
+
+footer{text-align:center;font-family:var(--font-sans);font-size:.72rem;color:var(--ink-muted);margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+@keyframes flash{0%{background:var(--accent-soft);}100%{background:transparent;}}
+.highlight-target{animation:flash 1.2s ease-out;}
+</style>
+</head>
+</head>
+<body>
+<div class="layout">
+
+<aside>
+  <div class="case-id">MBE-2026-L01 · 教师版</div>
+  <h2>教学笔记：标杆的重量</h2>
+  <nav>
+    <div class="nav-group">教学准备</div>
+    <ul>
+      <li><a href="#overview">案例定位与目标</a></li>
+      <li><a href="#grouping">分组建议</a></li>
+      <li><a href="#timing">时间分配</a></li>
+    </ul>
+    <div class="nav-group">各题引导思路</div>
+    <ul>
+      <li><a href="#q1">问题一：诊断</a></li>
+      <li><a href="#q2">问题二：成本的两面性</a></li>
+      <li><a href="#q3">问题三：政企关系</a></li>
+      <li><a href="#q4">问题四：优先级判断</a></li>
+      <li><a href="#q5">问题五：叙事与现实</a></li>
+      <li><a href="#q6">问题六：可复制性</a></li>
+    </ul>
+    <div class="nav-group">教学框架</div>
+    <ul>
+      <li><a href="#framework">借力·定力·创造力</a></li>
+      <li><a href="#reading">延伸阅读</a></li>
+    </ul>
+  </nav>
+  <div class="sidebar-badge">
+    &#128274; 教师专用文件<br>请勿在课前发放给学员
+  </div>
+</aside>
+
+<main>
+
+<div class="tn-hero" id="top">
+  <span class="case-tag">Teaching Note · MBE-2026-L01</span>
+  <h1>潜江荣盛冷链：标杆的重量</h1>
+  <p class="subtitle">教师教学笔记 — 含引导框架、参考思路与时间安排</p>
+  <dl class="tn-meta">
+    <div><dt>文件类型</dt><dd>Teaching Note（教师版）</dd></div>
+    <div><dt>对应案例</dt><dd>MBE-2026-L01</dd></div>
+    <div><dt>建议课时</dt><dd>90 分钟</dd></div>
+    <div><dt>适用分组</dt><dd>4—5人/组，共5组</dd></div>
+    <div><dt>难度等级</dt><dd>★★★★☆</dd></div>
+    <div><dt>核心框架</dt><dd>借力 · 定力 · 创造力</dd></div>
+  </dl>
+</div>
+
+<!-- S1: 案例定位 -->
+<section id="overview">
+  <h2><span class="num">一</span>案例定位与教学目标</h2>
+  <p>本案例的核心价值在于其<strong>高度的典型性和复杂性</strong>：它不是一个简单的成功或失败故事，而是一个正处于转折点的企业，面临着中国特殊产业语境下的多重张力。</p>
+  <div class="callout blue">
+    <span class="callout-label">核心张力</span>
+    政府的"宠爱"既是资源，也是枷锁。荣盛不是一个失败的故事，也不是一个成功的故事，而是一个<strong>正在做出选择的企业</strong>——这正是哈佛案例最有价值的状态，留给学员足够的讨论空间。
+  </div>
+  <h3>主要教学目标</h3>
+  <ul>
+    <li><strong>打破"做大做强"的线性思维</strong>，理解规模化高标准投入与商业回报之间的非线性关系；</li>
+    <li><strong>理解"政策红利"的双重性</strong>，政府资源既是支持也是约束，企业需要主动管理这一关系；</li>
+    <li><strong>掌握从单品物流向供应链增值服务延伸的战略逻辑</strong>，识别价值链中的利润来源；</li>
+    <li><strong>训练在资源约束下进行优先级判断的能力</strong>；</li>
+    <li><strong>引发对"对外叙事与内部现实"这一中国企业普遍性问题的反思</strong>。</li>
+  </ul>
+  <h3>案例的独特性</h3>
+  <p>与大多数中国农业供应链案例不同，本案例<strong>刻意选取了一家"被政府认可却经营亏损"的企业</strong>，而非成功转型的标杆。这使得学员无法依赖"结果导向"的后见之明来回答问题，必须在不确定性中做出判断。</p>
+  <p>财务数据的设计也是教学工具：附表四中三年累计超千万的债务缺口，意在制造"时间压力感"，迫使学员在有限资源约束下做出优先级选择，而非泛泛讨论战略方向。</p>
+</section>
+
+<!-- S2: 分组建议 -->
+<section id="grouping">
+  <h2><span class="num">二</span>分组讨论建议</h2>
+  <p>建议4—5人一组，课前为每组指定不同的分析视角，避免所有人从同一角度切入。</p>
+  <div class="role-grid">
+    <div class="role-card"><div class="role-letter">A</div><div class="role-name">财务顾问<br>诊断核心问题</div></div>
+    <div class="role-card"><div class="role-letter">B</div><div class="role-name">战略顾问<br>设计转型路径</div></div>
+    <div class="role-card"><div class="role-letter">C</div><div class="role-name">银行信贷官<br>评估续贷风险</div></div>
+    <div class="role-card"><div class="role-letter">D</div><div class="role-name">政府官员<br>重新设计支持方式</div></div>
+    <div class="role-card"><div class="role-letter">E</div><div class="role-name">竞争对手<br>老陈视角的机会</div></div>
+  </div>
+  <div class="callout yellow">
+    <span class="callout-label">教师提示</span>
+    C组（银行信贷官）是容易被忽略但价值极高的视角。银行对荣盛的续贷决策，实际上对李建国的转型窗口有决定性影响。请C组在汇报时说明：他们会给出什么条件，要求荣盛提供哪些信息。
+  </div>
+</section>
+
+<!-- S3: 时间分配 -->
+<section id="timing">
+  <h2><span class="num">三</span>时间分配建议（90分钟）</h2>
+  <table class="time-table">
+    <thead><tr><th>阶段</th><th>内容</th><th>时间</th></tr></thead>
+    <tbody>
+      <tr><td>开场</td><td>教师简介背景，确认学员已读案例；提问：你认为荣盛现在最紧迫的问题是什么？</td><td>5 分钟</td></tr>
+      <tr><td>诊断讨论</td><td>问题一 + 问题二（A、C组汇报，全班补充）</td><td>20 分钟</td></tr>
+      <tr><td>核心辩论</td><td>问题四（优先级判断，B组主导，全班辩论）</td><td>20 分钟</td></tr>
+      <tr><td>深度讨论</td><td>问题三 + 问题五（D组引导政企关系；全班讨论叙事张力）</td><td>25 分钟</td></tr>
+      <tr><td>框架提炼</td><td>教师总结：借力—定力—创造力三角框架</td><td>10 分钟</td></tr>
+      <tr><td>拓展收尾</td><td>问题六（E组分享老陈视角，讨论可复制性）</td><td>10 分钟</td></tr>
+    </tbody>
+  </table>
+  <div class="callout green">
+    <span class="callout-label">节奏提示</span>
+    问题四是本课核心，不要让前两个问题的讨论超时。如果开场讨论超过25分钟，果断切到问题四；问题六可以在课后以书面作业形式完成。
+  </div>
+</section>
+
+<!-- Q1 -->
+<section id="q1">
+  <h2><span class="num">问题一</span>诊断：根本原因是什么？</h2>
+  <div class="callout red">
+    <span class="callout-label">常见误区</span>
+    学员容易把问题归结为"当初不该接受政府定位"或"建设标准太高"。这是对<strong>症状</strong>而非<strong>根因</strong>的定位，需要引导学员继续追问。
+  </div>
+  <h3>引导方向</h3>
+  <p>核心问题是<strong>商业模式设计的先天缺陷</strong>——在没有高附加值业务支撑的条件下，引入了与高附加值业务相匹配的高固定成本结构。这不是个别决策的失误，而是商业模式与成本结构不匹配的系统性问题。</p>
+  <div class="callout blue">
+    <span class="callout-label">分析工具：单位经济学（Unit Economics）</span>
+    引导学员用附表一的数据做以下计算：<br><br>
+    每吨物流收入 ≈ 2,840万元 ÷ 12,100吨 ≈ <strong>235元/吨</strong><br>
+    变动成本 ≈ 780万元 ÷ 12,100吨 ≈ <strong>65元/吨</strong><br>
+    边际贡献 ≈ <strong>170元/吨</strong><br><br>
+    8,000吨冷库年均利用率约40%，年吞吐量约4,800吨，边际贡献总额仅约 <strong>816万元</strong>，远不足以覆盖 <strong>2,210万元</strong> 的固定成本。
+  </div>
+  <h3>追问方向</h3>
+  <ul>
+    <li>如果2014年就明白这个单位经济模型，荣盛的建设规模应该是多少？</li>
+    <li>荣盛的固定成本结构，是"政府要求"造成的，还是荣盛自己的选择？两者的比例各是多少？</li>
+    <li>如果当年不接受"标杆企业"的定位，荣盛今天会在哪里？</li>
+  </ul>
+</section>
+
+<!-- Q2 -->
+<section id="q2">
+  <h2><span class="num">问题二</span>成本的两面性</h2>
+  <div class="callout red">
+    <span class="callout-label">常见误区</span>
+    大多数学员会认为合规成本是纯粹的劣势，结论是"应该降低合规标准"。这个结论在现实中站不住脚，需要引导学员转换角度。
+  </div>
+  <h3>引导方向：合规溢价的条件性</h3>
+  <p>高合规成本是<strong>劣势</strong>，当且仅当：</p>
+  <ul>
+    <li>客户不愿意为合规支付溢价（市场处于价格竞争阶段）；</li>
+    <li>企业无法将合规转化为可感知的差异化（没有品牌出口）；</li>
+    <li>监管机构不执法（不合规者没有被惩罚的风险）。</li>
+  </ul>
+  <p>但合规成本可以成为<strong>护城河</strong>，当：</p>
+  <ul>
+    <li>进入需要官方认证的高端渠道（出口、大型商超、食品企业B2B）；</li>
+    <li>政策趋严导致不合规竞争者被淘汰（监管套利空间收窄）；</li>
+    <li>消费者愿意为"可追溯""品质背书"支付更高价格。</li>
+  </ul>
+  <div class="callout green">
+    <span class="callout-label">关键追问</span>
+    荣盛所在的市场，是否正在向后一种方向演进？预制菜行业2023—2025年的监管趋严，是否正在改变这个判断？引导学员思考：<strong>合规是成本，还是一张未来才能兑现的门票？</strong>
+  </div>
+  <div class="note-grid">
+    <div class="note-card">
+      <h4>合规成本作为劣势的条件</h4>
+      <p>价格竞争市场 · 客户不敏感 · 监管不执法 · 无溢价出口</p>
+    </div>
+    <div class="note-card">
+      <h4>合规成本转化为护城河的条件</h4>
+      <p>高端渠道准入 · 监管趋严淘汰对手 · 品牌溢价市场形成 · 出口资质需求</p>
+    </div>
+  </div>
+</section>
+
+<!-- Q3 -->
+<section id="q3">
+  <h2><span class="num">问题三</span>政企关系的本质</h2>
+  <div class="callout yellow">
+    <span class="callout-label">课堂注意事项</span>
+    这个话题在中国本土语境下容易走向两个极端：要么对政企关系过度美化，要么流于批判。引导学员用<strong>博弈论框架</strong>分析，而非道德评判。
+  </div>
+  <h3>"政企交易"的成本收益分析</h3>
+  <table>
+    <thead><tr><th>荣盛获得</th><th>荣盛付出</th></tr></thead>
+    <tbody>
+      <tr><td class="ok">土地支持（估计节约500万以上）</td><td class="lo">合规约束（成本溢出约180万/年）</td></tr>
+      <tr><td class="ok">政策补贴和低息贷款</td><td class="lo">接待成本（约100万/年）</td></tr>
+      <tr><td class="ok">品牌背书（"潜江龙虾"IP）</td><td class="lo">形象绑定（不能公开示弱）</td></tr>
+      <tr><td class="ok">政府采购优先</td><td class="lo">战略灵活性受限</td></tr>
+    </tbody>
+  </table>
+  <h3>引导学员思考</h3>
+  <p>这笔"交易"在<strong>2015—2018年是合算的</strong>（资源大量流入）；但在<strong>2022年是不合算的</strong>（资源流入停止，约束依然存在）。</p>
+  <p>企业应如何<strong>主动调整这一关系</strong>，而非被动维持？可从以下角度引导：</p>
+  <ul>
+    <li>荣盛是否可以主动提出"重新谈判"——以新的增值服务换取新的政策支持？</li>
+    <li>D组（政府视角）：如果你是潜江市农业农村局，当荣盛陷入经营困难，你最担心什么？你会主动提供什么新资源？</li>
+    <li>荣盛的"标杆"地位，是否可以作为一种可主动运营的资产，而非被动背负的义务？</li>
+  </ul>
+  <div class="callout blue">
+    <span class="callout-label">延伸概念</span>
+    可引入<strong>"政治性企业家精神"（Political Entrepreneurship）</strong>的概念，探讨在强政府干预行业中，企业如何主动管理政策环境，而非被动接受。参考：Khanna &amp; Palepu (2010) 关于新兴市场"制度缺口"的分析框架。
+  </div>
+</section>
+
+<!-- Q4 -->
+<section id="q4">
+  <h2><span class="num">问题四</span>优先级判断（核心辩论题）</h2>
+  <p>这是本案例<strong>最有实战价值</strong>的讨论题，建议留出15—20分钟，让B组主导，其余各组从自己视角发起挑战。</p>
+  <h3>三个方向的评估矩阵（教师参考，不直接发给学员）</h3>
+  <table>
+    <thead><tr><th>评估维度</th><th>方向一：自营交易</th><th>方向二：知识变现</th><th>方向三：深加工</th></tr></thead>
+    <tbody>
+      <tr><td>启动资金需求</td><td class="lo">高（500万+）</td><td class="ok">极低（50万内）</td><td>中高（300—400万）</td></tr>
+      <tr><td>现金回收速度</td><td class="ok">快（季节内变现）</td><td class="ok">快（单次收费）</td><td class="lo">慢（渠道建立期长）</td></tr>
+      <tr><td>管理能力要求</td><td>中（需采购判断力）</td><td class="ok">低（已有知识）</td><td class="lo">高（全新生产体系）</td></tr>
+      <tr><td>战略杠杆效应</td><td>中</td><td>中（可带来资源）</td><td class="ok">高（改变收入结构）</td></tr>
+      <tr><td>失败代价</td><td class="lo">高（库存亏损风险）</td><td class="ok">低（无固定成本）</td><td>中高（设备投入沉没）</td></tr>
+      <tr><td>与现有资产协同性</td><td class="ok">高</td><td>中</td><td class="ok">高</td></tr>
+    </tbody>
+  </table>
+  <div class="callout green">
+    <span class="callout-label">关键引导发现</span>
+    没有标准答案。最优路径取决于荣盛的<strong>风险承受能力</strong>和<strong>核心团队的能力边界</strong>。<br><br>
+    一个高价值的辩论焦点：能否先走<strong>知识变现（轻资产）</strong>，用轻资产收益为自营交易或深加工积累资本？即<strong>"以轻养重"</strong>的路径逻辑。引导学员测算：知识变现每年50万，需要几年才能积累够深加工的启动资金？这个时间窗口与债务压力（三年缺口1,030万）是否兼容？
+  </div>
+  <h3>各组视角的典型挑战</h3>
+  <div class="note-grid">
+    <div class="note-card">
+      <h4>A组（财务）会说</h4>
+      <p>现金流最紧，方向一资金占压500万根本拿不出来；方向二是唯一现实起点。</p>
+    </div>
+    <div class="note-card">
+      <h4>B组（战略）会说</h4>
+      <p>方向三才能根本解决季节性问题，方向二只是"花架子"，规模天花板太低。</p>
+    </div>
+    <div class="note-card">
+      <h4>C组（银行）会说</h4>
+      <p>无论走哪条，必须先拿出可信的现金流预测；方向三需要新融资，需要额外抵押物。</p>
+    </div>
+    <div class="note-card">
+      <h4>D组（政府）会说</h4>
+      <p>方向二（培训咨询）可以帮政府输出"潜江经验"，我愿意背书，甚至联合推广。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Q5 -->
+<section id="q5">
+  <h2><span class="num">问题五</span>叙事与现实</h2>
+  <p>这是<strong>最具中国特色</strong>的讨论题，也是最容易流于表面的一题。</p>
+  <div class="callout red">
+    <span class="callout-label">引导方向</span>
+    避免简单的道德评判（"企业不应该说谎"），转向<strong>信息管理与战略沟通</strong>的专业框架。荣盛维持"标杆"形象，不是简单的欺骗，而是一个多受众、多目标的信息管理问题。
+  </div>
+  <h3>分受众分析框架</h3>
+  <table>
+    <thead><tr><th>受众</th><th>对"荣盛经营困难"的反应</th><th>战略沟通建议</th></tr></thead>
+    <tbody>
+      <tr><td>政府主管部门</td><td class="lo">可能撤销"标杆"认定，影响后续支持</td><td>不宜主动披露，但可以"转型升级"为名寻求新资源</td></tr>
+      <tr><td>银行信贷部门</td><td>可能收紧授信或提前收贷</td><td class="hi">可选择性披露，争取债务重组机会</td></tr>
+      <tr><td>潜在合作伙伴</td><td class="ok">可能视为合作切入点（帮助解决问题）</td><td class="ok">可适度披露，引入战略投资人或合作方</td></tr>
+      <tr><td>竞争对手</td><td>可能趁机抢夺客户</td><td class="lo">不宜披露</td></tr>
+      <tr><td>核心员工</td><td class="ok">理解困境，可能共同寻找出路</td><td class="ok">应内部透明，建立信任</td></tr>
+    </tbody>
+  </table>
+  <h3>追问方向</h3>
+  <ul>
+    <li>李建国在维持"标杆"形象时，最大的受众是谁？他最担心失去的是什么资源？</li>
+    <li>有没有可能，向银行信贷部门部分披露困难，反而能获得债务重组机会？</li>
+    <li>荣盛的"对外叙事"和"内部现实"的落差，是主动选择，还是被动陷入？</li>
+  </ul>
+  <div class="callout blue">
+    <span class="callout-label">延伸概念</span>
+    引入<strong>"选择性透明（Selective Transparency）"</strong>的概念：在复杂利益相关方结构下，企业向不同受众披露不同程度的信息，是一种可以被主动设计的战略工具，而非简单的"说谎或说实话"二选一。
+  </div>
+</section>
+
+<!-- Q6 -->
+<section id="q6">
+  <h2><span class="num">问题六</span>可复制性</h2>
+  <p>这是开放性讨论题，无标准答案，主要用于课程收尾和拓展思考。E组（老陈视角）可以在这里说明：如果荣盛转型成功，他们这样的小型竞争者会面临什么新威胁？</p>
+  <h3>核心可迁移要素</h3>
+  <ul>
+    <li>存在被政府打造的<strong>产区品牌 IP</strong>（潜江龙虾 → 阳澄湖大闸蟹 ✓，赣南脐橙 ✓，云南鲜花 ?）；</li>
+    <li>存在<strong>强烈的季节性</strong>，导致冷链设施高闲置；</li>
+    <li>存在以参观考察为载体的<strong>知识和经验积累</strong>，尚未商品化；</li>
+    <li>下游存在愿意为"可追溯"和"品质背书"支付溢价的<strong>消费市场</strong>。</li>
+  </ul>
+  <h3>不具备可复制性的情况</h3>
+  <ul>
+    <li>产区品牌尚未建立（无"借力"基础）；</li>
+    <li>产品不适合深加工（如鲜切花，加工空间有限）；</li>
+    <li>政策环境不允许物流企业进入交易领域；</li>
+    <li>企业不是"门面担当"，没有积累200场/年的参观接待经验（知识变现方向不适用）。</li>
+  </ul>
+  <div class="callout green">
+    <span class="callout-label">课堂收尾的好问题</span>
+    请学员在白板上列举三个中国农产品产区，判断荣盛模式在这些产区的可复制性。这个练习通常能在五分钟内引出非常丰富的讨论，也是一个自然的课程收尾。
+  </div>
+</section>
+
+<!-- Framework -->
+<section id="framework">
+  <h2><span class="num">四</span>核心教学框架：借力·定力·创造力</h2>
+  <p>建议在课程最后10分钟，用这个三角框架做总结，帮助学员形成结构化认知，把当天的讨论收束到一个可带走的思维工具上。</p>
+
+  <div class="triangle-wrap">
+    <div class="tri-top">借力（Leverage）<br><span style="font-size:.72rem;font-weight:400;opacity:.8;">主动识别并善用外部资源</span></div>
+    <div class="tri-mid">
+      <div class="tri-node">定力（Discipline）<br><span style="font-size:.68rem;font-weight:400;">保持单位经济学清醒</span></div>
+      <div class="tri-arrow">⟷</div>
+      <div class="tri-node">创造力（Innovation）<br><span style="font-size:.68rem;font-weight:400;">重定义价值创造边界</span></div>
+    </div>
+  </div>
+
+  <h3>借力（Leverage）</h3>
+  <p>识别并善用政府资源、产区品牌、政策红利。关键是"借"——主动设计，而非被动接受。荣盛早期的失误，是把"被政府塑造"等同于"主动借力"。两者的差异在于：<strong>谁在设定条件，谁在决定边界</strong>。</p>
+
+  <h3>定力（Discipline）</h3>
+  <p>在外部压力（做大做强）和内部惯性（继续堆砌硬件）面前，保持对单位经济学的清醒认知。高标准不等于高回报，好故事不等于好生意。荣盛的智能调度系统日均使用3.2单、设计容量500单，这个数字是定力缺失的最直观证据。</p>
+
+  <h3>创造力（Innovation）</h3>
+  <p>当现有商业模式触及天花板，解法不是"把现有的事情做得更好"，而是<strong>重新定义自己的价值创造边界</strong>。交易、培训、加工，是荣盛的探索路径；每个企业在相似困境中的出路会不同，但逻辑是相通的：<strong>物流是基础设施，利润来自增值服务</strong>。</p>
+
+  <div class="callout blue">
+    <span class="callout-label">教师板书建议</span>
+    在白板上画出三角，让学员用一句话描述荣盛在每个维度上的现状和目标状态。这通常能让学员自然总结出案例的核心洞察，比教师直接告诉他们更有效。
+  </div>
+</section>
+
+<!-- Reading -->
+<section id="reading">
+  <h2><span class="num">五</span>参考延伸阅读</h2>
+  <ul>
+    <li>Porter, M. (1985). <em>Competitive Advantage: Creating and Sustaining Superior Performance</em>（价值链分析部分，理解"物流是基础设施"的理论依据）</li>
+    <li>Khanna, T. &amp; Palepu, K. (2010). <em>Winning in Emerging Markets</em>（新兴市场制度缺口与企业战略，为政企关系分析提供框架）</li>
+    <li>中国物流与采购联合会：《中国冷链物流发展报告》（近三年版本，了解行业背景数据）</li>
+    <li>艾媒咨询：《2023—2024年中国预制菜行业研究报告》（为方向三的市场可行性提供数据支撑）</li>
+    <li>农业农村部：《关于加快农产品产地冷藏保鲜设施建设的意见》（理解案例中政策补贴的来源与条件）</li>
+  </ul>
+  <div class="callout yellow">
+    <span class="callout-label">可选配套作业</span>
+    课后书面作业建议：让学员选择一个中国农产品区域品牌（非小龙虾），分析当地物流企业面临的类似挑战，并说明荣盛转型逻辑是否适用，以及需要哪些调整。
+  </div>
+</section>
+
+<footer>
+  <p>本教学笔记与案例MBE-2026-L01配套使用，仅供授课教师参考。请勿在课前发放给学员。</p>
+  <p style="margin-top:.4rem;">MBE-2026-L01 Teaching Note &nbsp;·&nbsp; v2.0 &nbsp;·&nbsp; 2026年8月</p>
+</footer>
+
+</main>
+</div>
+
+<script>
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('nav a');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector('nav a[href="#' + e.target.id + '"]');
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
