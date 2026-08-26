@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching Note｜MBE-2026-L01 从废铁到机皇（教师专用）</title>
+  <meta name="description" content="教学注记（教师专用）：梁山商用二手车出口非洲案例，三大分析框架与课堂引导方案" />
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-main: #1e2a3a;
+      --bg-card: rgba(255,255,255,0.05);
+      --bg-card-hover: rgba(255,255,255,0.08);
+      --ink: #e2e8f0;
+      --ink-muted: #94a3b8;
+      --ink-dim: #64748b;
+      --accent: #f59e0b;
+      --accent-soft: rgba(245,158,11,0.15);
+      --accent-border: rgba(245,158,11,0.35);
+      --blue: #60a5fa;
+      --blue-soft: rgba(96,165,250,0.12);
+      --green: #34d399;
+      --green-soft: rgba(52,211,153,0.12);
+      --red: #f87171;
+      --red-soft: rgba(248,113,113,0.12);
+      --violet: #a78bfa;
+      --violet-soft: rgba(167,139,250,0.12);
+      --border: rgba(255,255,255,0.08);
+      --border-strong: rgba(255,255,255,0.14);
+      --sidebar-w: 15rem;
+      --font: "LXGW WenKai", "PingFang SC", "Hiragino Sans GB", serif;
+      --font-sans: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.85; }
+
+    /* Top banner */
+    .top-banner {
+      background: var(--accent);
+      color: #1a1000;
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      min-height: 100vh;
+      max-width: 78rem;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+    aside {
+      position: sticky;
+      top: 2.1rem;
+      height: calc(100vh - 2.1rem);
+      padding: 1.5rem 1rem 1.5rem 1.25rem;
+      border-right: 1px solid var(--border);
+      background: rgba(15,23,42,0.97);
+      overflow-y: auto;
+    }
+    @media (max-width: 900px) { aside { position: relative; height: auto; } }
+
+    .case-id {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .tn-badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      padding: 0.15rem 0.5rem;
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      border-radius: 3px;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    aside h2 { font-size: 0.85rem; font-weight: 600; line-height: 1.45; margin-bottom: 1.5rem; color: var(--ink); }
+
+    nav ul { list-style: none; }
+    nav li { margin-bottom: 0.05rem; }
+    nav a {
+      display: block;
+      padding: 0.3rem 0.55rem;
+      font-size: 0.76rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    nav a:hover { color: var(--ink); background: var(--bg-card); }
+    nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 600;
+    }
+    .nav-group {
+      font-family: var(--font-sans);
+      font-size: 0.59rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-dim);
+      margin: 1rem 0 0.25rem 0.55rem;
+      text-transform: uppercase;
+    }
+
+    main {
+      padding: 2rem 2.75rem 5rem;
+      background: var(--bg-main);
+      min-width: 0;
+    }
+    @media (max-width: 600px) { main { padding: 1.25rem 1rem 3rem; } }
+
+    /* Header */
+    .tn-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-strong);
+    }
+    .tn-header .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      margin-bottom: 1rem;
+    }
+    .tn-header .meta-row span strong { color: var(--accent); }
+    .tn-header h1 { font-size: clamp(1.4rem, 3.5vw, 1.9rem); font-weight: 600; line-height: 1.3; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .tn-header .subtitle { font-size: 0.92rem; color: var(--ink-muted); font-style: italic; }
+
+    .objective-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 700px) { .objective-grid { grid-template-columns: 1fr; } }
+
+    .obj-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem;
+    }
+    .obj-card.f1 { border-top: 3px solid var(--accent); }
+    .obj-card.f2 { border-top: 3px solid var(--blue); }
+    .obj-card.f3 { border-top: 3px solid var(--green); }
+    .obj-card h3 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .obj-card.f1 h3 { color: var(--accent); }
+    .obj-card.f2 h3 { color: var(--blue); }
+    .obj-card.f3 h3 { color: var(--green); }
+    .obj-card ul { padding-left: 1.1rem; font-size: 0.78rem; color: var(--ink-muted); }
+    .obj-card li { margin-bottom: 0.35rem; line-height: 1.5; }
+
+    /* Section */
+    section { margin-bottom: 3.5rem; scroll-margin-top: 3rem; }
+    section > h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-strong);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      color: var(--ink);
+    }
+    .sec-num {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    section p { margin-bottom: 1rem; color: var(--ink-muted); text-align: justify; font-size: 0.93rem; }
+    section p strong { color: var(--ink); font-weight: 600; }
+
+    /* Framework sections */
+    .framework-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1.1rem;
+      border-radius: 6px 6px 0 0;
+      margin-bottom: 0;
+    }
+    .framework-header.f1 { background: var(--accent-soft); border: 1px solid var(--accent-border); }
+    .framework-header.f2 { background: var(--blue-soft); border: 1px solid rgba(96,165,250,0.25); }
+    .framework-header.f3 { background: var(--green-soft); border: 1px solid rgba(52,211,153,0.25); }
+
+    .fw-badge {
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    .f1 .fw-badge { background: rgba(245,158,11,0.3); color: var(--accent); }
+    .f2 .fw-badge { background: rgba(96,165,250,0.2); color: var(--blue); }
+    .f3 .fw-badge { background: rgba(52,211,153,0.2); color: var(--green); }
+    .framework-header h3 { font-size: 1rem; font-weight: 600; }
+    .f1 .framework-header h3 { color: var(--accent); }
+    .f2 .framework-header h3 { color: var(--blue); }
+    .f3 .framework-header h3 { color: var(--green); }
+
+    .framework-body {
+      padding: 1.25rem 1.4rem;
+      background: var(--bg-card);
+      border-radius: 0 0 6px 6px;
+      border: 1px solid var(--border);
+      border-top: none;
+      margin-bottom: 1.5rem;
+    }
+    .framework-body p { margin-bottom: 0.85rem; font-size: 0.88rem; color: var(--ink-muted); }
+    .framework-body p strong { color: var(--ink); }
+
+    .fw-concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    @media (max-width: 600px) { .fw-concept-grid { grid-template-columns: 1fr; } }
+    .fw-concept {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.75rem 0.9rem;
+    }
+    .fw-concept h4 { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; color: var(--ink); margin-bottom: 0.35rem; }
+    .fw-concept p { font-size: 0.76rem; color: var(--ink-muted); margin: 0; text-align: left; }
+
+    /* Q&A sections */
+    .qa-block {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .qa-header {
+      padding: 0.9rem 1.2rem;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+    .qa-num {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .qa-header h3 { font-size: 0.92rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
+
+    .qa-body { padding: 1.2rem 1.3rem; }
+    .qa-body p { font-size: 0.87rem; color: var(--ink-muted); margin-bottom: 0.85rem; }
+    .qa-body p strong { color: var(--ink); }
+    .qa-body h4 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 1rem 0 0.45rem;
+    }
+    .qa-body ul { padding-left: 1.25rem; margin-bottom: 0.85rem; }
+    .qa-body li { font-size: 0.84rem; color: var(--ink-muted); margin-bottom: 0.4rem; line-height: 1.6; }
+    .qa-body li strong { color: var(--ink); }
+
+    .answer-box {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid var(--accent-border);
+      border-radius: 5px;
+      padding: 0.9rem 1.1rem;
+      margin: 0.75rem 0;
+    }
+    .answer-box .label {
+      font-family: var(--font-sans);
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .answer-box p { font-size: 0.84rem; color: var(--ink); margin-bottom: 0.5rem; text-align: left; }
+    .answer-box p:last-child { margin-bottom: 0; }
+    .answer-box.blue { background: var(--blue-soft); border-color: rgba(96,165,250,0.3); }
+    .answer-box.blue .label { color: var(--blue); }
+    .answer-box.green { background: var(--green-soft); border-color: rgba(52,211,153,0.3); }
+    .answer-box.green .label { color: var(--green); }
+
+    .tension-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    @media (max-width: 580px) { .tension-grid { grid-template-columns: 1fr; } }
+    .tension-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.85rem 1rem;
+    }
+    .tension-card h4 { font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--violet); margin-bottom: 0.4rem; }
+    .tension-card p { font-size: 0.78rem; color: var(--ink-muted); margin: 0; text-align: left; }
+
+    /* Session plan */
+    .session-plan { margin: 1.5rem 0; }
+    .session-step {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0;
+      position: relative;
+    }
+    .session-step:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 1.1rem;
+      top: 2.5rem;
+      width: 2px;
+      height: calc(100% - 0.5rem);
+      background: var(--border);
+    }
+    .step-dot {
+      flex-shrink: 0;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      border: 2px solid var(--accent-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 0.15rem;
+      z-index: 1;
+    }
+    .step-body { padding-bottom: 1.5rem; flex: 1; }
+    .step-time {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.15rem;
+    }
+    .step-title { font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.35rem; }
+    .step-desc { font-size: 0.82rem; color: var(--ink-muted); }
+    .step-desc ul { padding-left: 1.1rem; margin-top: 0.35rem; }
+    .step-desc li { margin-bottom: 0.25rem; }
+
+    /* Comparison table */
+    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; font-family: var(--font-sans); }
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      background: rgba(255,255,255,0.08);
+      color: var(--ink);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid var(--border-strong);
+    }
+    td { padding: 0.45rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; color: var(--ink-muted); }
+    tr:hover td { background: rgba(255,255,255,0.03); }
+    td.good { color: var(--green); font-weight: 500; }
+    td.warn { color: var(--accent); font-weight: 500; }
+    td.bad { color: var(--red); }
+    td.em { color: var(--ink); font-weight: 600; }
+
+    /* Reading list */
+    .reading-list { list-style: none; }
+    .reading-list li {
+      padding: 0.65rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.84rem;
+    }
+    .reading-list li:last-child { border-bottom: none; }
+    .reading-cat {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      margin-right: 0.5rem;
+    }
+
+    blockquote {
+      margin: 1rem 0;
+      padding: 0.85rem 1.1rem;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--accent);
+      font-style: italic;
+      color: var(--ink-muted);
+      font-size: 0.87rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    footer {
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      color: var(--ink-dim);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .highlight-target { animation: flash 1.2s ease-out; }
+    @keyframes flash {
+      0% { background: rgba(245,158,11,0.15); }
+      100% { background: transparent; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-banner">教师专用 · Instructor Copy · Confidential — 请勿分发给学生</div>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside>
+    <div class="case-id">MBE-2026-L01</div>
+    <div class="tn-badge">Teaching Note</div>
+    <h2>从废铁到机皇：梁山二手车出口非洲</h2>
+    <nav>
+      <div class="nav-group">概览</div>
+      <ul>
+        <li><a href="#overview">案例定位与适用</a></li>
+        <li><a href="#objectives">教学目标</a></li>
+        <li><a href="#frameworks">三大分析框架</a></li>
+      </ul>
+      <div class="nav-group">框架详解</div>
+      <ul>
+        <li><a href="#f1">框架一：中国企业全球化</a></li>
+        <li><a href="#f2">框架二：逆向物流</a></li>
+        <li><a href="#f3">框架三：再制造工程</a></li>
+      </ul>
+      <div class="nav-group">问题解析</div>
+      <ul>
+        <li><a href="#q1">问题 1｜逆向物流价值链</a></li>
+        <li><a href="#q2">问题 2｜全球化路径类型</a></li>
+        <li><a href="#q3">问题 3｜再制造边界</a></li>
+        <li><a href="#q4">问题 4｜政策压力分析</a></li>
+        <li><a href="#q5">问题 5｜战略选择</a></li>
+      </ul>
+      <div class="nav-group">课堂管理</div>
+      <ul>
+        <li><a href="#session">90 分钟课堂方案</a></li>
+        <li><a href="#readings">延伸阅读</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Header -->
+    <div class="tn-header">
+      <div style="position:relative;width:100%;border-radius:8px;overflow:hidden;margin-bottom:1.5rem;">
+        <img src="hero.jpg" alt="梁山二手重型卡车出口非洲" style="width:100%;height:180px;object-fit:cover;object-position:center;display:block;filter:brightness(0.45) saturate(0.7);" />
+        <div style="position:absolute;inset:0;display:flex;align-items:center;padding:0 2rem;gap:1rem;">
+          <div>
+            <div style="font-family:var(--font-sans);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem;">MBE-2026-L01 · Teaching Note</div>
+            <div style="font-size:1.5rem;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-0.02em;text-shadow:0 2px 8px rgba(0,0,0,0.5);">从废铁到机皇</div>
+            <div style="font-size:0.8rem;color:rgba(255,255,255,0.7);margin-top:0.3rem;font-style:italic;">梁山商用二手车出口非洲 · 教师专用</div>
+          </div>
+        </div>
+      </div>
+      <div class="meta-row">
+        <span><strong>案例编号</strong> MBE-2026-L01</span>
+        <span><strong>配套案例</strong> 梁山二手车_学生版.html</span>
+        <span><strong>适用课程</strong> 国际物流 · 供应链管理 · 产业升级</span>
+        <span><strong>课时</strong> 75—90 分钟</span>
+      </div>
+      <h1>从废铁到机皇：梁山商用二手车出口非洲</h1>
+      <p class="subtitle">Teaching Note — 案例教学注记（教师专用）</p>
+    </div>
+
+    <!-- Section: Overview -->
+    <section id="overview">
+      <h2><span class="sec-num">概览</span>案例定位与适用场景</h2>
+
+      <p>本案例以山东梁山县商用二手车出口非洲产业集群为对象，呈现了一个中国内陆县城如何将国内"废铁"变成非洲市场"机皇"的完整产业逻辑。案例核心叙事涵盖三个层面：<strong>产业层面</strong>的逆向供应链设计；<strong>企业层面</strong>的差异化竞争策略（蜗牛、蚂蚁、诚川三种路径）；以及<strong>宏观层面</strong>的中国企业全球化路径分类与政策环境变化。</p>
+
+      <p>案例适用于以下课程场景：</p>
+      <p>① <strong>国际物流与供应链管理</strong>——逆向物流设计、再制造工程、跨境供应链效率优化；<br>
+      ② <strong>中国产业与企业国际化</strong>——"一带一路"背景下的南南贸易、中国县域企业出海路径分析；<br>
+      ③ <strong>循环经济与绿色物流</strong>——再制造的资源效率（节能 60%、节材 70%+）与政策机遇；<br>
+      ④ <strong>职教本科供应链/贸易专业</strong>——产业一线案例，适合操作层面的技能讨论与分析。</p>
+
+      <p>本案例与 <em>MBE-2026-D05（12天的赌注·美的供应链）</em>可联讲，构成"中国制造企业出海的两种范式"：D05 是跨国制造巨头的应急响应；L01 是草根产业集群的升级蝶变。两者叙事结构互补，适合作为系列课程的前后呼应。</p>
+    </section>
+
+    <!-- Section: Objectives -->
+    <section id="objectives">
+      <h2><span class="sec-num">目标</span>教学目标</h2>
+
+      <p>本案例围绕三大分析框架设定教学目标，每个框架对应一组知识能力和思辨目标：</p>
+
+      <div class="objective-grid">
+        <div class="obj-card f1">
+          <h3>框架一：中国企业全球化</h3>
+          <ul>
+            <li>区分中国企业出海的不同路径类型（技术驱动 vs 成本套利 vs 资源匹配）</li>
+            <li>分析梁山模式在全球价值链中的位置及可升级性</li>
+            <li>理解"南南贸易"的逻辑与局限</li>
+          </ul>
+        </div>
+        <div class="obj-card f2">
+          <h3>框架二：逆向物流</h3>
+          <ul>
+            <li>识别逆向供应链的关键环节和价值创造机制</li>
+            <li>分析竞争壁垒的来源（技术、规模、信任）</li>
+            <li>评估逆向物流产业对政策变化的敏感度</li>
+          </ul>
+        </div>
+        <div class="obj-card f3">
+          <h3>框架三：再制造工程</h3>
+          <ul>
+            <li>区分"再制造"（Remanufacturing）与"翻新"（Refurbishing）的技术边界</li>
+            <li>理解再制造认证体系的经济与竞争价值</li>
+            <li>分析再制造从成本工具向品牌工具的转型逻辑</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Frameworks -->
+    <section id="frameworks">
+      <h2><span class="sec-num">框架</span>三大分析框架概述</h2>
+      <p>以下三节分别展开三个分析框架的理论基础与在本案例中的映射关系，供教师在讲解时作为背景铺垫或学生报告后的点评框架。</p>
+    </section>
+
+    <!-- Framework 1 -->
+    <section id="f1">
+      <div class="framework-header f1">
+        <span class="fw-badge">Framework 1</span>
+        <h3>中国企业全球化路径分类</h3>
+      </div>
+      <div class="framework-body">
+        <p>学界对中国企业全球化路径的分类通常围绕<strong>竞争优势来源</strong>展开。以下四种路径在中国出海企业中最为典型，本案例与"资源匹配型"高度契合，但也在向"能力建构型"转型：</p>
+
+        <div class="fw-concept-grid">
+          <div class="fw-concept">
+            <h4>① 技术驱动型</h4>
+            <p>以自研技术建立差异化（如华为、大疆）。壁垒高，但需巨额研发投入和时间积累。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>② 品牌建构型</h4>
+            <p>以品牌认知建立溢价（如比亚迪的新能源汽车出海）。需要持续的市场教育和售后建设。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>③ 资源匹配型（梁山）</h4>
+            <p>将国内"过剩"或"淘汰"资源精准匹配到目标市场需求缺口。低壁垒，高速，但可持续性依赖外部条件稳定。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>④ 能力建构型</h4>
+            <p>通过海外运营积累本地知识，逐步建立售后、品牌、再制造等综合能力（梁山的升级方向）。</p>
+          </div>
+        </div>
+
+        <p><strong>梁山模式的核心竞争假设</strong>是：国内"废弃"的商用车，与非洲市场的"刚性需求"之间，存在一个由国内排放法规升级创造的持续性价值套利空间。这一假设成立的前提是：①非洲市场对车辆精密度要求低；②非洲中国品牌零件生态成熟；③国内排放标准迭代继续产生新的"淘汰车源"。</p>
+
+        <p>教师可引导学生思考：当非洲车龄限制政策逐步收紧，上述假设①的前提开始松动时，梁山模式是"路径依赖的陷阱"，还是"升级的倒逼机制"？</p>
+
+        <div class="tension-grid">
+          <div class="tension-card">
+            <h4>核心张力 A</h4>
+            <p>梁山出口的竞争力依赖非洲市场的"低标准"，但这一标准正在提升——梁山企业是否有能力随之升级？</p>
+          </div>
+          <div class="tension-card">
+            <h4>核心张力 B</h4>
+            <p>梁山模式是"南南贸易"的样本，但南南贸易的声誉问题（中国低质出口）同样威胁其长期市场地位。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Framework 2 -->
+    <section id="f2">
+      <div class="framework-header f2">
+        <span class="fw-badge">Framework 2</span>
+        <h3>逆向物流：价值链分析</h3>
+      </div>
+      <div class="framework-body">
+        <p><strong>逆向物流（Reverse Logistics）</strong>指产品在到达最终用户后，从消费端向供应端流动的物流过程，包括回收、维修、再制造、再销售等环节。传统供应链的"废弃末端"，在逆向物流体系中成为新的"价值起点"。</p>
+
+        <p>梁山案例展示了逆向物流创造价值的<strong>五个关键机制</strong>：</p>
+
+        <div class="fw-concept-grid">
+          <div class="fw-concept">
+            <h4>① 价格套利（核心）</h4>
+            <p>以废铁价收购，以"接近新车底气"的价格出售——价值差来自技术投入和市场信息不对称。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>② 生态系统杠杆</h4>
+            <p>梁山的零配件生态（380 家配件商）大幅降低了再制造成本，是逆向物流实现盈利的结构性支撑。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>③ 场景匹配</h4>
+            <p>国内"淘汰"的国二、国三车，在非洲路况下恰好处于"生命周期高峰"——场景匹配创造价值增量。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>④ 信息壁垒变现</h4>
+            <p>非洲买家对中国二手车市场信息的掌握程度远低于梁山企业，这一信息差是利润空间的来源之一，也是品牌建设能够消除的长期风险。</p>
+          </div>
+        </div>
+
+        <p><strong>逆向物流的核心竞争壁垒分析：</strong>在梁山案例中，可模仿性不对等——<em>分拣技术、再制造工艺</em>需要熟练工人积累（难模仿）；<em>规模和渠道</em>需要时间建立（可模仿，有时间差）；<em>通关制度红利</em>属于产业集群享有（单家企业难以复制）。这意味着真正的护城河不在于任何单一能力，而在于"产业集群的整体协同"。</p>
+
+        <blockquote>
+          教师提示：引导学生将梁山的"逆向供应链"与快消品行业的"包装回收"或"电池退役处理"作对比，理解逆向物流在不同行业中的结构差异。
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Framework 3 -->
+    <section id="f3">
+      <div class="framework-header f3">
+        <span class="fw-badge">Framework 3</span>
+        <h3>再制造工程：从技术到商业</h3>
+      </div>
+      <div class="framework-body">
+        <p>再制造（Remanufacturing）在工程层面有严格定义：将旧品拆解至最小单元，逐一检测、修复或更换，并按照原型新品的性能标准重新装配，使产品在功能、寿命、可靠性上均恢复到新品水平。它与以下概念有本质区别：</p>
+
+        <div class="fw-concept-grid">
+          <div class="fw-concept">
+            <h4>翻新（Refurbishing）</h4>
+            <p>以外观改善和基础功能恢复为目标，不要求每一零部件均达到新品标准。成本低，质量波动大，通常不提供质保。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>修复（Repair）</h4>
+            <p>针对特定损坏部位的局部处理，不涉及整体性能恢复。是维修服务，不是产品再制造。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>再利用（Reuse）</h4>
+            <p>产品原样再销售，不经过技术处理。几乎无增值，依赖信息中介价值。</p>
+          </div>
+          <div class="fw-concept">
+            <h4>再制造（Remanufacturing）✓</h4>
+            <p>完整拆解 → 探伤检测 → 按新品标准选件装配 → 性能测试。输出产品应具备新品的功能、质保和可靠性。</p>
+          </div>
+        </div>
+
+        <p><strong>为什么再制造在梁山的商业逻辑中是战略升级方向而非现状？</strong>目前梁山多数出口企业执行的是<em>介于翻新和再制造之间</em>的操作——标杆企业（蜗牛货车）已接近再制造标准，但认证体系缺失，在买家端难以区分"真再制造"与"深度翻新"。品牌认证的建立，将允许梁山头部企业突破价格天花板，从"低价可靠"升级为"高性价比认证品"。</p>
+
+        <p><strong>再制造的政策背景：</strong>中国国家工业和信息化部自 2010 年代开始推动汽车零部件再制造试点，发动机、变速箱、转向机等"五大总成"已有明确再制造标准（GB/T 等级）。梁山出口企业若能取得国家再制造认证，出口产品可获得更清晰的质量标签，并在部分非洲市场享有进口政策上的差异化待遇（如豁免车龄限制审查）。</p>
+      </div>
+    </section>
+
+    <!-- Q&A -->
+    <section id="q1">
+      <h2><span class="sec-num">解析</span>问题逐题解析</h2>
+
+      <div class="qa-block">
+        <div class="qa-header">
+          <span class="qa-num">问题 1</span>
+          <h3>逆向物流：废铁变现的价值逻辑——哪个环节是核心竞争力？</h3>
+        </div>
+        <div class="qa-body">
+          <p><strong>课堂引导方向：</strong>让学生先独立画出"价值链图"——从废弃车辆进入梁山市场，到成品装柜出海，列出每个环节的"输入""输出"和"价值增量来源"。这个练习通常能揭示学生对"价值创造"的不同理解层次。</p>
+
+          <h4>参考答案要点</h4>
+          <ul>
+            <li><strong>价值创造的核心环节：</strong>并非单一环节，而是"严格分拣 + 再制造技术"的组合。分拣决定了哪些车辆有改造价值（降低坏账率），再制造决定了改造后的产品品质上限。两者缺一不可。</li>
+            <li><strong>最难被模仿的核心竞争力：</strong>是梁山作为<em>整体产业集群</em>的配套能力——380 家配件商的在地供应网络，任何单家企业或外地竞争者几乎无法独立复制。这是隐性的"集群壁垒"。</li>
+            <li><strong>外地进入者最大障碍：</strong>熟练再制造工人的积累（非结构化知识，需要多年经验），以及本地零配件采购的成本优势（梁山内部可能比外地低 20—30%）。</li>
+          </ul>
+
+          <div class="answer-box">
+            <div class="label">核心结论</div>
+            <p>梁山逆向物流的价值创造，表面是"技术"，本质是"生态"。再制造技术是必要条件，但配件生态是充分条件——失去了生态，再制造成本将大幅上升，商业模式即失去核心竞争力。</p>
+          </div>
+
+          <p><strong>进阶追问（适合研究生层次）：</strong>如果梁山的配件生态因本地新车产能转移而萎缩，逆向物流产业会如何调整？这说明什么？（提示：引向供应链脆弱性与集群依赖的讨论。）</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="q2">
+      <div class="qa-block">
+        <div class="qa-header">
+          <span class="qa-num">问题 2</span>
+          <h3>梁山模式属于哪种中国企业全球化路径？可持续性的核心条件是什么？</h3>
+        </div>
+        <div class="qa-body">
+          <p><strong>课堂引导方向：</strong>先让学生回忆他们熟知的中国企业出海案例（华为、比亚迪、宁德时代、海底捞等），分类后再将梁山放入对比。这个"定位游戏"通常能激发活跃讨论。</p>
+
+          <h4>参考答案要点</h4>
+          <ul>
+            <li><strong>路径分类：</strong>梁山属于"资源匹配型"出海——利用国内排放政策与非洲基建需求之间的结构性价值差，而非依赖自有技术或品牌。与华为（技术型）、比亚迪（品牌型）存在本质差异。</li>
+            <li><strong>可持续性依赖的条件：</strong>①国内排放政策持续迭代（产生新的"淘汰车源"）；②非洲路况和使用习惯维持当前状态（维持对"粗放型"车辆的需求）；③非洲的中国品牌零件生态保持完善；④非洲各国进口车龄政策不大幅收紧。</li>
+            <li><strong>可持续性的脆弱性：</strong>上述四个条件中，第④条（政策收紧）已经开始动摇。这意味着梁山模式的窗口期可能比多数经营者预期的更短。</li>
+          </ul>
+
+          <div class="answer-box blue">
+            <div class="label">与其他出海路径的本质差异</div>
+            <p>华为、比亚迪的全球化依赖"技术主权"——技术壁垒一旦建立，政策波动的影响有限。梁山的全球化依赖"政策套利"——两端的政策（国内排放标准 + 非洲进口限制）一旦收敛，模式即面临根本性挑战。这不是梁山的失败，而是资源匹配型出海路径的内在特征：它是市场机会的快速响应者，而非长期护城河的建造者。</p>
+          </div>
+
+          <p><strong>引导结语：</strong>资源匹配型出海并非"低级"，它是许多产业早期全球化的必经阶段。问题是：梁山的企业是否有意识地将"资源匹配"转变为"能力建构"？蚂蚁汽车和诚川汽车的路径，恰好代表了这种转型尝试。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="q3">
+      <div class="qa-block">
+        <div class="qa-header">
+          <span class="qa-num">问题 3</span>
+          <h3>再制造 vs 翻新：边界如何判断？认证体系需要解决哪些核心问题？</h3>
+        </div>
+        <div class="qa-body">
+          <p><strong>课堂引导方向：</strong>这个问题最适合用"概念辨析"开场——让学生先写下他们对"再制造"和"翻新"的直觉理解，再通过案例 Exhibit 2（再制造流程表）来检验。通常学生会发现，他们原来的判断比技术标准要模糊得多。</p>
+
+          <h4>技术边界的判断标准</h4>
+          <ul>
+            <li><strong>拆解深度：</strong>翻新通常不拆解发动机；再制造要求完全拆解至零件级，逐一检测。</li>
+            <li><strong>零件处置：</strong>翻新仅更换易损件；再制造要求每个零件均经探伤检测，不合格者全部报废，不"凑合用"。</li>
+            <li><strong>装配标准：</strong>翻新按大致标准装配；再制造按原型新品公差标准装配，需专用工具和检测设备。</li>
+            <li><strong>性能验证：</strong>翻新通过简单测试；再制造须经热磨合、负载测试，性能指标须满足原厂规范。</li>
+            <li><strong>质保承诺：</strong>翻新通常不提供质保；再制造产品理应附有明确的质保期（通常不低于新品的 50%）。</li>
+          </ul>
+
+          <h4>梁山要建立可信认证体系，需解决的核心问题</h4>
+          <ul>
+            <li><strong>标准制定：</strong>目前行业内缺乏统一的商用车再制造出口标准，需由行业协会或政府主导制定（参考国内"五大总成"再制造标准）。</li>
+            <li><strong>第三方验证：</strong>需引入独立认证机构，避免企业自说自话。坦桑尼亚标准局局长访问梁山，可能是中非双边认证合作的前期信号。</li>
+            <li><strong>可追溯体系：</strong>每台车的车源信息、拆解记录、检测数据须数字化存档，供买家和监管方查询。</li>
+            <li><strong>成本传导：</strong>认证成本（约每台增加数千元）是否能被非洲买家接受为溢价？这取决于品牌教育和市场细分策略。</li>
+          </ul>
+
+          <div class="answer-box green">
+            <div class="label">核心结论</div>
+            <p>再制造认证的价值不只是质量保障，更是商业模式的"价格锚"——有认证的再制造产品，可以脱离"价格战"逻辑，在中高端买家市场中以品质而非价格竞争。这是蚂蚁汽车路径的本质逻辑：用重汽品牌背书替代了尚未建立的行业认证。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="q4">
+      <div class="qa-block">
+        <div class="qa-header">
+          <span class="qa-num">问题 4</span>
+          <h3>车龄限制：威胁还是机遇？对三家企业的差异化影响如何？</h3>
+        </div>
+        <div class="qa-body">
+          <p><strong>课堂引导方向：</strong>"威胁还是机遇"是经典的辩证分析框架，适合先让学生选边（投票），再展开讨论。通常班级会分成两派，讨论自然激烈。关键在于教师引导：两个答案都不错，但对谁是"威胁"、对谁是"机遇"，取决于企业的当前定位。</p>
+
+          <h4>对三家企业的差异化影响分析</h4>
+
+          <table>
+            <thead>
+              <tr><th>影响维度</th><th>蜗牛货车网（规模型）</th><th>蚂蚁汽车（品牌型）</th><th>诚川汽车（信任型）</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>当前车源结构</td>
+                <td class="warn">大量 10—15 年车龄</td>
+                <td class="good">"350标准"限 3 年车龄</td>
+                <td class="warn">未明确披露</td>
+              </tr>
+              <tr>
+                <td>政策收紧直接冲击</td>
+                <td class="bad">高——大量库存可能变成"烫手山芋"</td>
+                <td class="good">低——车龄本已合规</td>
+                <td class="warn">中——取决于实际车源结构</td>
+              </tr>
+              <tr>
+                <td>政策收紧间接机遇</td>
+                <td class="warn">中——竞争对手同样受冲击，洗牌期出现</td>
+                <td class="good">高——合规车龄自然成为竞争门槛</td>
+                <td class="good">高——诚信口碑在合规讨论中更有说服力</td>
+              </tr>
+              <tr>
+                <td>转型难度</td>
+                <td class="bad">高——车源渠道和整备流程均需调整</td>
+                <td class="good">低——已在合规轨道</td>
+                <td class="warn">中——方向正确但需规模化</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="answer-box">
+            <div class="label">核心结论</div>
+            <p>车龄限制对梁山产业的影响是"分化式冲击"——对以旧车源为主的中小企业是威胁；对已在执行"350标准"（蚂蚁）或建立信任口碑（诚川）的企业，是<strong>竞争洗牌的机遇</strong>。政策收紧实际上相当于"免费颁发行政许可"给已合规企业，同时清除了以低车龄、低整备成本为主要竞争手段的劣币。</p>
+            <p>政策风险对"先行者"（蚂蚁、诚川）是利好，对"跟随者"（大量中小出口商）是出清信号。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="q5">
+      <div class="qa-block">
+        <div class="qa-header">
+          <span class="qa-num">问题 5</span>
+          <h3>战略选择：路径 A、B、C，如何判断？</h3>
+        </div>
+        <div class="qa-body">
+          <p><strong>课堂引导方向：</strong>这是本案例最重要的综合题，建议留出 15—20 分钟。推荐使用"角色扮演"：一组学生代表蜗牛货车网（年出口量大），一组代表年出口量约 500 台的中型企业，让两组给出不同建议，引导班级讨论为何"正确答案"因企业规模和现有能力而异。</p>
+
+          <h4>三条路径的前提假设与关键风险对照</h4>
+          <ul>
+            <li><strong>路径 A（规模深化）</strong>成立的前提：可收购的 6—8 年新车源持续充足，且单位成本的下降能覆盖车源价格上升。<strong>关键风险：</strong>车龄门槛再度收紧时，规模扩张可能变成存量包袱。</li>
+            <li><strong>路径 B（品质升级）</strong>成立的前提：非洲目标买家中，有足够比例愿意为"认证再制造"支付 20—30% 溢价。<strong>关键风险：</strong>非洲市场的买家意识提升速度，可能慢于 18—24 个月的认证建设周期。</li>
+            <li><strong>路径 C（新能源切入）</strong>成立的前提：目标出口国有基本的充电基础设施，或国内退役新能源商用车的电池衰减不超过使用接受度。<strong>关键风险：</strong>撒哈拉以南非洲充电基础设施极度缺乏，短期内是电动商用车出口的根本障碍，不能通过企业自身努力解决。</li>
+          </ul>
+
+          <div class="answer-box">
+            <div class="label">教师推荐立场（可根据学情调整）</div>
+            <p>对于<strong>大型企业（蜗牛量级）</strong>：建议 A+B 并行——以 A（扩规模）维持现金流，同时分拨资源启动 B（再制造认证体系建设），用规模盈利补贴品质升级的投入。</p>
+            <p>对于<strong>中型企业（500 台量级）</strong>：建议聚焦 B——体量不够支撑纯规模战，但聚焦特定品类（如重型自卸车或商用客车）建立再制造认证，可以在细分市场中率先建立品质壁垒。</p>
+            <p><strong>路径 C</strong>：对任何规模企业而言，短期均不建议作为主赛道，但可作为"探针"——用小规模试点监测市场接受度，为未来布局保留选项。</p>
+          </div>
+
+          <h4>如果你是地方政府政策制定者</h4>
+          <ul>
+            <li>推动行业标准建立（再制造认证国标或地标），为企业升级提供合规路径；</li>
+            <li>对通过再制造认证的出口企业给予出口退税倾斜或融资支持，降低升级初期的资金门槛；</li>
+            <li>主动对接非洲目标国监管机构（如坦桑尼亚标准局），推动中非双边再制造产品互认；</li>
+            <li>限制低车龄、高整备标准以下的企业出口资质，通过行政手段加速市场自净。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Session Plan -->
+    <section id="session">
+      <h2><span class="sec-num">课堂</span>90 分钟课堂方案</h2>
+
+      <div class="session-plan">
+        <div class="session-step">
+          <div class="step-dot">1</div>
+          <div class="step-body">
+            <div class="step-time">0—10 分钟</div>
+            <div class="step-title">开场定锚：一辆旧卡车的旅程</div>
+            <div class="step-desc">
+              教师描述场景：一辆 2012 年出厂的重型自卸车，在云南某水电项目工地服役 10 年后，被以 3 万元收购进入梁山市场，最终以 10 万元（折合约 1.5 万美元）出口至尼日利亚拉各斯。<br>
+              <ul>
+                <li>追问：这 7 万元的价值增量，来自哪里？</li>
+                <li>引导学生初步建立"逆向物流价值链"的思维框架</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="session-step">
+          <div class="step-dot">2</div>
+          <div class="step-body">
+            <div class="step-time">10—30 分钟</div>
+            <div class="step-title">小组分析：三家企业的护城河来自哪里？</div>
+            <div class="step-desc">
+              将班级分为三组，分别代表蜗牛（规模）、蚂蚁（品牌）、诚川（信任），各组完成：
+              <ul>
+                <li>识别本企业的核心竞争壁垒来源</li>
+                <li>列出最脆弱的一个风险点</li>
+                <li>对车龄政策收紧的影响做出"受益 / 中性 / 受损"判断并说明理由</li>
+              </ul>
+              每组 3 分钟汇报，教师做简短点评。
+            </div>
+          </div>
+        </div>
+
+        <div class="session-step">
+          <div class="step-dot">3</div>
+          <div class="step-body">
+            <div class="step-time">30—50 分钟</div>
+            <div class="step-title">全班辩论：翻新 or 再制造，叫法重要吗？</div>
+            <div class="step-desc">
+              发放 Exhibit 2（再制造流程表），引导学生讨论：
+              <ul>
+                <li>梁山目前出口的大多数车辆，究竟更接近"翻新"还是"再制造"？</li>
+                <li>这个区别对买家、监管方、竞争格局分别意味着什么？</li>
+                <li>认证体系的建立，谁来牵头？谁来买单？谁来受益？</li>
+              </ul>
+              重点引导：再制造认证是"质量标签"，也是"进入壁垒"——它对先行者有利，对跟随者是门槛。
+            </div>
+          </div>
+        </div>
+
+        <div class="session-step">
+          <div class="step-dot">4</div>
+          <div class="step-body">
+            <div class="step-time">50—75 分钟</div>
+            <div class="step-title">战略决策：路径 A / B / C，你选哪个？</div>
+            <div class="step-desc">
+              场景设定：你是一家年出口量 500 台的梁山企业，有 3000 万可用资金，必须在 3 年内完成战略定位。
+              <ul>
+                <li>投票：A / B / C（允许"组合"，但须说明优先级）</li>
+                <li>不同选择者各 2 分钟阐述核心理由</li>
+                <li>教师重点揭示：三条路径成立的"前提假设"有何不同——不同的假设对应不同的情报需求，而不是抽象的"战略偏好"</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="session-step">
+          <div class="step-dot">5</div>
+          <div class="step-body">
+            <div class="step-time">75—90 分钟</div>
+            <div class="step-title">总结收束：梁山能代表什么？</div>
+            <div class="step-desc">
+              教师收束三个框架的核心洞见：
+              <ul>
+                <li><strong>全球化：</strong>梁山是"资源匹配型"出海的典型，它对中国制造业出海的意义在于——并非每一个出海故事都需要有技术主权或品牌。找准需求差距，同样是全球化路径。</li>
+                <li><strong>逆向物流：</strong>价值不在于某一个技术环节，而在于产业生态的整体协同——这是梁山无法被单独复制的核心。</li>
+                <li><strong>再制造：</strong>叫法背后是商业模式——从"翻新出口商"升级为"再制造认证者"，是梁山向上突破价格天花板的唯一路径。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Readings -->
+    <section id="readings">
+      <h2><span class="sec-num">阅读</span>延伸阅读与参考资料</h2>
+
+      <ul class="reading-list">
+        <li>
+          <span class="reading-cat">全球化理论</span>
+          Moon, H.C., Rugman, A.M. & Verbeke, A. (1998). A generalized double diamond approach to the global competitiveness of Korea and Singapore. <em>International Business Review.</em>
+        </li>
+        <li>
+          <span class="reading-cat">逆向物流</span>
+          Rogers, D.S. & Tibben-Lembke, R.S. (1999). <em>Going Backwards: Reverse Logistics Trends and Practices.</em> Reverse Logistics Executive Council. — 逆向物流基础教材，梁山案例可作为其"二手产品再销售"案例的补充。
+        </li>
+        <li>
+          <span class="reading-cat">再制造工程</span>
+          Lund, R.T. (1984). Remanufacturing: The Experience of the United States and Implications for Developing Countries. <em>World Bank Technical Paper No. 31.</em> — 经典文献，提供发展中国家视角。
+        </li>
+        <li>
+          <span class="reading-cat">中国产业政策</span>
+          国家工业和信息化部（2021）：《汽车零部件再制造规范管理暂行办法》——理解中国再制造政策框架的基础文件。
+        </li>
+        <li>
+          <span class="reading-cat">非洲市场</span>
+          African Development Bank (2024). <em>African Economic Outlook 2024.</em> — 提供非洲基础设施投资和商用车市场的宏观背景数据。
+        </li>
+        <li>
+          <span class="reading-cat">联讲案例</span>
+          MBE-2026-D05《12 天的赌注：美的供应链应急响应》——与本案例构成"中国制造企业出海两种范式"的对照组，可先讲 D05，再讲 L01，形成从大企业到集群的视角递进。
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>MBE 产业物流教学案例系列 · MBE-2026-L01 Teaching Note · 2026 年</p>
+      <p style="margin-top:0.3rem;">本文件为教师专用资料，严禁在学生中传阅或分发。</p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-15% 0px -75% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('highlight-target');
+        setTimeout(() => target.classList.remove('highlight-target'), 1200);
+      }
+    });
+  });
+</script>
+</body>
+</html>

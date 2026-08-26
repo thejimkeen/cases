@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MBE-2026-L01｜从废铁到机皇：梁山二手车出口非洲</title>
+  <meta name="description" content="教学案例：山东梁山县商用二手车出口非洲产业——逆向物流、再制造工程与中国企业全球化" />
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-web/1.7.0/lxgwwenkai-regular.min.css" />
+  <style>
+    :root {
+      --bg: #f5f0ea;
+      --bg-paper: #fffef9;
+      --ink: #1a1a1f;
+      --ink-muted: #5c5c66;
+      --accent: #c2410c;
+      --accent-soft: #fff7ed;
+      --border: #e8ddd0;
+      --red: #dc2626;
+      --green: #059669;
+      --blue: #0369a1;
+      --amber: #d97706;
+      --sidebar-w: 16rem;
+      --font: "LXGW WenKai", "PingFang SC", "Hiragino Sans GB", serif;
+      --font-sans: "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 17px; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.85;
+      background-image:
+        radial-gradient(ellipse 70% 50% at 100% 0%, rgba(194,65,12,0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(217,119,6,0.05), transparent);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      min-height: 100vh;
+      max-width: 76rem;
+      margin: 0 auto;
+    }
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 1.5rem 1rem 1.5rem 1.25rem;
+      border-right: 1px solid var(--border);
+      background: rgba(255,254,249,0.96);
+      backdrop-filter: blur(10px);
+      overflow-y: auto;
+    }
+    @media (max-width: 900px) {
+      aside { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .case-id {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    aside h2 { font-size: 0.88rem; font-weight: 600; line-height: 1.45; margin-bottom: 1.4rem; color: var(--ink); }
+
+    nav ul { list-style: none; }
+    nav li { margin-bottom: 0.1rem; }
+    nav a {
+      display: block;
+      padding: 0.32rem 0.55rem;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      text-decoration: none;
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    nav a:hover { color: var(--ink); background: var(--accent-soft); }
+    nav a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 600;
+    }
+    .nav-group {
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin: 1rem 0 0.3rem 0.55rem;
+      text-transform: uppercase;
+    }
+
+    main {
+      padding: 2rem 2.75rem 5rem;
+      background: var(--bg-paper);
+      box-shadow: -4px 0 28px rgba(0,0,0,0.04);
+      min-width: 0;
+    }
+    @media (max-width: 600px) { main { padding: 1.25rem 1rem 3rem; } }
+
+    /* Hero */
+    .hero { border-bottom: 3px double var(--border); padding-bottom: 2rem; margin-bottom: 2.25rem; }
+
+    .hero-img-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(124,45,18,0.72) 0%,
+        rgba(194,65,12,0.45) 45%,
+        rgba(0,0,0,0.18) 100%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+    }
+    .hero-overlay-text { color: #fff; }
+    .hero-overlay-from {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 0.3rem;
+    }
+    .hero-overlay-label {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .hero-overlay-divider {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.75), rgba(255,255,255,0.3));
+      margin: 0 1.5rem;
+      margin-top: 1rem;
+      position: relative;
+    }
+    .hero-overlay-divider::before,
+    .hero-overlay-divider::after {
+      content: '►';
+      position: absolute;
+      top: -7px;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .hero-overlay-divider::before { left: 30%; }
+    .hero-overlay-divider::after { left: 60%; }
+
+    .tag {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.65rem;
+      background: var(--ink);
+      color: #fff;
+      letter-spacing: 0.06em;
+      border-radius: 2px;
+      margin-bottom: 0.85rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      line-height: 1.35;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .hero .subtitle { font-size: 0.97rem; color: var(--ink-muted); font-style: italic; margin-bottom: 1.5rem; }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
+      gap: 0.6rem 1.25rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      background: #f9f6f0;
+      padding: 1rem 1.25rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .meta-grid dt { color: var(--ink-muted); margin-bottom: 0.1rem; }
+    .meta-grid dd { color: var(--ink); font-weight: 600; }
+
+    /* Abstract */
+    .abstract {
+      background: linear-gradient(135deg, var(--accent-soft) 0%, #fffef9 100%);
+      border-left: 4px solid var(--accent);
+      padding: 1.3rem 1.6rem;
+      margin-bottom: 2.75rem;
+      font-size: 0.95rem;
+      border-radius: 0 6px 6px 0;
+    }
+    .abstract .label {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.55rem;
+    }
+
+    /* Sections */
+    section { margin-bottom: 3rem; scroll-margin-top: 1.5rem; }
+    section h2 {
+      font-size: 1.28rem;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .num { font-family: var(--font-sans); font-size: 0.7rem; color: var(--accent); font-weight: 700; white-space: nowrap; }
+    section p { margin-bottom: 1rem; text-align: justify; }
+    section p strong { font-weight: 600; }
+
+    blockquote {
+      margin: 1.25rem 0;
+      padding: 1rem 1.25rem;
+      background: #f8f4ef;
+      border-left: 3px solid var(--accent);
+      font-style: italic;
+      color: #333;
+      font-size: 0.93rem;
+      border-radius: 0 4px 4px 0;
+    }
+    blockquote cite {
+      display: block;
+      font-style: normal;
+      font-size: 0.78rem;
+      font-family: var(--font-sans);
+      color: var(--ink-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* Company cards */
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    @media (max-width: 700px) { .company-grid { grid-template-columns: 1fr; } }
+
+    .company-card {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem;
+      background: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .company-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.07); }
+    .company-card.lead { border-color: var(--accent); background: #fffaf6; }
+    .company-card.brand { border-color: var(--blue); background: #f0f7ff; }
+    .company-card.trust { border-color: var(--green); background: #f0fdf4; }
+
+    .company-badge {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .company-card.lead .company-badge { color: var(--accent); }
+    .company-card.brand .company-badge { color: var(--blue); }
+    .company-card.trust .company-badge { color: var(--green); }
+
+    .company-name { font-size: 0.97rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .company-stat {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.22rem;
+      border-bottom: 1px dotted var(--border);
+      padding-bottom: 0.22rem;
+    }
+    .company-stat:last-child { border-bottom: none; }
+    .company-stat span:last-child { font-weight: 600; color: var(--ink); }
+    .company-tagline {
+      margin-top: 0.65rem;
+      font-size: 0.78rem;
+      font-family: var(--font-sans);
+      color: var(--ink-muted);
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* Process flow */
+    .process-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem;
+      margin: 1.25rem 0;
+      padding: 1.1rem 1.25rem;
+      background: #faf7f2;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .process-step {
+      font-family: var(--font-sans);
+      font-size: 0.76rem;
+      padding: 0.3rem 0.7rem;
+      background: var(--accent-soft);
+      border: 1px solid #fed7aa;
+      border-radius: 4px;
+      color: #9a3412;
+      font-weight: 500;
+    }
+    .process-arrow { color: var(--accent); font-size: 0.8rem; font-weight: 700; }
+
+    /* Timeline */
+    .timeline { margin: 1.5rem 0; }
+    .tl-item { display: flex; gap: 1rem; margin-bottom: 0; position: relative; }
+    .tl-item:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 0.7rem;
+      top: 1.8rem;
+      width: 2px;
+      height: 100%;
+      background: var(--border);
+    }
+    .tl-dot {
+      flex-shrink: 0;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      border: 2px solid var(--accent);
+      margin-top: 0.2rem;
+      z-index: 1;
+    }
+    .tl-dot.key { border-color: var(--amber); background: #fef3c7; }
+    .tl-dot.peak { border-color: var(--green); background: #dcfce7; }
+    .tl-body { padding-bottom: 1.2rem; flex: 1; }
+    .tl-date { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; margin-bottom: 0.15rem; }
+    .tl-date.key { color: var(--amber); }
+    .tl-date.peak { color: var(--green); }
+    .tl-text { font-size: 0.87rem; color: var(--ink); }
+
+    /* Exhibit */
+    .exhibit { margin: 1.75rem 0; }
+    .exhibit-label {
+      font-family: var(--font-sans);
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .exhibit h3 { font-size: 0.97rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--ink); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; font-family: var(--font-sans); }
+    th {
+      text-align: left;
+      padding: 0.55rem 0.75rem;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    td { padding: 0.48rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+    tr:nth-child(even) td { background: #faf8f4; }
+    tr:hover td { background: var(--accent-soft); }
+    td.good { color: var(--green); font-weight: 600; }
+    td.bad { color: var(--red); }
+    td.mid { color: var(--amber); font-weight: 500; }
+    td.em { font-weight: 600; }
+
+    /* Stat highlight grid */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      text-align: center;
+    }
+    .stat-card .stat-num {
+      font-family: var(--font-sans);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .stat-card .stat-label { font-family: var(--font-sans); font-size: 0.72rem; color: var(--ink-muted); }
+
+    /* Decision box */
+    .decision-box {
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      background: #fff;
+      margin: 1.5rem 0;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+    }
+    .decision-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 0.75rem;
+      align-items: start;
+    }
+    @media (max-width: 650px) { .decision-row { grid-template-columns: 1fr; } }
+    .option-box { border-radius: 6px; padding: 0.9rem 1rem; border: 1.5px solid; }
+    .option-box.a { border-color: var(--accent); background: var(--accent-soft); }
+    .option-box.b { border-color: var(--blue); background: #eff6ff; }
+    .option-box.c { border-color: var(--green); background: #f0fdf4; }
+    .option-box h4 { font-size: 0.8rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .option-box.a h4 { color: var(--accent); }
+    .option-box.b h4 { color: var(--blue); }
+    .option-box.c h4 { color: var(--green); }
+    .option-box p { font-size: 0.74rem; color: var(--ink-muted); margin: 0; }
+    .option-box ul { font-size: 0.74rem; color: var(--ink-muted); margin: 0.3rem 0 0; padding-left: 1.1rem; }
+    .option-box li { margin-bottom: 0.2rem; }
+    .vs { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 700; color: var(--ink-muted); text-align: center; margin-top: 2rem; }
+
+    /* Discussion questions */
+    .questions ol { padding-left: 1.5rem; }
+    .questions li { margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.8; }
+    .questions li strong {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    /* Info callout */
+    .callout {
+      display: flex;
+      gap: 0.75rem;
+      background: #f0fdf4;
+      border: 1px solid #a7f3d0;
+      border-radius: 6px;
+      padding: 0.9rem 1.1rem;
+      margin: 1.25rem 0;
+      font-size: 0.88rem;
+    }
+    .callout-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.15rem; }
+    .callout-text { color: #065f46; }
+    .callout-text strong { font-weight: 600; }
+
+    /* Warning callout */
+    .callout.warn {
+      background: #fef3c7;
+      border-color: #fcd34d;
+    }
+    .callout.warn .callout-text { color: #92400e; }
+
+    footer {
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .highlight-target { animation: flash 1.2s ease-out; }
+    @keyframes flash {
+      0% { background: var(--accent-soft); }
+      100% { background: transparent; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside>
+    <div class="case-id">MBE-2026-L01</div>
+    <h2>从废铁到机皇：梁山商用二手车出口非洲</h2>
+    <nav>
+      <div class="nav-group">案例正文</div>
+      <ul>
+        <li><a href="#abstract">案例摘要</a></li>
+        <li><a href="#s1">一、水泊之地，车轮为帆</a></li>
+        <li><a href="#s2">二、废铁的第二次生命</a></li>
+        <li><a href="#s3">三、非洲：粗粮胃口的大市场</a></li>
+        <li><a href="#s4">四、三家企业，三种路径</a></li>
+        <li><a href="#s5">五、危机的多重面孔</a></li>
+        <li><a href="#s6">六、下一步怎么走？</a></li>
+      </ul>
+      <div class="nav-group">讨论</div>
+      <ul>
+        <li><a href="#questions">五个讨论问题</a></li>
+      </ul>
+      <div class="nav-group">数据附件</div>
+      <ul>
+        <li><a href="#ex1">Exhibit 1｜产业时间轴</a></li>
+        <li><a href="#ex2">Exhibit 2｜再制造流程</a></li>
+        <li><a href="#ex3">Exhibit 3｜竞争力对比</a></li>
+        <li><a href="#ex4">Exhibit 4｜出口增长数据</a></li>
+        <li><a href="#ex5">Exhibit 5｜三种路径对比</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-img-wrap">
+        <img src="hero.jpg" alt="梁山二手重型卡车出口非洲" />
+        <div class="hero-img-overlay">
+          <div class="hero-overlay-text">
+            <div class="hero-overlay-from">山东 · 梁山</div>
+            <div class="hero-overlay-label">废铁</div>
+          </div>
+          <div class="hero-overlay-divider"></div>
+          <div class="hero-overlay-text" style="text-align:right;">
+            <div class="hero-overlay-from">撒哈拉以南 · 非洲</div>
+            <div class="hero-overlay-label">机皇</div>
+          </div>
+        </div>
+      </div>
+
+      <span class="tag">教学案例 · 产业物流系列</span>
+      <h1>从废铁到机皇</h1>
+      <p class="subtitle">梁山商用二手车出口非洲——逆向物流、再制造工程与中国企业全球化</p>
+
+      <dl class="meta-grid">
+        <div><dt>案例编号</dt><dd>MBE-2026-L01</dd></div>
+        <div><dt>时间跨度</dt><dd>2019—2025 年</dd></div>
+        <div><dt>案例主体</dt><dd>山东梁山县二手商用车出口产业集群</dd></div>
+        <div><dt>行业</dt><dd>商用车 / 再制造 / 跨境贸易</dd></div>
+        <div><dt>核心议题</dt><dd>逆向物流 · 再制造升级 · 中国企业出海路径</dd></div>
+        <div><dt>分析框架</dt><dd>中国企业全球化 · 逆向物流 · 再制造工程</dd></div>
+        <div><dt>数据截至</dt><dd>2024 年 11 月</dd></div>
+        <div><dt>版权声明</dt><dd>仅供课堂讨论，不构成商业建议</dd></div>
+      </dl>
+    </div>
+
+    <!-- Abstract -->
+    <div class="abstract" id="abstract">
+      <span class="label">案例摘要 Abstract</span>
+      <p>在中国，一辆跑了十年、满身创伤的重型自卸车，通常只值废铁价——压称卖给拆解厂，或在停车场悄然锈蚀。然而在山东省梁山县的二手车市场里，这些车辆正经历一次彻底的价值重构：经过再制造技术的"大换血"，它们以原价三分之一的代价，驶向尼日利亚的建设工地、坦桑尼亚的矿山公路、肯尼亚的货运干线。在那里，它们被客户尊称为"机皇"。</p>
+      <p style="margin-bottom:0">梁山是一个无港口、无铁路枢纽的内陆县城，却凭借全国最大的专用车产业集群和系统化的再制造能力，将商用二手车出口做到全国县域第一——2023 年出口额突破 7500 万美元，同比增长 204%。本案例以梁山三家代表性企业（蜗牛货车网、蚂蚁汽车、诚川汽车）为主线，呈现中国商用二手车"走出去"的不同路径，并聚焦产业面临的结构性挑战：非洲各国车龄限制趋严、质量信誉风险积累、日本二手车竞争加剧。学生将被要求从全球化战略、逆向物流效率和再制造工程三个维度，分析梁山模式的可持续性，并为产业的下一步发展提出建议。</p>
+    </div>
+
+    <!-- Section 1 -->
+    <section id="s1">
+      <h2><span class="num">一</span>水泊之地，车轮为帆</h2>
+
+      <p>提到梁山，多数中国人的第一反应是《水浒传》里那片浩淼的水泊。然而现实中的梁山县，坐落于山东省西南黄河冲积平原，平坦干旱，没有深水良港，也没有铁路枢纽。2019年之前，这里在物流地图上几乎是一个空白。</p>
+      <p>改变从制造业开始。1980 年代起，这片土地逐渐成为全国最重要的<strong>专用汽车生产基地</strong>：半挂车、自卸车、罐车、冷藏车……到 2024 年，梁山集聚了整车制造企业 142 家、零配件企业 380 家，年产能达到专用汽车 35 万辆，本地配套率高达 65%。这意味着在梁山，一辆重型卡车从底盘到轮毂几乎可以全部在本地找到零件供应商。</p>
+
+      <blockquote>
+        专用车产业的聚集，带来了一个意料之外的副产品：规模庞大的二手商用车市场。工厂生产的是新车，但每年有无数辆旧车在这里完成最后的交易——这片"车轮的终点"，成了另一个故事的起点。
+      </blockquote>
+
+      <p>2019 年，中国正式启动二手车出口试点政策，梁山迅速抓住机遇。政府随即设立"专班"推动出口：商务局、海关、外管局、金融保险机构协同，打通从整备到出口退税的全流程。16 家企业率先取得出口资质。同年，蜗牛货车网送出第一批货柜——目的地：坦桑尼亚达累斯萨拉姆港。</p>
+
+      <p>从那时起，梁山的出口曲线几乎只画了一个方向：向上。</p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-num">142</div>
+          <div class="stat-label">整车制造企业</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">380</div>
+          <div class="stat-label">零配件配套企业</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">65%</div>
+          <div class="stat-label">本地配套率</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">56+</div>
+          <div class="stat-label">出口目的国</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="s2">
+      <h2><span class="num">二</span>废铁的第二次生命——逆向物流如何创造价值</h2>
+
+      <p>梁山的生意，本质上是一条<strong>逆向供应链</strong>：货物的起点不是工厂，而是各地的报废场、事故处理中心和换代更新的运输公司。</p>
+
+      <p>货源主要来自三类：其一，国内货运公司完成使用周期（通常 8—12 年）后置换下来的旧车；其二，大基建时代工程结束后闲置的工程车辆；其三，保险公司定损后认定"修复成本高于残值"的事故车。这些车辆进入梁山市场时，往往按吨位计算价格——字面意义上的废铁价。</p>
+
+      <p>然而，出口企业的核心能力在于一套严格的<strong>筛选与再制造体系</strong>，将废铁价的输入转化为"接近新车底气"的输出。以蜗牛货车网的操作流程为例：</p>
+
+      <div class="process-flow">
+        <div class="process-step">进场收购</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">底盘 / 缸体初检</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">五大总成拆解检测</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">发动机再制造</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">整车整备</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">四重质检</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">装柜出口</div>
+      </div>
+
+      <p>其中，<strong>发动机再制造</strong>是整个价值链中技术含量最高、也最能决定出口品质上限的环节。与简单"翻新"（清洗、喷漆、换易损件）不同，再制造要求将发动机完全拆解后，逐一对零件进行探伤检测，按新机标准重新选配、装配，并经过热磨合测试。最终产品在理论上应具备与原型新品相当的动力输出。</p>
+
+      <blockquote>
+        "底盘开裂？不收。缸体有裂纹？不收。重大事故车？碰都不碰。"
+        <cite>——蜗牛货车网质检负责人</cite>
+      </blockquote>
+
+      <p>这套体系的经济账是：再制造成本约为新机的 50%，但在买家眼中，再制造发动机的可靠性与新机差距并不显著——尤其是在非洲对车辆精密度要求远低于欧洲的使用环境中。</p>
+
+      <p>四重质检流程依次为：底盘调校 → 变速箱验证 → 实车路试 → 整车淋水测试（检验密封性）。只有全部通过，车辆才进入装柜程序。</p>
+
+      <div class="callout">
+        <div class="callout-icon">♻️</div>
+        <div class="callout-text"><strong>再制造的资源账：</strong>与生产等量新品相比，再制造可节约成本 50%、节约能耗 60%、节约原材料消耗 70% 以上。这既是成本优势，也是绿色制造层面的竞争叙事。</div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="s3">
+      <h2><span class="num">三</span>非洲：粗粮胃口的大市场</h2>
+
+      <p>梁山的二手车为什么卖到非洲，而不是东南亚或南美？答案需要从非洲买家的使用场景出发来理解。</p>
+
+      <p>撒哈拉以南非洲正经历持续的基础设施建设热潮。大量道路、矿山、建筑工地需要重型商用车——但多数买家是中小企业主，无力承担新车的首付+融资成本。与此同时，非洲的道路条件十分严苛：土路、碎石路、雨季泥泞，加上超载运营是普遍现象，对车辆的要求是"耐造"而非"精密"。</p>
+
+      <p>这恰好与中国"国二"、"国三"排放标准的商用车特点高度匹配。这些车辆在国内因排放法规升级而被强制淘汰，但其发动机扭矩大、结构简单、维修门槛低——最后一点在非洲尤为关键：路边小作坊的工人，拿着扳手和经验，就能完成大部分维修，无需等待专业技师。</p>
+
+      <blockquote>
+        "中国卡车的发动机劲大、耐跑，能够适应非洲复杂的泥泞路况。"
+        <cite>——密斯特（Mister），尼日利亚客商</cite>
+      </blockquote>
+
+      <p>与最主要的竞争对手——日本二手车——相比，梁山车的核心优势不是质量，而是<strong>适配性和配件可及性</strong>。日本二手车品质确实更高，但价格是梁山车的两到三倍；更重要的是，日本车的零部件需要专程进口，出故障可能趴窝半个月。而中国品牌零件在非洲市场的供应链已相当完善——当地大街小巷都能找到中国品牌零件，维修成本和等待时间远低于日本车。</p>
+
+      <p>非洲买家的理性计算是：用一台日本二手车的价格，买两台中国二手车，一台运营赚钱，另一台备着拆配件。这不是无奈，这是当地市场的商业逻辑。</p>
+
+      <div class="callout warn">
+        <div class="callout-icon">⚠️</div>
+        <div class="callout-text"><strong>注意：</strong>坦桑尼亚国家标准局局长 Dr. Ashura 于 2024 年 8 月专程访问梁山，就中国商用二手车进口坦桑尼亚的技术标准问题进行协商——这既是市场认可的信号，也预示着标准层面的监管压力正在临近。</div>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="s4">
+      <h2><span class="num">四</span>三家企业，三种路径</h2>
+
+      <p>面对同一片市场，梁山的出口企业选择了不同的竞争战略。以下三家企业最具代表性：</p>
+
+      <div class="company-grid">
+        <div class="company-card lead">
+          <div class="company-badge">规模与技术路径</div>
+          <div class="company-name">蜗牛货车网</div>
+          <div class="company-stat"><span>成立</span><span>2016年</span></div>
+          <div class="company-stat"><span>出口起点</span><span>2019年</span></div>
+          <div class="company-stat"><span>2024年出口量</span><span>5,799 台</span></div>
+          <div class="company-stat"><span>同比增长</span><span>+60.4%</span></div>
+          <div class="company-stat"><span>累计出口额</span><span>1.5 亿美元</span></div>
+          <div class="company-stat"><span>市场地位</span><span>全国商用二手车出口第一</span></div>
+          <div class="company-tagline">凭借自建再制造产线和跨境电商平台取得规模优势；在尼日利亚、肯尼亚自建仓库和维修点。</div>
+        </div>
+
+        <div class="company-card brand">
+          <div class="company-badge">品牌背书路径</div>
+          <div class="company-name">蚂蚁汽车</div>
+          <div class="company-stat"><span>定位</span><span>中国重汽认证二手车专营</span></div>
+          <div class="company-stat"><span>出口起点</span><span>2024年5月</span></div>
+          <div class="company-stat"><span>首年出口量</span><span>300 台</span></div>
+          <div class="company-stat"><span>2025年目标</span><span>1,500 台</span></div>
+          <div class="company-stat"><span>目标销售额</span><span>3 亿元</span></div>
+          <div class="company-stat"><span>核心优势</span><span>厂家认证 + 售后保障</span></div>
+          <div class="company-tagline">依托中国重汽集团品牌背书，强调原厂认证和可追溯的质量保障，以品牌溢价抵消价格劣势。</div>
+        </div>
+
+        <div class="company-card trust">
+          <div class="company-badge">诚信经营路径</div>
+          <div class="company-name">诚川汽车</div>
+          <div class="company-stat"><span>核心理念</span><span>"诚信拒绝"胜过虚假承诺</span></div>
+          <div class="company-stat"><span>典型案例</span><span>拒绝5天交付，客户反而回头</span></div>
+          <div class="company-stat"><span>竞争策略</span><span>口碑积累为主</span></div>
+          <div class="company-stat"><span>创始人语录</span><span>"低质量是死路一条"</span></div>
+          <div class="company-tagline">拒绝以承诺讨好客户，坚持诚信优先，通过口碑建立长期稳定的买家关系，在信息不对称的跨境市场中构筑护城河。</div>
+        </div>
+      </div>
+
+      <p>三种路径代表了二手车出口行业三个不同的护城河来源：<strong>规模与技术</strong>（蜗牛）、<strong>品牌认证</strong>（蚂蚁）、<strong>信任资产</strong>（诚川）。在市场规范程度低、信息不对称严重的跨境二手车领域，这三种护城河各有其适用场景，也各有其脆弱性。</p>
+
+      <p>梁山全县 16 家有出口资质的企业，在政府专班的协助下共享了一项关键基础设施成果：通关效率的大幅提升——从"一车一证"改为"一批一证"，单车过关时间压缩至 10 分钟，出口总周期从三个月缩短至两个月以内。这一体制改革是梁山集群优势的重要组成部分，单家企业若独立运营，几乎无法享有同等的制度便利。</p>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="s5">
+      <h2><span class="num">五</span>危机的多重面孔</h2>
+
+      <p>快速增长背后，梁山的二手车出口产业正积累几个不容忽视的结构性风险。</p>
+
+      <p><strong>政策收紧：</strong>非洲多个核心市场相继收紧二手车进口的车龄门槛。肯尼亚、坦桑尼亚等国均已或正在讨论将可进口车辆的最大车龄从 15 年压低至 8—10 年。梁山目前大量收购的 10—15 年车龄车辆，一旦政策落地，将直接被挡在门外，倒逼企业只能收购更新、也更贵的车源，利润空间随之收窄。</p>
+
+      <p><strong>质量信誉风险：</strong>部分出口企业为控制成本、追求出货量，整备标准低于行业均值。一旦出现集中性故障，不仅损害个别企业声誉，还会波及"梁山货"的整体口碑。在非洲买家判断力尚不充分的市场里，品类声誉一旦形成负面印象，修复成本极高。</p>
+
+      <p><strong>竞争格局变化：</strong>日本二手重卡通过东南亚、中东转口，正在以更快的速度进入东非市场。与中国车相比，日本车的整体翻新标准更高，在高端客户（大型物流公司、矿业企业）中具备更强的议价权。梁山出口企业若长期定位于低价区间，将面临品牌向上突破的玻璃天花板。</p>
+
+      <p><strong>内部成本压力：</strong>再制造工人的熟练技工短缺，工资每年上涨约 15—20%；优质低车龄车源竞争激烈，收购价格持续抬升。"低价输入 + 精修输出"的商业模式，其利润空间正在被双向挤压。</p>
+
+      <div class="callout warn">
+        <div class="callout-icon">⚡</div>
+        <div class="callout-text">
+          <strong>决策背景：</strong>2024 年底，梁山出口企业的决策者们面临一个共同的战略窗口期——在市场红利尚未完全消退之前，是继续深耕"价格战"逻辑，还是向上突破、重塑竞争定位？
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="s6">
+      <h2><span class="num">六</span>下一步怎么走？</h2>
+
+      <p>面对上述压力，梁山出口产业的下一步战略选择，在业内形成了三种明显的路线分歧：</p>
+
+      <div class="decision-box">
+        <p style="font-weight:600;margin-bottom:1.25rem;font-family:var(--font-sans);">如果你是梁山龙头企业的决策者，你会选择哪条路？</p>
+        <div class="decision-row">
+          <div class="option-box a">
+            <h4>路径 A · 规模深化</h4>
+            <p>聚焦现有模式，做大出口规模</p>
+            <ul>
+              <li>收购更新车龄（6—8年）的车源</li>
+              <li>扩产再制造产线，拉低单台成本</li>
+              <li>抢在政策收紧前完成市场份额卡位</li>
+            </ul>
+            <p style="margin-top:0.5rem;font-style:italic;color:var(--accent);">风险：更新车源成本更高，政策风险未根本解决</p>
+          </div>
+          <div class="vs">VS</div>
+          <div class="option-box b">
+            <h4>路径 B · 品质升级</h4>
+            <p>建立标准化再制造认证品牌</p>
+            <ul>
+              <li>申请国家再制造认证，打造品牌溢价</li>
+              <li>在非洲建立售后服务网络和品牌授权</li>
+              <li>向中高端买家（大型矿业、物流企业）转型</li>
+            </ul>
+            <p style="margin-top:0.5rem;font-style:italic;color:var(--blue);">风险：建设期 18—24 个月，初期投资大，短期利润下滑</p>
+          </div>
+          <div class="vs">VS</div>
+          <div class="option-box c">
+            <h4>路径 C · 新赛道切入</h4>
+            <p>进军新能源二手车出口</p>
+            <ul>
+              <li>收购国内退役纯电动商用车（运营 3—4 年）</li>
+              <li>车龄新，符合非洲进口政策</li>
+              <li>利用已有渠道快速铺货</li>
+            </ul>
+            <p style="margin-top:0.5rem;font-style:italic;color:var(--green);">风险：非洲充电基础设施极度缺乏，市场接受度未知</p>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--ink-muted);margin-top:1rem;font-family:var(--font-sans);">三条路径对应三种不同的增长逻辑，所需能力、资本投入和时间窗口各不相同，且并非完全互斥——但资源有限，必须做出优先级判断。</p>
+      </div>
+    </section>
+
+    <!-- Discussion Questions -->
+    <section id="questions">
+      <h2><span class="num">讨论</span>五个问题</h2>
+      <p style="color:var(--ink-muted);font-size:0.9rem;margin-bottom:1.5rem;">请在阅读案例全文和附件后，围绕以下问题准备你的观点。讨论将从<strong>逆向物流、全球化路径、再制造工程</strong>三个分析框架展开。</p>
+
+      <div class="questions">
+        <ol>
+          <li>
+            <strong>问题 1｜逆向物流：废铁变现的价值逻辑</strong>
+            梁山的商业模式将"废弃物"转化为可出口商品，价值创造发生在哪些具体环节？哪个环节是最难被模仿的核心竞争力？如果你是一家想进入梁山市场的外地企业，最大的进入壁垒是什么？
+          </li>
+          <li>
+            <strong>问题 2｜中国企业全球化：梁山模式属于哪种路径？</strong>
+            与华为（技术驱动）、比亚迪（品牌驱动）等中国企业的出海路径相比，梁山二手车出口代表了怎样一种全球化逻辑？它的可持续性依赖于哪些条件？条件一旦改变，模式会如何演变？
+          </li>
+          <li>
+            <strong>问题 3｜再制造 vs 翻新：边界在哪里？</strong>
+            案例中提到发动机"再制造"，但现实中不同企业的操作差异很大。你如何判断一辆出口车是真正的"再制造"还是简单"翻新"？如果梁山要建立可信的再制造认证体系，需要解决哪些核心问题？
+          </li>
+          <li>
+            <strong>问题 4｜政策压力：车龄限制是威胁还是机遇？</strong>
+            非洲多国收紧车龄限制，表面上是对梁山模式的打击，但从另一个角度，它可能倒逼产业升级。你认为车龄限制对梁山三类企业（蜗牛、蚂蚁、诚川）的影响程度是否相同？这一政策变化对"先行者"和"后来者"的影响有何差异？
+          </li>
+          <li>
+            <strong>问题 5｜战略选择：路径 A、B、C，你选哪条？</strong>
+            面对案例第六节中的三条战略路径，假设你是一家年出口量 500 台、有 3000 万元可用于战略投资的中型梁山企业，你会优先选择哪条路径？需要补充哪些关键信息才能做出决定？如果你是地方政府产业政策制定者，你会如何引导产业选择？
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Exhibit 1: Timeline -->
+    <section id="ex1">
+      <div class="exhibit">
+        <div class="exhibit-label">Exhibit 1</div>
+        <h3>梁山商用二手车出口产业关键时间节点</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <div class="tl-date">1980年代—2010年代</div>
+              <div class="tl-text">梁山专用汽车产业集群逐步形成，积累整车与配件生产基础</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot key"></div>
+            <div class="tl-body">
+              <div class="tl-date key">2016年</div>
+              <div class="tl-text">蜗牛货车网成立，探索二手商用车信息化交易平台</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot key"></div>
+            <div class="tl-body">
+              <div class="tl-date key">2019年</div>
+              <div class="tl-text">国家启动二手车出口试点政策；梁山首批 16 家企业取得出口资质；蜗牛货车网完成首批出口（坦桑尼亚）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <div class="tl-date">2022年</div>
+              <div class="tl-text">梁山县二手车出口额达 2,465 万美元，同比增长 113.2%；通关流程改革（一批一证）落地</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot peak"></div>
+            <div class="tl-body">
+              <div class="tl-date peak">2023年</div>
+              <div class="tl-text">全年出口额 7,503.75 万美元，同比增长 204%，梁山成为全国县域商用二手车出口第一；出口覆盖 56 个"一带一路"国家</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <div class="tl-date">2024年5月</div>
+              <div class="tl-text">蚂蚁汽车（中国重汽认证）启动二手车出口业务</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot key"></div>
+            <div class="tl-body">
+              <div class="tl-date key">2024年8月</div>
+              <div class="tl-text">坦桑尼亚国家标准局局长 Dr. Ashura 访问梁山，就进口标准问题开展交流——政府层面的认可与监管预警同步传递</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot peak"></div>
+            <div class="tl-body">
+              <div class="tl-date peak">2024年1—11月</div>
+              <div class="tl-text">出口额 6,978.78 万美元，同比增长 31.66%；蜗牛货车网单家出口 5,799 台（增长 60.4%）</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot key"></div>
+            <div class="tl-body">
+              <div class="tl-date key">2025年上半年</div>
+              <div class="tl-text">济宁市（含梁山）往非洲出口超 7,000 台，同比增长 70%；非洲部分国家车龄限制政策收紧压力持续累积</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exhibit 2: Remanufacturing Process -->
+    <section id="ex2">
+      <div class="exhibit">
+        <div class="exhibit-label">Exhibit 2</div>
+        <h3>发动机再制造核心流程与关键控制点</h3>
+        <table>
+          <thead>
+            <tr><th>阶段</th><th>主要操作</th><th>关键控制点</th><th>结果标准</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="em">进场初检</td>
+              <td>底盘、缸体外观检查；发动机启动测试</td>
+              <td>底盘裂纹、缸体裂纹、事故车判定</td>
+              <td class="bad">不达标 → 直接退货/报废</td>
+            </tr>
+            <tr>
+              <td class="em">完全拆解</td>
+              <td>发动机完整拆解至零部件级别</td>
+              <td>拆解记录、零件编号管理</td>
+              <td>零件分类入库检测</td>
+            </tr>
+            <tr>
+              <td class="em">探伤检测</td>
+              <td>磁粉探伤、超声波检测关键受力件</td>
+              <td>曲轴、连杆、缸体裂纹检出</td>
+              <td class="bad">不合格件 → 报废，不进入再制造流程</td>
+            </tr>
+            <tr>
+              <td class="em">磨损件更换</td>
+              <td>按新机标准更换活塞环、轴承、密封件等</td>
+              <td>配件来源、规格匹配</td>
+              <td>达到新机装配公差标准</td>
+            </tr>
+            <tr>
+              <td class="em">按新机标准装配</td>
+              <td>扭矩控制、间隙检测</td>
+              <td>装配工艺规范执行</td>
+              <td>装配精度满足原厂规范</td>
+            </tr>
+            <tr>
+              <td class="em">热磨合测试</td>
+              <td>空载 + 负载热磨合；记录转速、温度、爬坡能力</td>
+              <td>稳定性、温升异常</td>
+              <td class="good">全指标合格 → 进入整车整备</td>
+            </tr>
+            <tr>
+              <td class="em">整车四重质检</td>
+              <td>底盘 → 变速箱 → 实车路试 → 淋水密封测试</td>
+              <td>整车综合性能</td>
+              <td class="good">全部通过 → 装柜出口</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.78rem;color:var(--ink-muted);margin-top:0.75rem;">注：上述为标杆企业（如蜗牛货车网）的流程；行业内不同企业在"拆解深度"和"检测标准"上存在显著差异，这是导致出口产品质量参差不齐的根本原因。</p>
+      </div>
+    </section>
+
+    <!-- Exhibit 3: Competition comparison -->
+    <section id="ex3">
+      <div class="exhibit">
+        <div class="exhibit-label">Exhibit 3</div>
+        <h3>非洲市场：梁山二手车 vs 日本二手车 vs 中国新车</h3>
+        <table>
+          <thead>
+            <tr><th>维度</th><th>梁山中国二手车</th><th>日本二手车</th><th>中国新车</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>价格（相对基准）</strong></td>
+              <td class="good">1×（基准价）</td>
+              <td class="mid">约 2.5—3×</td>
+              <td class="bad">约 1.8—2×</td>
+            </tr>
+            <tr>
+              <td><strong>零配件价格</strong></td>
+              <td class="good">极低，非洲满街可买</td>
+              <td class="bad">贵，需海运进口</td>
+              <td class="good">中等，逐步普及</td>
+            </tr>
+            <tr>
+              <td><strong>路边维修便利性</strong></td>
+              <td class="good">高（结构简单，工人熟悉）</td>
+              <td class="bad">低（精密系统，需专业设备）</td>
+              <td class="mid">中</td>
+            </tr>
+            <tr>
+              <td><strong>粗放使用适应性</strong></td>
+              <td class="good">强（超载、泥泞路设计耐受性高）</td>
+              <td class="mid">中</td>
+              <td class="mid">中</td>
+            </tr>
+            <tr>
+              <td><strong>整体质量稳定性</strong></td>
+              <td class="mid">参差不齐（取决于整备标准）</td>
+              <td class="good">高（整备标准统一）</td>
+              <td class="good">高（新车）</td>
+            </tr>
+            <tr>
+              <td><strong>车龄政策合规性</strong></td>
+              <td class="bad">风险：10—15 年车龄面临政策压力</td>
+              <td class="mid">中等（部分也存在车龄问题）</td>
+              <td class="good">无问题</td>
+            </tr>
+            <tr>
+              <td><strong>高端客户吸引力</strong></td>
+              <td class="bad">低（品牌认知不足）</td>
+              <td class="good">高</td>
+              <td class="mid">中（快速提升）</td>
+            </tr>
+            <tr>
+              <td><strong>一站式配套采购</strong></td>
+              <td class="good">强（梁山专用车 + 配件一站式）</td>
+              <td class="bad">弱</td>
+              <td class="mid">中</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Exhibit 4: Export data -->
+    <section id="ex4">
+      <div class="exhibit">
+        <div class="exhibit-label">Exhibit 4</div>
+        <h3>梁山县商用二手车出口额增长数据</h3>
+        <table>
+          <thead>
+            <tr><th>年份</th><th>出口额（万美元）</th><th>同比增长</th><th>备注</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2022年</td>
+              <td class="em">2,465</td>
+              <td class="good">+113.2%</td>
+              <td>快速起飞期，新冠后基建需求释放</td>
+            </tr>
+            <tr>
+              <td>2023年</td>
+              <td class="em">7,503.75</td>
+              <td class="good">+204%</td>
+              <td>爆发期；超越 7000 万美元门槛；县域第一</td>
+            </tr>
+            <tr>
+              <td>2024年（1—11月）</td>
+              <td class="em">6,978.78</td>
+              <td class="mid">+31.66%</td>
+              <td>增速回落，但绝对量仍在高位；政策压力显现</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.78rem;color:var(--ink-muted);margin-top:0.75rem;">蜗牛货车网单家数据：2023年（1—11月）出口 3,616 台；2024年（1—11月）出口 5,799 台，增长 60.4%，累计（2019—2024）出口超 1.2 万台，累计出口额 1.5 亿美元。</p>
+      </div>
+    </section>
+
+    <!-- Exhibit 5: Strategic options comparison -->
+    <section id="ex5">
+      <div class="exhibit">
+        <div class="exhibit-label">Exhibit 5</div>
+        <h3>三种战略路径：关键假设与风险结构对比</h3>
+        <table>
+          <thead>
+            <tr><th>维度</th><th>路径 A：规模深化</th><th>路径 B：品质升级</th><th>路径 C：新能源切入</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>核心逻辑</strong></td>
+              <td>以量取胜，摊薄成本</td>
+              <td>以质取胜，建立溢价</td>
+              <td>换赛道，规避政策压力</td>
+            </tr>
+            <tr>
+              <td><strong>所需核心能力</strong></td>
+              <td>供应链规模化、物流效率</td>
+              <td>认证体系、品牌建设、售后网络</td>
+              <td>新能源车辆鉴定、充电生态理解</td>
+            </tr>
+            <tr>
+              <td><strong>前期投资</strong></td>
+              <td class="good">低（扩产线为主）</td>
+              <td class="bad">高（认证+品牌+网络，约 3000 万+）</td>
+              <td class="mid">中（新车源渠道开发）</td>
+            </tr>
+            <tr>
+              <td><strong>回报周期</strong></td>
+              <td class="good">短（12 个月内）</td>
+              <td class="bad">长（18—36 个月）</td>
+              <td class="mid">未知（取决于市场接受度）</td>
+            </tr>
+            <tr>
+              <td><strong>车龄政策抗压性</strong></td>
+              <td class="mid">中（收购更新车龄，成本上升）</td>
+              <td class="good">高（再制造认证可能获豁免）</td>
+              <td class="good">高（新能源车车龄天然较新）</td>
+            </tr>
+            <tr>
+              <td><strong>质量风险敞口</strong></td>
+              <td class="bad">大（规模扩张易牺牲标准）</td>
+              <td class="good">小（认证倒逼标准统一）</td>
+              <td class="mid">未知（电动车在非洲使用经验为零）</td>
+            </tr>
+            <tr>
+              <td><strong>最大不确定性</strong></td>
+              <td>政策变化时无差异化抵御</td>
+              <td>非洲买家的品牌溢价支付意愿</td>
+              <td>充电基础设施的铺设时间表</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>MBE 产业物流教学案例系列 · MBE-2026-L01 · 2026 年</p>
+      <p style="margin-top:0.35rem;">数据来源：梁山县商务局公开资料、企业公开报道；案例内容仅供课堂教学讨论使用，不构成商业建议或企业立场陈述。</p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('highlight-target');
+        setTimeout(() => target.classList.remove('highlight-target'), 1200);
+      }
+    });
+  });
+</script>
+</body>
+</html>
